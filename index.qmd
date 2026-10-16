@@ -122,7 +122,6 @@ This textbook is optimized for active learning on modern screens:
 * **Real-Time Reading Progress:** An unobtrusive progress indicator tracks your scroll position across every chapter.
 * **Inline Self-Assessments:** Expandable knowledge-check cards allow students to test conceptual retention before exams.
 * **Rich Figure Commentary:** Comprehensive visual collages with detailed alt text and academic citations.
-* **Adaptive Dark & Light Modes:** Tailored typography and contrast curves for comfortable day and night reading.
 
 ::: {.callout-tip}
 ### Suggested Citation (APA 7th Edition)

@@ -20,8 +20,8 @@ bibliography: references.bib
 format:
   html:
     theme:
-      light: [cosmo, theme.scss]
-      dark: [darkly, theme.scss]
+      - cosmo
+      - theme.scss
     toc: true
     toc-depth: 3
     toc-title: "Contents"
