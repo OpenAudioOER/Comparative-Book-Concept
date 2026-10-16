@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Comparative Politics 2e"
+  title: "Introduction to Comparative Government and Politics (2nd Edition)"
   sidebar:
     style: "floating"
     search: true

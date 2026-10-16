@@ -1,7 +1,7 @@
 {
   "name": "comparative-book-concept",
   "version": "1.0.0",
-  "description": "Comparative Politics 2e - Modern digital textbook proof of concept",
+  "description": "Introduction to Comparative Government and Politics (2nd Edition) - Modern digital textbook proof of concept",
   "scripts": {
     "build": "echo 'Serving pre-rendered Quarto book from _book/'"
   },

@@ -1,4 +1,4 @@
-# Comparative Politics (2nd Edition) — Digital Textbook Proof of Concept
+# Introduction to Comparative Government and Politics (2nd Edition) — Digital Textbook Proof of Concept
 
 An open-access, modern digital textbook proof of concept built with **[Quarto](https://quarto.org)** and hosted on **Vercel**.
 
