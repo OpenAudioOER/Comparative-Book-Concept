@@ -1,0 +1,130 @@
+# Welcome to Comparative Politics {.unnumbered}
+
+::: {.book-hero}
+::: {.hero-content}
+<div class="hero-badge"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Open Educational Resource • 2nd Edition</div>
+
+<p class="hero-title">Comparative Politics: A Global Analysis</p>
+
+<p class="hero-subtitle">Exploring Government, Institutions, and Societies Across the World</p>
+
+<p class="hero-author">By <strong>Norah Jones, Ph.D.</strong> • Contributing Scholars in Comparative Politics</p>
+
+<div class="hero-actions">
+  <a href="01.html" class="btn-hero-primary"><i class="bi bi-book-half" aria-hidden="true"></i> Start Reading: Chapter 1</a>
+  <a href="#curriculum-overview" class="btn-hero-secondary"><i class="bi bi-list-ul" aria-hidden="true"></i> Explore Curriculum</a>
+</div>
+:::
+
+::: {.hero-cover}
+<img src="images/textbook-cover.jpg" alt="Cover of Comparative Politics Second Edition textbook displaying gold architectural arches over a globe on an Oxford navy background" class="hero-cover-img" />
+:::
+:::
+
+::: {.stats-strip}
+::: {.stat-card}
+<div class="stat-number">12</div>
+<div class="stat-label">Core Chapters</div>
+:::
+
+::: {.stat-card}
+<div class="stat-number">50+</div>
+<div class="stat-label">Global Case Studies</div>
+:::
+
+::: {.stat-card}
+<div class="stat-number">100%</div>
+<div class="stat-label">Open Access (CC-BY)</div>
+:::
+
+::: {.stat-card}
+<div class="stat-number">Interactive</div>
+<div class="stat-label">Self Assessments</div>
+:::
+:::
+
+## About This Digital Edition {.unnumbered}
+
+Welcome to the second edition of **Comparative Politics**. Designed as a comprehensive, open-access textbook for undergraduate students and scholars, this work bridges classical political philosophy with cutting-edge empirical research in global governance.
+
+Why do some democratic institutions endure through crisis while others backslide into authoritarianism? How do distinct electoral systems shape policy outcomes, social safety nets, and economic equality? Rather than examining nations in isolation, this volume equips you with systematic comparative methodologies to analyze political behavior and institutional structures across cultures, continents, and historical eras.
+
+::: {.callout-note}
+### Key Pedagogical Framework
+
+This text employs three complementary analytical dimensions throughout every chapter:
+
+1. **Cross-National Analysis:** Large-$N$ comparative inquiries evaluating macro patterns across dozens of sovereign states (e.g., electoral systems vs. voter turnout).
+2. **Area Studies & In-Depth Case Studies:** Context-rich investigations of specific political cultures, regional dynamics, and historical paths across the Americas, Europe, Africa, Asia, and the Middle East.
+3. **Subnational Analysis:** Within-country comparisons exploring disparities across federal states, provinces, and municipal governance.
+:::
+
+## Curriculum & Chapter Directory {#curriculum-overview .unnumbered}
+
+Browse the volume’s chapters below to begin your inquiry:
+
+::: {.chapters-grid}
+
+::: {.chapter-box}
+::: {.chapter-top}
+<span class="chapter-num">Chapter 1</span>
+<h3 class="chapter-heading">Why Study Comparative Politics?</h3>
+<p class="chapter-desc">Introduction to the field, distinction between political subfields, the logic of comparison, and fundamental analytical lenses.</p>
+:::
+::: {.chapter-footer}
+<span>⏱ ~18 min read</span>
+<a href="01.html" class="chapter-link" aria-label="Read Chapter 1: Why Study Comparative Politics?">Read Chapter <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+:::
+:::
+
+::: {.chapter-box}
+::: {.chapter-top}
+<span class="chapter-num">Chapter 2</span>
+<h3 class="chapter-heading">The State & Sovereign Authority</h3>
+<p class="chapter-desc">The origin of the modern state, Weberian legitimacy, state capacity, weak and failed states, and the challenges of globalization.</p>
+:::
+::: {.chapter-footer}
+<span>Forthcoming</span>
+<span class="chapter-status"><i class="bi bi-lock-fill" aria-hidden="true"></i> Coming Soon</span>
+:::
+:::
+
+::: {.chapter-box}
+::: {.chapter-top}
+<span class="chapter-num">Chapter 3</span>
+<h3 class="chapter-heading">Democratic Regimes & Institutions</h3>
+<p class="chapter-desc">Parliamentary, presidential, and semi-presidential models. Electoral laws, voting systems, and institutional checks and balances.</p>
+:::
+::: {.chapter-footer}
+<span>Forthcoming</span>
+<span class="chapter-status"><i class="bi bi-lock-fill" aria-hidden="true"></i> Coming Soon</span>
+:::
+:::
+
+::: {.chapter-box}
+::: {.chapter-top}
+<span class="chapter-num">Chapter 4</span>
+<h3 class="chapter-heading">Authoritarianism & Hybrid Regimes</h3>
+<p class="chapter-desc">Totalitarian regimes, competitive authoritarian systems, monarchies, and modern mechanisms of political co-optation and control.</p>
+:::
+::: {.chapter-footer}
+<span>Forthcoming</span>
+<span class="chapter-status"><i class="bi bi-lock-fill" aria-hidden="true"></i> Coming Soon</span>
+:::
+:::
+
+:::
+
+## Interactive Features in This Textbook {.unnumbered}
+
+This textbook is optimized for active learning on modern screens:
+
+* **Real-Time Reading Progress:** An unobtrusive progress indicator tracks your scroll position across every chapter.
+* **Inline Self-Assessments:** Expandable knowledge-check cards allow students to test conceptual retention before exams.
+* **Rich Figure Commentary:** Comprehensive visual collages with detailed alt text and academic citations.
+* **Adaptive Dark & Light Modes:** Tailored typography and contrast curves for comfortable day and night reading.
+
+::: {.callout-tip}
+### Suggested Citation (APA 7th Edition)
+Jones, N. (2026). *Comparative Politics: A Global Analysis of Government, Institutions, and Societies* (2nd ed.). Open Education Press. <https://doi.org/10.1000/comp-pol-2e>
+:::

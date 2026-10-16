@@ -1,0 +1,23 @@
+.DS_Store
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Quarto cache
+/.quarto/
+**/*.quarto_ipynb
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.toc
+*.out
+*.synctex.gz
+index.tex
+index.aux
+index.log
+index.toc
+
+# Vercel deployment folder
+.vercel

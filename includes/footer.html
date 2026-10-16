@@ -1,0 +1,57 @@
+<script>
+// Fallback for scroll progress bar on browsers without scroll-driven animation support
+document.addEventListener('DOMContentLoaded', () => {
+  if (!CSS.supports('animation-timeline', 'scroll()')) {
+    const progress = document.querySelector('#scroll-progress');
+    if (progress) {
+      const updateProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollable > 0) {
+          const scrolled = window.scrollY;
+          const ratio = Math.min(Math.max(scrolled / scrollable, 0), 1);
+          progress.style.transform = `scaleX(${ratio})`;
+        }
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    }
+  }
+
+  // Calculate estimated reading time for content chapters
+  const content = document.querySelector('main.content');
+  if (content) {
+    const text = content.innerText || '';
+    const wordCount = text.trim().split(/\s+/).length;
+    const readingTimeMin = Math.max(1, Math.ceil(wordCount / 225));
+    
+    // Inject reading time badge if on a chapter page
+    const titleMeta = document.querySelector('.quarto-title-meta');
+    if (titleMeta && !document.querySelector('.reading-meta-badge')) {
+      const badge = document.createElement('div');
+      badge.className = 'reading-meta-badge';
+      badge.innerHTML = `
+        <span class="meta-item"><i class="bi bi-clock-history"></i> ${readingTimeMin} min read</span>
+        <span class="meta-item-separator">•</span>
+        <span class="meta-item"><i class="bi bi-file-text"></i> ${wordCount.toLocaleString()} words</span>
+        <span class="meta-item-separator">•</span>
+        <span class="meta-item badge-oer"><i class="bi bi-award"></i> Open Access 2nd Ed.</span>
+      `;
+      titleMeta.parentNode.insertBefore(badge, titleMeta.nextSibling);
+    }
+  }
+
+  // Interactive self-check question toggles
+  document.querySelectorAll('.knowledge-check-card').forEach(card => {
+    const btn = card.querySelector('.kc-toggle-btn');
+    const answer = card.querySelector('.kc-answer');
+    if (btn && answer) {
+      btn.addEventListener('click', () => {
+        const isHidden = answer.style.display === 'none' || !answer.style.display;
+        answer.style.display = isHidden ? 'block' : 'none';
+        btn.textContent = isHidden ? 'Hide Explanation & Answer' : 'Reveal Explanation & Answer';
+        btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+      });
+    }
+  });
+});
+</script>

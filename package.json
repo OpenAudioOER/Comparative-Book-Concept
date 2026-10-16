@@ -1,0 +1,11 @@
+{
+  "name": "comparative-book-concept",
+  "version": "1.0.0",
+  "description": "Comparative Politics 2e - Modern digital textbook proof of concept",
+  "scripts": {
+    "build": "echo 'Serving pre-rendered Quarto book from _book/'"
+  },
+  "keywords": ["oer", "quarto", "textbook", "comparative-politics", "political-science"],
+  "author": "OpenAudioOER",
+  "license": "CC-BY-SA-4.0"
+}
