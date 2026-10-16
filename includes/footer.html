@@ -1,22 +1,5 @@
 <script>
-// Fallback for scroll progress bar on browsers without scroll-driven animation support
 document.addEventListener('DOMContentLoaded', () => {
-  if (!CSS.supports('animation-timeline', 'scroll()')) {
-    const progress = document.querySelector('#scroll-progress');
-    if (progress) {
-      const updateProgress = () => {
-        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-        if (scrollable > 0) {
-          const scrolled = window.scrollY;
-          const ratio = Math.min(Math.max(scrolled / scrollable, 0), 1);
-          progress.style.transform = `scaleX(${ratio})`;
-        }
-      };
-      window.addEventListener('scroll', updateProgress, { passive: true });
-      updateProgress();
-    }
-  }
-
   // Calculate estimated reading time for content chapters
   const content = document.querySelector('main.content');
   if (content) {
@@ -24,19 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordCount = text.trim().split(/\s+/).length;
     const readingTimeMin = Math.max(1, Math.ceil(wordCount / 225));
     
-    // Inject reading time badge if on a chapter page
-    const titleMeta = document.querySelector('.quarto-title-meta');
-    if (titleMeta && !document.querySelector('.reading-meta-badge')) {
+    // Inject reading time badge right below the chapter heading
+    const chapterHeading = document.querySelector('main.content h1');
+    if (chapterHeading && !document.querySelector('.reading-meta-badge')) {
       const badge = document.createElement('div');
       badge.className = 'reading-meta-badge';
       badge.innerHTML = `
-        <span class="meta-item"><i class="bi bi-clock-history"></i> ${readingTimeMin} min read</span>
-        <span class="meta-item-separator">•</span>
-        <span class="meta-item"><i class="bi bi-file-text"></i> ${wordCount.toLocaleString()} words</span>
-        <span class="meta-item-separator">•</span>
-        <span class="meta-item badge-oer"><i class="bi bi-award"></i> Open Access 2nd Ed.</span>
+        <span class="meta-item"><i class="bi bi-clock-history" aria-hidden="true"></i> ${readingTimeMin} min read</span>
+        <span class="meta-item-separator" aria-hidden="true">•</span>
+        <span class="meta-item"><i class="bi bi-file-text" aria-hidden="true"></i> ${wordCount.toLocaleString()} words</span>
+        <span class="meta-item-separator" aria-hidden="true">•</span>
+        <span class="meta-item badge-oer"><i class="bi bi-award" aria-hidden="true"></i> Open Access 2nd Ed.</span>
       `;
-      titleMeta.parentNode.insertBefore(badge, titleMeta.nextSibling);
+      chapterHeading.insertAdjacentElement('afterend', badge);
     }
   }
 

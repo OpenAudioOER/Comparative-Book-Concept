@@ -3,9 +3,6 @@ project:
 
 book:
   title: "Comparative Politics 2e"
-  subtitle: "A Global Analysis of Government, Institutions, and Societies"
-  author: "Norah Jones"
-  date: "October 2026"
   sidebar:
     style: "floating"
     search: true
@@ -26,7 +23,6 @@ format:
     toc-title: "Contents"
     number-sections: false
     smooth-scroll: true
-    include-in-header: includes/header.html
     include-after-body: includes/footer.html
   pdf:
     documentclass: scrreprt
