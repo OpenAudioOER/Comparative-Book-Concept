@@ -2,6 +2,8 @@
 
 An open-access, modern digital textbook proof of concept built with **[Quarto](https://quarto.org)** and hosted on **Vercel**.
 
+🌐 **Live Demo**: [https://comparative-book-concept.vercel.app](https://comparative-book-concept.vercel.app)
+
 ## 📖 Features
 
 * **Editorial Typography & Visual Polish**: Custom SCSS theme pairing *Newsreader* (editorial book serif) with *Plus Jakarta Sans* (clean geometric headers) and warm book parchment background.
