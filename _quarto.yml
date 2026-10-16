@@ -14,8 +14,6 @@ book:
   chapters:
     - index.qmd
     - 01.qmd
-    - summary.qmd
-    - references.qmd
 
 bibliography: references.bib
 
@@ -27,8 +25,7 @@ format:
     toc: true
     toc-depth: 3
     toc-title: "Contents"
-    number-sections: true
-    number-depth: 2
+    number-sections: false
     smooth-scroll: true
     include-in-header: includes/header.html
     include-after-body: includes/footer.html
