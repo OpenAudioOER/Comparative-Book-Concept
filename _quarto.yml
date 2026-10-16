@@ -13,7 +13,6 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - 01.qmd
 
 bibliography: references.bib
 

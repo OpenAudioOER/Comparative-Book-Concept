@@ -1,5 +1,11 @@
 {
   "outputDirectory": "_book",
   "cleanUrls": true,
-  "framework": null
+  "redirects": [
+    {
+      "source": "/01",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
