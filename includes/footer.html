@@ -1,6 +1,27 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Calculate estimated reading time for content chapters
+  // 1. Inject fully-accessible scroll progress bar (aria-hidden="true" per WCAG best practices)
+  if (!document.getElementById('scroll-progress')) {
+    const progress = document.createElement('div');
+    progress.id = 'scroll-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    document.body.prepend(progress);
+
+    // Fallback for browsers that do not yet support CSS scroll-driven animations
+    if (!CSS.supports('animation-timeline', 'scroll()')) {
+      const updateProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollable > 0) {
+          const ratio = Math.min(Math.max(window.scrollY / scrollable, 0), 1);
+          progress.style.transform = `scaleX(${ratio})`;
+        }
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    }
+  }
+
+  // 2. Calculate estimated reading time for content chapters
   const content = document.querySelector('main.content');
   if (content) {
     const text = content.innerText || '';
@@ -23,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Interactive self-check question toggles
+  // 3. Interactive self-check question toggles
   document.querySelectorAll('.knowledge-check-card').forEach(card => {
     const btn = card.querySelector('.kc-toggle-btn');
     const answer = card.querySelector('.kc-answer');

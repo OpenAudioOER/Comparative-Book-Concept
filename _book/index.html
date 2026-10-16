@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-9ca39a6c8f3c55bb7168ad3fe9fb6c64.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a62f0433c46a4a1467c6029eeb9c3af2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1d8cd1b3ea87df088c2074838336b639.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -776,7 +776,28 @@ Table&nbsp;1.2
 </main> <!-- /main -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Calculate estimated reading time for content chapters
+  // 1. Inject fully-accessible scroll progress bar (aria-hidden="true" per WCAG best practices)
+  if (!document.getElementById('scroll-progress')) {
+    const progress = document.createElement('div');
+    progress.id = 'scroll-progress';
+    progress.setAttribute('aria-hidden', 'true');
+    document.body.prepend(progress);
+
+    // Fallback for browsers that do not yet support CSS scroll-driven animations
+    if (!CSS.supports('animation-timeline', 'scroll()')) {
+      const updateProgress = () => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollable > 0) {
+          const ratio = Math.min(Math.max(window.scrollY / scrollable, 0), 1);
+          progress.style.transform = `scaleX(${ratio})`;
+        }
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress();
+    }
+  }
+
+  // 2. Calculate estimated reading time for content chapters
   const content = document.querySelector('main.content');
   if (content) {
     const text = content.innerText || '';
@@ -799,7 +820,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Interactive self-check question toggles
+  // 3. Interactive self-check question toggles
   document.querySelectorAll('.knowledge-check-card').forEach(card => {
     const btn = card.querySelector('.kc-toggle-btn');
     const answer = card.querySelector('.kc-answer');
