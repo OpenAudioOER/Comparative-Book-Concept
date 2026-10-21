@@ -1010,7 +1010,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const firstP = tblDiv.querySelector("p");
     const autoCap = tblDiv.querySelector("figcaption, table caption");
     if (firstP && autoCap && /Table\s+\d+/i.test(firstP.textContent)) {
+      const capId = autoCap.id;
       autoCap.remove();
+      if (capId) {
+        if (!firstP.id) {
+          firstP.id = `${tblDiv.id}-title`;
+        }
+        tblDiv.querySelectorAll(`[aria-describedby="${capId}"]`).forEach((el) => {
+          el.removeAttribute("aria-describedby");
+          el.setAttribute("aria-labelledby", firstP.id);
+        });
+      }
     }
     const titleEl = firstP || autoCap;
     if (titleEl) {
@@ -1025,6 +1035,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       );
     }
+  });
+
+  // Clean up any dangling ARIA references to elements that do not exist in the DOM
+  document.querySelectorAll("[aria-describedby], [aria-labelledby]").forEach((el) => {
+    ["aria-describedby", "aria-labelledby"].forEach((attr) => {
+      const id = el.getAttribute(attr);
+      if (id && !document.getElementById(id)) {
+        el.removeAttribute(attr);
+      }
+    });
   });
 
   // -------------------------------------------------------------------------
