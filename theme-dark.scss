@@ -1,0 +1,1757 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !default;
+$font-family-serif: "Source Serif 4", "Newsreader", Georgia, Cambria, "Times New Roman", serif !default;
+$font-family-monospace: "JetBrains Mono", Menlo, Monaco, Consolas, monospace !default;
+
+$font-family-base: $font-family-serif !default;
+$headings-font-family: $font-family-sans-serif !default;
+
+// Elevated Academic Deep Slate Palette (Dark Mode — Low-Glare, Non-Electric)
+// (No !default so our palette overrides Cosmo's built-in neon colors for icons & controls)
+$primary: #829ab1;          // Dusty Steel-Slate (Desaturated, calm)
+$secondary: #7c8ba1;        // Muted Slate
+$success: #689689;          // Muted Sage-Slate
+$info: #7898a8;             // Muted Nordic Slate-Teal
+$warning: #829ab1;          // Dusty Steel-Slate
+$danger: #b86b6b;           // Muted Terracotta
+
+$callout-color-note: #829ab1;
+$callout-color-tip: #689689;
+$callout-color-important: #7496a6;
+$callout-color-warning: #7496a6;
+$callout-color-caution: #7496a6;
+
+$body-color: #cdd4de;       // Soft Alabaster-Slate (Zero eye-strain / halation)
+$body-bg: #141921;          // Deep Matte Slate Reading Canvas
+$link-color: #96afc7;       // Soft Steel-Slate Link
+$link-hover-color: #b5cade; // Lighter Mist-Slate Hover
+
+$headings-color: #e4e9f0;   // Soft Off-White (Never pure #fff glare)
+$headings-font-weight: 700;
+
+$font-size-base: 1.125rem !default;
+$line-height-base: 1.78 !default;
+
+$border-radius: 10px !default;
+$border-radius-lg: 16px !default;
+
+// Grid & Layout Proportions
+$grid-sidebar-width:  290px;
+$grid-body-width:     800px;
+$grid-margin-width:   240px;
+$grid-column-gutter-width: 2.25rem;
+
+$sidebar-bg:          #10151d;
+$sidebar-fg:          #cbd2dc;
+$sidebar-hl:          #8ca8c4;
+$border-color:        #242e3d;
+
+// Bootstrap Table Dark Overrides
+$table-bg:            transparent;
+$table-color:         #cbd2dc;
+$table-border-color:  #2e3b4e;
+
+/*-- scss:rules --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root,
+body.quarto-dark {
+  --tb-bg: #141921;
+  --tb-recessed: #0f131a;
+  --tb-recessed-hover: #1a212d;
+  --tb-card: #1b222d;
+  --tb-tint: #171e28;
+  --tb-border: #232c3b;
+  --tb-border-strong: #2c3748;
+
+  --tb-ink: #cdd4de;
+  --tb-ink-secondary: #aeb7c4;
+  --tb-caption: #97a3b4;
+  --tb-heading: #e4e9f0;
+  --tb-muted: #788598;
+
+  // Monochromatic Steel-Slate Accents (Replaces multi-color neon dashboard look)
+  --tb-navy: #adc2d6;
+  --tb-blue: #829ab1;
+  --tb-blue-hover: #bfd2e3;
+  --tb-blue-soft: rgba(130, 154, 177, 0.12);
+  --tb-blue-border: rgba(130, 154, 177, 0.25);
+
+  // Unified Muted Slate-Blue for Review Questions (Cohesive with primary slate)
+  --tb-indigo: #7c8da6;
+  --tb-indigo-btn: #3a485e;
+  --tb-indigo-dark: #b4c2d6;
+  --tb-indigo-soft: rgba(124, 141, 166, 0.14);
+
+  // Muted Sage-Slate for Case Studies & Summaries
+  --tb-emerald: #689689;
+  --tb-emerald-border: #568276;
+  --tb-emerald-dark: #9bc0b5;
+  --tb-emerald-soft: rgba(104, 150, 137, 0.14);
+  --tb-emerald-tint: rgba(24, 39, 36, 0.5);
+
+  // Muted Nordic Slate for Critical Thinking
+  --tb-teal: #7496a6;
+  --tb-teal-dark: #a5c1ce;
+  --tb-teal-soft: rgba(116, 150, 166, 0.14);
+  --tb-teal-tint: rgba(25, 36, 44, 0.5);
+
+  --tb-amber: #a89166;
+  --tb-amber-dark: #cfc0a3;
+  --tb-amber-soft: rgba(168, 145, 102, 0.14);
+  --tb-amber-tint: rgba(44, 38, 28, 0.4);
+
+  --tb-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --tb-serif: "Source Serif 4", "Newsreader", Georgia, serif;
+}
+
+// ---------------------------------------------------------------------------
+// 1. Subtle, Non-Electric Scroll Progress Bar (Solid Dusty Steel-Slate)
+// ---------------------------------------------------------------------------
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--tb-blue);
+  transform-origin: 0 50%;
+  z-index: 99999;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: scroll())) {
+    @keyframes grow-scroll-progress {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    #scroll-progress {
+      animation: grow-scroll-progress auto linear;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 2. Accessibility, Focus States & Editorial Typography
+// ---------------------------------------------------------------------------
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--tb-blue) !important;
+  outline-offset: 3px !important;
+  border-radius: 4px;
+}
+
+body {
+  font-family: var(--tb-serif);
+  color: var(--tb-ink);
+  background-color: var(--tb-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Darken top mobile/secondary nav header in dark mode
+#quarto-header .quarto-secondary-nav {
+  background-color: var(--tb-recessed) !important;
+  border-bottom: 1px solid var(--tb-border) !important;
+}
+
+main.content {
+  max-width: 820px;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+
+  p {
+    margin-bottom: 1.5rem;
+    color: var(--tb-ink);
+    line-height: 1.78;
+    letter-spacing: -0.005em;
+  }
+
+  // Normalize body bulleted & numbered lists ("loose" <p>-wrapped and "tight" lists)
+  section > ul:not(.country-profile-card),
+  section > ol {
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+
+    > li {
+      margin-bottom: 0.6rem;
+      line-height: 1.72;
+      color: var(--tb-ink);
+
+      &::marker {
+        color: var(--tb-blue);
+        font-weight: 650;
+      }
+
+      > p {
+        margin-bottom: 0.55rem;
+        line-height: 1.72;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  a:not(.btn):not(.btn-hero-primary):not(.btn-hero-secondary):not(.chapter-link):not(.nav-link):not(.toc-action) {
+    color: var(--tb-navy);
+    text-decoration: underline;
+    text-decoration-color: rgba(166, 188, 211, 0.35);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+    &:hover {
+      color: var(--tb-blue-hover);
+      text-decoration-color: var(--tb-blue-hover);
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  blockquote {
+    margin: 2rem 0;
+    padding: 1.25rem 1.75rem;
+    background-color: var(--tb-recessed);
+    border-left: 4px solid var(--tb-blue);
+    border-radius: 0 10px 10px 0;
+    font-style: italic;
+    color: var(--tb-ink-secondary);
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 3. Chapter Openers & Section Hierarchy
+// ---------------------------------------------------------------------------
+#title-block-header {
+  margin-bottom: 2.25rem;
+  padding-bottom: 0;
+  border-bottom: none;
+
+  .quarto-title-breadcrumbs {
+    display: none !important;
+  }
+
+  .quarto-title-banner {
+    background: transparent;
+    padding: 0;
+  }
+
+  h1.title {
+    font-family: var(--tb-sans);
+    font-size: 2.35rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--tb-heading);
+    line-height: 1.18;
+    margin-top: 0.2rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 3a. Editorial Chapter Audio Bar & On-Demand Player (Dark Mode)
+// ---------------------------------------------------------------------------
+.chapter-audio-wrapper {
+  margin-top: 0.9rem;
+  font-family: var(--tb-sans);
+
+  .chapter-audio-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .chapter-audio-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background-color: var(--tb-card);
+    color: var(--tb-heading);
+    border: 1px solid var(--tb-border-strong);
+    border-radius: 999px;
+    padding: 0.34rem 0.85rem;
+    font-family: var(--tb-sans);
+    font-size: 0.79rem;
+    font-weight: 650;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    transition: all 0.16s ease;
+
+    svg {
+      color: var(--tb-blue);
+      flex-shrink: 0;
+    }
+
+    .audio-toggle-chevron {
+      font-size: 0.7rem;
+      color: var(--tb-muted);
+      transition: transform 0.18s ease;
+    }
+
+    &:hover {
+      background-color: var(--tb-blue-soft);
+      border-color: var(--tb-blue-border);
+      color: var(--tb-navy);
+    }
+  }
+
+  &.is-open .chapter-audio-toggle {
+    background-color: var(--tb-blue-soft);
+    border-color: var(--tb-blue-border);
+    color: var(--tb-navy);
+
+    .audio-toggle-chevron {
+      transform: rotate(180deg);
+      color: var(--tb-navy);
+    }
+  }
+
+  .chapter-audio-float-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: transparent;
+    color: var(--tb-caption);
+    border: 1px dashed var(--tb-border-strong);
+    border-radius: 999px;
+    padding: 0.3rem 0.72rem;
+    font-family: var(--tb-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &[hidden] {
+      display: none !important;
+    }
+
+    &:hover {
+      color: var(--tb-heading);
+      border-color: var(--tb-blue);
+      background-color: var(--tb-card);
+    }
+  }
+
+  .chapter-audio-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.76rem;
+    color: var(--tb-muted);
+    padding-left: 0.25rem;
+
+    &[hidden] {
+      display: none !important;
+    }
+
+    .audio-links-prefix {
+      color: var(--tb-muted);
+      font-weight: 500;
+    }
+
+    .audio-links-sep {
+      color: var(--tb-border-strong);
+    }
+
+    a.chapter-audio-ext {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      color: var(--tb-ink-secondary) !important;
+      font-weight: 650;
+      text-decoration: none !important;
+      transition: color 0.15s ease;
+
+      svg {
+        opacity: 0.65;
+        transition: transform 0.15s ease, opacity 0.15s ease;
+      }
+
+      &:hover {
+        color: var(--tb-blue-hover) !important;
+
+        svg {
+          opacity: 1;
+          transform: translate(1px, -1px);
+        }
+      }
+    }
+  }
+
+  .chapter-audio-drawer {
+    margin-top: 0.85rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: transparent;
+
+    &[hidden] {
+      display: none !important;
+    }
+
+    .chapter-audio-floating-header {
+      display: none;
+    }
+
+    .chapter-audio-frame-holder iframe {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
+    }
+  }
+
+  // Docked / Floating Picture-in-Picture Mode (Bottom-Left)
+  &.is-floating .chapter-audio-drawer {
+    position: fixed;
+    bottom: 1.35rem;
+    left: 1.5rem;
+    width: 390px;
+    max-width: calc(100vw - 3rem);
+    margin-top: 0;
+    z-index: 1055;
+    background-color: var(--tb-card);
+    border: 1px solid var(--tb-border-strong);
+    border-radius: 14px;
+    padding: 0.5rem;
+    box-shadow: 0 16px 38px -6px rgba(0, 0, 0, 0.65);
+
+    .chapter-audio-floating-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.2rem 0.4rem 0.45rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--tb-ink-secondary);
+
+      .floating-header-title {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+
+        svg {
+          color: var(--tb-blue);
+        }
+      }
+
+      .floating-header-actions {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+
+        button {
+          background: var(--tb-recessed);
+          border: 1px solid var(--tb-border-strong);
+          border-radius: 6px;
+          padding: 0.15rem 0.45rem;
+          font-family: var(--tb-sans);
+          font-size: 0.7rem;
+          font-weight: 600;
+          color: var(--tb-caption);
+          cursor: pointer;
+          transition: all 0.15s ease;
+
+          &:hover {
+            color: var(--tb-heading);
+            border-color: var(--tb-blue);
+          }
+        }
+      }
+    }
+  }
+}
+
+.chapter-kicker {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--tb-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: transparent;
+  color: var(--tb-navy);
+  border-left: 3.5px solid var(--tb-blue);
+  padding: 0.05rem 0 0.05rem 0.65rem;
+  border-radius: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+main.content h2,
+main.content .h2 {
+  font-family: var(--tb-sans);
+  font-size: 1.6rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  color: var(--tb-heading);
+  margin-top: 3rem;
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 2px solid var(--tb-border-strong);
+  line-height: 1.25;
+}
+
+main.content h3,
+main.content .h3 {
+  font-family: var(--tb-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--tb-ink-secondary);
+  margin-top: 2.1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+main.content h4,
+main.content .h4 {
+  font-family: var(--tb-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--tb-navy);
+  margin-top: 1.6rem;
+  margin-bottom: 0.55rem;
+}
+
+// ---------------------------------------------------------------------------
+// 4. Left Book Navigation Sidebar (Stacked "Chapter X:" + Title) & Right TOC
+// ---------------------------------------------------------------------------
+@media (min-width: 992px) {
+  #quarto-sidebar {
+    position: static !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+#quarto-sidebar,
+.sidebar {
+  background: var(--tb-recessed) !important;
+  border-right: 1px solid var(--tb-border) !important;
+  font-family: var(--tb-sans);
+
+  .sidebar-title {
+    font-weight: 700 !important;
+    color: var(--tb-heading) !important;
+    font-size: 1.02rem;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+
+    .sidebar-book-main-title {
+      display: block;
+      font-weight: 700;
+      color: var(--tb-heading);
+      cursor: default;
+    }
+
+    .sidebar-edition-kicker {
+      display: block;
+      margin-top: 0.32rem;
+      font-family: var(--tb-sans);
+      font-size: 0.68rem;
+      font-weight: 650;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--tb-muted);
+      border-left: none;
+      padding: 0;
+      line-height: 1.15;
+      cursor: default;
+    }
+  }
+
+  .sidebar-item-container {
+    border-radius: 7px;
+    margin: 2px 6px;
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      background: var(--tb-recessed-hover);
+    }
+  }
+
+  .sidebar-item.sidebar-preface-item {
+    margin-bottom: 0.35rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--tb-border);
+
+    .sidebar-link:not(.active) {
+      .sidebar-ch-title {
+        font-size: 0.81rem;
+        font-weight: 450;
+        color: var(--tb-muted);
+      }
+
+      .sidebar-preface-icon {
+        color: var(--tb-muted);
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .sidebar-item .sidebar-link {
+    font-size: 0.875rem;
+    color: var(--tb-ink-secondary);
+    padding: 0.42rem 0.65rem;
+    border-radius: 7px;
+    display: block;
+
+    .chapter-title,
+    .menu-text {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .sidebar-ch-num {
+      flex: 0 0 1.25rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--tb-muted);
+      line-height: 1.35;
+      text-align: left;
+
+      &.sidebar-preface-icon {
+        display: inline-flex;
+        align-items: center;
+        transform: translateY(1px);
+      }
+    }
+
+    .sidebar-ch-body {
+      flex: 1 1 auto;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.08rem;
+    }
+
+    .sidebar-ch-title {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.32;
+      color: var(--tb-ink-secondary);
+    }
+
+    .sidebar-ch-sub {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 450;
+      line-height: 1.28;
+      color: var(--tb-muted);
+    }
+
+    &.active {
+      background: var(--tb-blue-soft);
+      color: var(--tb-navy);
+      font-weight: 700;
+      border-left: 3px solid var(--tb-blue);
+      border-radius: 0 7px 7px 0;
+
+      .sidebar-ch-num {
+        color: var(--tb-navy);
+        font-weight: 800;
+      }
+
+      .sidebar-ch-title {
+        color: var(--tb-heading);
+        font-weight: 700;
+      }
+
+      .sidebar-ch-sub {
+        color: var(--tb-ink-secondary);
+      }
+    }
+  }
+}
+
+#TOC {
+  font-family: var(--tb-sans);
+  padding-left: 1rem;
+  border-left: 1px solid var(--tb-border);
+
+  #toc-title {
+    font-size: 0.76rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--tb-muted);
+    margin-bottom: 0.65rem;
+  }
+
+  // Top-level (H2) section links
+  > ul > li {
+    margin-bottom: 0.15rem;
+
+    > a.nav-link {
+      font-size: 0.86rem;
+      font-weight: 650;
+      line-height: 1.38;
+      color: var(--tb-ink-secondary);
+      padding: 0.34rem 0 0.34rem 0.65rem;
+      border-left: 2px solid transparent;
+
+      &:hover {
+        color: var(--tb-blue-hover);
+      }
+
+      &.active {
+        color: var(--tb-navy);
+        font-weight: 750;
+        border-left-color: var(--tb-blue);
+      }
+
+      &.active-parent {
+        color: var(--tb-navy);
+        font-weight: 700;
+        border-left-color: var(--tb-blue-border);
+      }
+    }
+
+    // Nested (H3) sub-section links
+    > ul {
+      margin-left: 0.65rem;
+      padding-left: 0;
+      border-left: 1px solid var(--tb-border-strong);
+      margin-top: 0.1rem;
+      margin-bottom: 0.35rem;
+
+      a.nav-link {
+        font-size: 0.79rem;
+        font-weight: 450;
+        line-height: 1.35;
+        color: var(--tb-muted);
+        padding: 0.22rem 0 0.22rem 0.75rem;
+        margin-left: -1px;
+        border-left: 2px solid transparent;
+
+        &:hover {
+          color: var(--tb-blue-hover);
+        }
+
+        &.active {
+          color: var(--tb-navy);
+          font-weight: 650;
+          border-left-color: var(--tb-blue);
+        }
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 5. Elevated Callout Boxes (Visually Balanced Proportions in Dark Mode)
+// ---------------------------------------------------------------------------
+div.callout,
+div.callout.callout-style-default,
+div.callout.callout-titled {
+  border-radius: 10px !important;
+  border-left-width: 4px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  margin-top: 1.5rem !important;
+  margin-bottom: 2rem !important;
+  border-top: 1px solid var(--tb-border-strong);
+  border-right: 1px solid var(--tb-border-strong);
+  border-bottom: 1px solid var(--tb-border-strong);
+  overflow: hidden;
+
+  > div.callout-header,
+  .callout-header {
+    font-family: var(--tb-sans);
+    font-weight: 750 !important;
+    letter-spacing: 0.01em;
+    font-size: 0.92rem !important;
+    line-height: 1.25 !important;
+    padding: 0.7rem 1.35rem !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    border-bottom: 1px solid var(--tb-border-strong) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem;
+
+    div.callout-icon-container,
+    .callout-icon-container {
+      padding: 0 !important;
+      margin: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      line-height: 1 !important;
+
+      .callout-icon::before {
+        vertical-align: middle;
+      }
+    }
+
+    div.callout-title-container,
+    .callout-title-container {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.25 !important;
+    }
+  }
+
+  .callout-body-container,
+  .callout-body {
+    font-family: var(--tb-serif);
+    font-size: 1.02rem !important;
+    padding: 0.95rem 1.35rem 1.05rem !important;
+    margin: 0 !important;
+    color: var(--tb-ink);
+
+    > :first-child,
+    > div > :first-child {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    > :last-child:not(.sourceCode),
+    > div > :last-child:not(.sourceCode) {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+      line-height: 1.55;
+    }
+
+    p:first-child:not(:last-child) {
+      font-family: var(--tb-sans);
+      font-size: 0.92rem;
+      font-weight: 650;
+      color: var(--tb-ink-secondary);
+      margin-bottom: 0.45rem !important;
+    }
+
+    ul, ol {
+      margin-top: 0.25rem !important;
+      margin-bottom: 0 !important;
+      padding-left: 1.35rem;
+
+      li {
+        margin-bottom: 0.38rem;
+        line-height: 1.58;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &.callout-note {
+    border-color: var(--tb-border-strong);
+    border-left-color: var(--tb-blue) !important;
+    background: var(--tb-tint);
+
+    > div.callout-header,
+    .callout-header {
+      background: rgba(125, 153, 181, 0.1) !important;
+      color: var(--tb-navy) !important;
+      border-bottom: 1px solid var(--tb-border-strong) !important;
+    }
+  }
+
+  &.callout-tip {
+    border-left-color: var(--tb-emerald) !important;
+    background: var(--tb-tint);
+
+    > div.callout-header,
+    .callout-header {
+      background: var(--tb-emerald-soft) !important;
+      color: var(--tb-emerald-dark) !important;
+      border-bottom: 1px solid var(--tb-border-strong) !important;
+    }
+  }
+
+  &.callout-important,
+  &.callout-warning,
+  &.callout-caution {
+    border-left-color: var(--tb-teal) !important;
+    background: var(--tb-tint);
+
+    > div.callout-header,
+    .callout-header {
+      background: var(--tb-teal-soft) !important;
+      color: var(--tb-teal-dark) !important;
+      border-bottom: 1px solid var(--tb-border-strong) !important;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 6. Publication Figures, Images & Split Source Credits
+// ---------------------------------------------------------------------------
+.gslide-description,
+.gdesc-inner {
+  display: none !important;
+}
+
+figcaption.quarto-uncaptioned {
+  display: none !important;
+}
+
+main.content figure.quarto-float-fig figure.figure,
+main.content figure.quarto-float-fig .quarto-figure {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+main.content figure.quarto-float-fig,
+main.content > section figure.figure:not(.quarto-float-tbl) {
+  margin: 2.25rem 0;
+  padding: 1.1rem 1.1rem 0.95rem;
+  background-color: var(--tb-card);
+  border: 1px solid var(--tb-border-strong);
+  border-radius: 14px;
+  box-shadow: 0 8px 22px -5px rgba(0, 0, 0, 0.3);
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--tb-border-strong);
+    filter: brightness(0.92) contrast(1.01);
+  }
+
+  figcaption:not(.quarto-uncaptioned),
+  .figure-caption:not(.quarto-uncaptioned) {
+    margin-top: 0.9rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--tb-border-strong);
+    font-family: var(--tb-serif);
+    font-size: 0.96rem;
+    line-height: 1.55;
+    color: var(--tb-caption);
+    text-align: left;
+
+    .fig-label-badge {
+      font-family: var(--tb-sans);
+      font-size: 0.8rem;
+      font-weight: 750;
+      font-style: normal;
+      color: var(--tb-navy);
+      background-color: var(--tb-blue-soft);
+      border: 1px solid var(--tb-blue-border);
+      padding: 0.18rem 0.55rem;
+      border-radius: 5px;
+      margin-right: 0.4rem;
+    }
+
+    .fig-source-credit {
+      display: block;
+      margin-top: 0.5rem;
+      padding-top: 0.45rem;
+      border-top: 1px dashed var(--tb-border-strong);
+      font-family: var(--tb-sans);
+      font-style: normal;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: var(--tb-muted);
+
+      a {
+        color: var(--tb-navy);
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 7. Publication-Grade Comparative Tables (Dark Mode)
+// ---------------------------------------------------------------------------
+main.content div[id^="tbl-"],
+main.content .table-responsive {
+  margin: 2.25rem 0;
+  background-color: var(--tb-card);
+  border: 1px solid var(--tb-border-strong);
+  border-top: 4px solid var(--tb-blue);
+  border-radius: 12px;
+  padding: 1.15rem 1.35rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+
+  figure.quarto-float-tbl {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  p:has(> strong:first-child),
+  caption {
+    font-family: var(--tb-sans);
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--tb-ink-secondary);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--tb-border-strong);
+    caption-side: top;
+    text-align: left;
+    line-height: 1.45;
+
+    strong {
+      font-weight: 700;
+    }
+
+    .fig-label-badge {
+      font-family: var(--tb-sans);
+      font-size: 0.8rem;
+      font-weight: 750;
+      font-style: normal;
+      color: var(--tb-navy);
+      background-color: var(--tb-blue-soft);
+      border: 1px solid var(--tb-blue-border);
+      padding: 0.18rem 0.55rem;
+      border-radius: 5px;
+      margin-right: 0.4rem;
+      display: inline-block;
+    }
+  }
+}
+
+main.content table.table {
+  font-family: var(--tb-sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--tb-ink);
+  --bs-table-bg: transparent;
+  --bs-table-color: #cbd2dc;
+
+  thead th {
+    background-color: rgba(125, 153, 181, 0.1) !important;
+    color: var(--tb-navy) !important;
+    font-weight: 750;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 0.95rem;
+    border-top: 1px solid var(--tb-border-strong);
+    border-bottom: 2px solid var(--tb-blue);
+  }
+
+  tbody td {
+    padding: 0.85rem 0.95rem;
+    border-bottom: 1px solid var(--tb-border-strong);
+    vertical-align: top;
+    color: var(--tb-ink) !important;
+    background-color: transparent !important;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 1.5px solid var(--tb-blue);
+  }
+
+  tbody tr:hover td {
+    background-color: rgba(255, 255, 255, 0.025) !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 8. Comparative Case Study Sections & Country Profile Cards
+// ---------------------------------------------------------------------------
+section.case-study-section {
+  position: relative;
+  margin-top: 3rem;
+  padding: 1.75rem 1.75rem 1.25rem;
+  background-color: var(--tb-recessed);
+  border: 1px solid var(--tb-border-strong);
+  border-top: 4px solid var(--tb-emerald);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+
+  > h2:first-of-type {
+    margin-top: 0.25rem;
+    color: var(--tb-emerald-dark);
+  }
+
+  .case-study-kicker {
+    display: inline-block;
+    font-family: var(--tb-sans);
+    font-size: 0.75rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--tb-emerald-dark);
+    background: var(--tb-emerald-soft);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+  }
+}
+
+ul.country-profile-card {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 2rem !important;
+  background-color: var(--tb-card);
+  border: 1px solid var(--tb-border-strong);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  font-family: var(--tb-sans);
+
+  .country-profile-header {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #1b2432 0%, #253347 100%);
+    border-bottom: 1px solid var(--tb-border-strong);
+    color: var(--tb-heading);
+    padding: 0.65rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  li {
+    padding: 0.7rem 1.2rem;
+    border-bottom: 1px solid var(--tb-border-strong);
+    border-right: 1px solid var(--tb-border-strong);
+    font-size: 0.88rem;
+    line-height: 1.4;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+
+    .profile-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--tb-muted);
+    }
+
+    .profile-value {
+      font-weight: 650;
+      color: var(--tb-ink);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 9. Interactive Inline Key Term Tooltips
+// ---------------------------------------------------------------------------
+strong.key-term-inline {
+  color: var(--tb-navy);
+  font-weight: 650;
+  border-bottom: 1.5px dotted var(--tb-blue);
+  cursor: help;
+  position: relative;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  padding: 0 2px;
+  border-radius: 3px;
+
+  &:hover,
+  &:focus {
+    background-color: var(--tb-blue-soft);
+    color: var(--tb-blue-hover);
+    outline: none;
+  }
+
+  .key-term-popover {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    width: 320px;
+    max-width: 85vw;
+    background-color: #1e2736;
+    color: var(--tb-ink);
+    font-family: var(--tb-sans);
+    font-size: 0.84rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+    padding: 0.9rem 1.05rem;
+    border-radius: 10px;
+    border: 1px solid var(--tb-border-strong);
+    border-top: 3.5px solid var(--tb-blue);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+    z-index: 1050;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    text-align: left;
+
+    .popover-term-title {
+      display: inline-block;
+      font-weight: 750;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--tb-navy);
+      background: var(--tb-blue-soft);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  &:hover .key-term-popover,
+  &:focus .key-term-popover {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 10. Automatic "Student Resources" End-of-Chapter Module
+// ---------------------------------------------------------------------------
+main.content section[id*="student-resources"] {
+  margin-top: 3.5rem;
+  padding: 2rem 2rem 2.25rem;
+  background-color: var(--tb-recessed);
+  border: 1px solid var(--tb-border-strong);
+  border-top: 5px solid var(--tb-blue);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+
+  > h2 {
+    margin-top: 0;
+    border-bottom-color: var(--tb-border-strong);
+  }
+}
+
+main.content section[id*="key-terms"] {
+  > ul {
+    list-style: none;
+    padding: 0.35rem 1.35rem;
+    background-color: var(--tb-card);
+    border: 1px solid var(--tb-border-strong);
+    border-radius: 12px;
+
+    > li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--tb-border-strong);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--tb-ink);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      strong:first-child {
+        font-family: var(--tb-sans);
+        font-weight: 750;
+        color: var(--tb-navy);
+        background-color: var(--tb-blue-soft);
+        padding: 0.15rem 0.5rem;
+        border-radius: 5px;
+        margin-right: 0.25rem;
+      }
+    }
+  }
+}
+
+main.content section[id*="summary"] {
+  section.level4 {
+    background-color: var(--tb-card);
+    border: 1px solid var(--tb-border-strong);
+    border-left: 4px solid var(--tb-emerald);
+    border-radius: 10px;
+    padding: 1.1rem 1.35rem;
+    margin-bottom: 1rem;
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0.45rem;
+      color: var(--tb-emerald-dark);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+main.content section[id*="review-questions"] {
+  > ol {
+    list-style: none;
+    counter-reset: rq-counter;
+    padding-left: 0;
+
+    > li {
+      counter-increment: rq-counter;
+      background-color: var(--tb-card);
+      border: 1px solid var(--tb-border-strong);
+      border-left: 4px solid var(--tb-indigo);
+      border-radius: 12px;
+      padding: 1.15rem 1.35rem 1.15rem 3.35rem;
+      margin-bottom: 1rem;
+      position: relative;
+      color: var(--tb-ink);
+
+      &::before {
+        content: counter(rq-counter);
+        position: absolute;
+        left: 1rem;
+        top: 1.15rem;
+        width: 1.7rem;
+        height: 1.7rem;
+        border-radius: 50%;
+        background-color: var(--tb-indigo-soft);
+        color: var(--tb-indigo-dark);
+        font-family: var(--tb-sans);
+        font-size: 0.82rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      ol {
+        list-style-type: lower-alpha;
+        margin-top: 0.65rem;
+        padding-left: 1.35rem;
+        font-family: var(--tb-sans);
+        font-size: 0.94rem;
+
+        li {
+          padding: 0.25rem 0.4rem;
+          margin-bottom: 0.2rem;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  details.answer-key-box {
+    margin-top: 1.1rem;
+    background-color: var(--tb-card);
+    border: 1px solid var(--tb-border-strong);
+    border-radius: 10px;
+    padding: 0.75rem 1.2rem;
+    font-family: var(--tb-sans);
+    font-size: 0.92rem;
+
+    summary {
+      font-weight: 700;
+      color: var(--tb-indigo-dark);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .answer-key-content {
+      margin-top: 0.65rem;
+      padding: 0.75rem 1rem;
+      background: var(--tb-emerald-tint);
+      border-left: 4px solid var(--tb-emerald);
+      border-radius: 6px;
+      color: var(--tb-emerald-dark);
+      font-weight: 650;
+    }
+  }
+}
+
+main.content section[id*="critical-thinking"] {
+  > ol {
+    list-style: none;
+    counter-reset: ct-counter;
+    padding-left: 0;
+
+    > li {
+      counter-increment: ct-counter;
+      position: relative;
+      padding: 1.05rem 1.3rem 1.05rem 3.5rem;
+      margin-bottom: 0.95rem;
+      background-color: var(--tb-card);
+      border: 1px solid var(--tb-border-strong);
+      border-left: 4px solid var(--tb-teal);
+      border-radius: 10px;
+      color: var(--tb-ink);
+
+      &::before {
+        content: "Q" counter(ct-counter);
+        position: absolute;
+        left: 0.95rem;
+        top: 1.05rem;
+        font-family: var(--tb-sans);
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: var(--tb-teal-dark);
+        background-color: var(--tb-teal-soft);
+        padding: 0.18rem 0.5rem;
+        border-radius: 5px;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// 10e. Suggestions for Further Study (Consistent Elevated Sub-Cards in Dark Mode)
+main.content section[id*="suggestions-for-further-study"] {
+  section.level4 {
+    background-color: var(--tb-card);
+    border: 1px solid var(--tb-border-strong);
+    border-left: 4px solid var(--tb-blue);
+    border-radius: 10px;
+    padding: 1.1rem 1.35rem;
+    margin-bottom: 1rem;
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0.55rem;
+      color: var(--tb-navy);
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  section#websites ul {
+    padding-left: 1.25rem;
+
+    li {
+      margin-bottom: 0.35rem;
+      font-family: var(--tb-sans);
+      font-size: 0.94rem;
+      font-weight: 550;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 11. Interactive Knowledge Check Widget & Book Hero
+// ---------------------------------------------------------------------------
+.knowledge-check-card {
+  background: var(--tb-card);
+  border: 1px solid var(--tb-border-strong);
+  border-left: 5px solid var(--tb-indigo);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin: 2.25rem 0;
+
+  .kc-badge {
+    display: inline-block;
+    font-family: var(--tb-sans);
+    font-size: 0.8rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--tb-indigo-dark);
+    background: var(--tb-indigo-soft);
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+  }
+
+  .kc-question {
+    font-family: var(--tb-sans);
+    font-size: 1.15rem;
+    font-weight: 750;
+    color: var(--tb-heading);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .kc-toggle-btn {
+    font-family: var(--tb-sans);
+    font-size: 0.9rem;
+    font-weight: 650;
+    background: var(--tb-indigo-btn);
+    color: #e2e7ee;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+  }
+
+  .kc-answer {
+    display: none;
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background: var(--tb-recessed);
+    border-radius: 8px;
+    border-left: 4px solid var(--tb-emerald);
+    font-family: var(--tb-serif);
+    font-size: 1.05rem;
+    color: var(--tb-ink);
+    line-height: 1.6;
+  }
+}
+
+.book-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2.75rem 2.25rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #161d29 0%, #1f2a3a 100%);
+  border: 1px solid var(--tb-border-strong);
+  border-radius: 20px;
+  color: var(--tb-heading);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1.75rem;
+  }
+
+  .hero-content {
+    flex: 1.2;
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--tb-sans);
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(125, 153, 181, 0.14);
+      border: 1px solid var(--tb-blue-border);
+      padding: 0.4rem 0.95rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+      color: var(--tb-navy);
+    }
+
+    .hero-title {
+      font-family: var(--tb-sans);
+      color: var(--tb-heading);
+      font-size: 2.5rem;
+      font-weight: 850;
+      letter-spacing: -0.035em;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.15;
+    }
+
+    .hero-subtitle {
+      font-family: var(--tb-serif);
+      font-style: italic;
+      font-size: 1.22rem;
+      color: var(--tb-ink-secondary);
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .hero-author {
+      font-family: var(--tb-sans);
+      font-size: 0.95rem;
+      color: var(--tb-muted);
+      margin-bottom: 2rem;
+
+      strong {
+        color: var(--tb-ink);
+      }
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .btn-hero-primary {
+        font-family: var(--tb-sans);
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 0.75rem 1.6rem;
+        background: #3b536f;
+        border: 1px solid rgba(166, 188, 211, 0.3);
+        color: var(--tb-heading);
+        border-radius: 10px;
+        text-decoration: none;
+
+        &:hover {
+          background: #476282;
+          color: #ffffff;
+        }
+      }
+
+      .btn-hero-secondary {
+        font-family: var(--tb-sans);
+        font-weight: 650;
+        font-size: 1rem;
+        padding: 0.75rem 1.4rem;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--tb-ink);
+        border: 1.5px solid var(--tb-border-strong);
+        border-radius: 10px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .hero-cover {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+
+    img.hero-cover-img {
+      max-width: 240px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: -12px 18px 30px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.12);
+      transform: perspective(1000px) rotateY(-8deg) rotateX(3deg);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 12. Academic Hanging Indents for References & Further Study
+// ---------------------------------------------------------------------------
+main.content section[id*="references"] > p,
+main.content section[id*="journal-articles"] ul li,
+main.content section[id*="books"] ul li {
+  padding-left: 2.25rem;
+  text-indent: -2.25rem;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin-bottom: 0.85rem;
+  overflow-wrap: break-word;
+}
+
+main.content section[id*="journal-articles"] ul,
+main.content section[id*="books"] ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.page-navigation {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--tb-border-strong);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .nav-page {
+    font-family: var(--tb-sans);
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    flex: 1;
+    max-width: 48%;
+
+    a.pagination-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.65rem;
+      padding: 0.85rem 1.15rem;
+      background-color: var(--tb-card);
+      border: 1px solid var(--tb-border-strong);
+      border-radius: 10px;
+      color: var(--tb-ink-secondary);
+      font-weight: 650;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.18s ease;
+
+      &:hover {
+        border-color: var(--tb-blue);
+        background-color: var(--tb-blue-soft);
+        color: var(--tb-heading);
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// Style Sidebar Search Box & Footer in Dark Mode
+#quarto-search .aa-Form,
+.aa-DetachedFormContainer .aa-Form {
+  background-color: var(--tb-card) !important;
+  border: 1px solid var(--tb-border-strong) !important;
+  border-radius: 8px !important;
+  color: var(--tb-ink) !important;
+}
+
+.footer .nav-footer {
+  background-color: var(--tb-bg) !important;
+  border-top: 1px solid var(--tb-border) !important;
+  color: var(--tb-muted) !important;
+}
+
+// ---------------------------------------------------------------------------
+// 13. Bottom-Right Floating Theme Toggle Pill (Dark Mode)
+// ---------------------------------------------------------------------------
+.quarto-color-scheme-toggle,
+.sidebar-tools-main {
+  display: none !important;
+}
+
+.tb-theme-toggle {
+  position: fixed;
+  bottom: 1.35rem;
+  right: 1.5rem;
+  z-index: 1050;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--tb-sans);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  color: var(--tb-ink-secondary);
+  background-color: var(--tb-card);
+  border: 1px solid var(--tb-border-strong);
+  border-radius: 9999px;
+  padding: 0.45rem 0.9rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: all 0.18s ease;
+
+  &:hover {
+    color: var(--tb-heading);
+    border-color: var(--tb-blue);
+    background-color: #243040;
+    transform: translateY(-1px);
+  }
+}

@@ -1,30 +1,48 @@
 project:
   type: book
+  output-dir: _book
 
 book:
-  title: "Introduction to Comparative Government and Politics (2nd Edition)"
-  sidebar:
-    style: "floating"
-    search: true
-    collapse-level: 2
+  title: "Introduction to Comparative Government and Politics, 2nd Edition"
+  subtitle: "An Open Educational Resource Textbook"
+  author: "Dr. Dino Bozonelos, Dr. Julia Wendt, Dr. Charlotte Lee, Jessica Scarffe, Brian Barrick, Dr. Masahiro Omae, Dr. Josh Franco, Dr. Byran Martin, and Stefan Veldhuis"
+  date: today
   page-navigation: true
+  search: true
+  sidebar:
+    style: "docked"
+    background: "light"
+    collapse-level: 1
+  page-footer:
+    left: |
+      **Bozonelos et al.** · Shared under a **CC BY-NC 4.0** license · ASCCC Open Educational Resources Initiative (OERI)
   chapters:
     - index.qmd
-
-bibliography: references.bib
+    - chapter-01.qmd
+    - chapter-02.qmd
+    - chapter-03.qmd
+    - chapter-04.qmd
+    - chapter-05.qmd
+    - chapter-06.qmd
+    - chapter-07.qmd
+    - chapter-08.qmd
+    - chapter-09.qmd
+    - chapter-10.qmd
+    - chapter-11.qmd
+    - chapter-12.qmd
 
 format:
   html:
     theme:
-      - cosmo
-      - theme.scss
+      light: [cosmo, theme-light.scss]
+      dark: [cosmo, theme-dark.scss]
     toc: true
     toc-depth: 3
-    toc-title: "Contents"
+    toc-title: "In This Chapter"
+    toc-location: right
     number-sections: false
     smooth-scroll: true
-    include-after-body: includes/footer.html
-  pdf:
-    documentclass: scrreprt
-
-editor: visual
+    lightbox: false
+    link-external-newwindow: true
+    respect-user-color-scheme: false
+    include-after-body: textbook-enhancements.html

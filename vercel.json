@@ -4,8 +4,8 @@
   "redirects": [
     {
       "source": "/01",
-      "destination": "/",
-      "permanent": true
+      "destination": "/chapter-01",
+      "permanent": false
     }
   ]
 }

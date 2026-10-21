@@ -1,5 +1,7 @@
 # Chapter 1: Why Study Comparative Politics?
 
+[Listen on Spotify](https://open.spotify.com/episode/7HOiM3L5he2hcgFav70Zqi?si=0rvl4zKYRX2bR1fk2lYWWw)
+
 ## 1.1: What is Comparative Politics?
 
 ::: callout-note
@@ -31,29 +33,29 @@ When defining and describing the scope of comparative politics, it is useful to 
 
 ### Comparative Politics
 
-This subfield of political science seeks to advance understanding of political structures from around the world in an organized, methodological, and clear way. Scholars can, for instance, analyze countries, in part or in whole, in order to consider similarities and differences between and among countries. While the name of the field itself suggests a methodology of comparing and contrasting, there is ample room for debate over the best way to analyze political units side-by-side. This chapter outlines multiple approaches to comparative research, whether focused on area studies, cross-national studies, or subnational studies. Comparative politics involves looking first within countries and then across designated countries (this contrasts with international relations, which is described below, but entails looking primarily across countries, with less attention given to within-country analysis). This textbook explores many of the themes analyzed in comparative politics, including the state, political institutions, democratic and non-democratic regimes, political identity, collective action, and political violence. Comparative politics is just one subfield within the larger discipline of political science.  A short survey of the other political science subfields provides helpful context that allows for a better understanding of the scope of comparative politics.
+This subfield of political science seeks to advance understanding of political structures from around the world in an organized, methodological, and clear way. Scholars can, for instance, analyze countries, in part or in whole, in order to consider similarities and differences between and among countries. While the name of the field itself suggests a methodology of comparing and contrasting, there is ample room for debate over the best way to analyze political units side-by-side. This chapter outlines multiple approaches to comparative research, whether focused on area studies, cross-national studies, or subnational studies. Comparative politics involves looking first within countries and then across designated countries (this contrasts with international relations, which is described below, but entails looking primarily across countries, with less attention given to within-country analysis). This textbook explores many of the themes analyzed in comparative politics, including the state, political institutions, democratic and non-democratic regimes, political identity, collective action, and political violence. Comparative politics is just one subfield within the larger discipline of political science. A short survey of the other political science subfields provides helpful context that allows for a better understanding of the scope of comparative politics.
 
 ::: {#fig-1-1-1}
-![Figure 1.1.1: Comparativists (those studying comparative politics) look within countries and then across designated countries to compare and contrast. One theme a comparativist may study is how types of leadership, and the associated political regime types (e.g., democracy, dictatorship), differ across countries. A scholar may ask: Who are the heads of state, where do they conduct their official government work, and how does this vary across countries? (Sources (from left to right): White House by Matt Wade is licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en); Tokyo, Japan, Seimon Ishibashi Bridge by Kakidai is licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en); Madrid, Spain, Royal Palace of Madrid by Bernard Gagnon is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en); London, Britain, Number 10 Downing Street by Sergeant Tom Robinson RLC is licensed under [Open Government License version 1.0](https://nationalarchives.gov.uk/doc/open-government-licence/version/1/); Reykjavík, Iceland, Bessastaðir, Wohnsitz der isl. Präsidenten by Balou46 is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en))](images/1.1.1.png){fig-alt="A collage of five side-by-side photograph sections of official state residences and landmarks. From left to right: (1) The White House in Washington, D.C., with its white, neoclassical curved portico and fountain on a green lawn; (2) The historic arched stone and iron Seimon Ishibashi Bridge in Tokyo, Japan, over a moat on the Edo Castle grounds; (3) The sprawling, grand baroque facade and large public courtyard of the Royal Palace in Madrid, Spain; (4) The door and black brick exterior of 10 Downing Street in London, UK, with its iconic Georgian entryway and iron railings; and (5) Bessastaðir in Iceland, a long white presidential residence with a red-tiled gabled roof on flat grassy terrain."}
+![Figure 1.1.1: Comparativists (those studying comparative politics) look within countries and then across designated countries to compare and contrast. One theme a comparativist may study is how types of leadership, and the associated political regime types (e.g., democracy, dictatorship), differ across countries. A scholar may ask: Who are the heads of state, where do they conduct their official government work, and how does this vary across countries? (Sources (from left to right): White House by Matt Wade is licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en); Tokyo, Japan, Seimon Ishibashi Bridge by Kakidai is licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en); Madrid, Spain, Royal Palace of Madrid by Bernard Gagnon is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en); London, Britain, Number 10 Downing Street by Sergeant Tom Robinson RLC is licensed under [Open Government License version 1.0](https://nationalarchives.gov.uk/doc/open-government-licence/version/1/); Reykjavík, Iceland, Bessastaðir, Wohnsitz der isl. Präsidenten by Balou46 is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en))](images/1.1.1.png){fig-alt="A collage of five side-by-side photograph sections of official state residences and landmarks."}
 :::
 
 ### American Politics
 
 This subfield of political science focuses on political institutions and behaviors within the United States. Those interested in American politics will focus on questions like: What is the role of elections in American democracy? How do interest groups affect legislation in the United States? What is the role of public opinion and the media in the United States, and what are the implications for democracy? What is the future of the two-party system? Do political parties delay important political action? Those who decide to specialize in American politics could find themselves with a variety of career opportunities, such as the following: teaching; journalism; working for government think-tanks; working for federal, state, or local governmental institutions; or even running for office.
 
-![Figure 1.1.2: Political scientists who study American politics have a variety of research interests, and one area of inquiry is the study of political parties and partisanship in the United States. Political parties began forming almost immediately upon the United States’ Declaration of Independence, though a number of founders, including George Washington, warned early on about the influence and possible dangers of political parties on the state of democracy. The two main political parties in the United States are the Republican Party (logo in the image on the left) and the Democratic Party (logo in the image on the right). (Sources (from left to right): Republican Elephant by Republican Party (United States) is licensed under [CC01 - Universal Public Domain](https://creativecommons.org/publicdomain/zero/1.0/); Democratic Donkey by Steven Braeger is licensed under [Public Domain CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en))](images/1.1.2.png){#fig-1-1-2 fig-alt="Side-by-side logos of the two major U.S. political parties: on the left, the Republican red elephant with three white stars across its blue upper body; on the right, the Democratic donkey silhouette in blue with four white stars and a red lower half."}
+![Figure 1.1.2: Political scientists who study American politics have a variety of research interests, and one area of inquiry is the study of political parties and partisanship in the United States. Political parties began forming almost immediately upon the United States’ Declaration of Independence, though a number of founders, including George Washington, warned early on about the influence and possible dangers of political parties on the state of democracy. The two main political parties in the United States are the Republican Party (logo in the image on the left) and the Democratic Party (logo in the image on the right). (Sources (from left to right): Republican Elephant by Republican Party (United States) is licensed under [CC01 - Universal Public Domain](https://creativecommons.org/publicdomain/zero/1.0/); Democratic Donkey by Steven Braeger is licensed under [Public Domain CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en))](images/1.1.2.png){#fig-1-1-2 fig-alt="Side-by-side logos of the two major U.S. political parties."}
 
 ### International Relations
 
 Sometimes called world politics, international affairs, or international studies, international relations is a subfield of political science which focuses on how countries and/or international organizations or bodies interact with each other. Those interested in international relations consider questions like: What causes war between countries? How does international trade affect relationships between countries? How do international bodies, like non-governmental organizations, work with various countries? What is globalization and how does it affect peace and conflict? What is the best balance of power for the global system? Individuals interested in this field of political science may be looking for careers in teaching, non-governmental organizations, the United Nations, or governmental think-tanks focused on foreign policy.
 
-![Figure 1.1.3: Academics involved in the study of international relations are often interested in themes of international conflict. To this end, some studies involve looking at members of the United Nations (headquarters in New York City pictured above). The United Nations is an intergovernmental organization formed in 1945 with the goal of promoting peace and preventing international conflicts. (Source: The United Nations by Tom Page is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/deed.en))](images/1.1.3.jpg){#fig-1-1-3 fig-alt="A central paved avenue flanked on both sides by rows of tall white flagpoles flying national flags of UN member states leading toward the Palace of Nations building under a blue sky with clouds."}
+![Figure 1.1.3: Academics involved in the study of international relations are often interested in themes of international conflict. To this end, some studies involve looking at members of the United Nations (headquarters in New York City pictured above). The United Nations is an intergovernmental organization formed in 1945 with the goal of promoting peace and preventing international conflicts. (Source: The United Nations by Tom Page is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/deed.en))](images/1.1.3.jpg){#fig-1-1-3 fig-alt="United Nations headquarters and member flags."}
 
 ### Political Philosophy
 
 Sometimes called political theory, political philosophy is a subfield of political science that reflects on the philosophical origins of politics, the state, government, fairness, equality, equity, authority, and legitimacy. This field can consider themes in broad or narrow terms, considering the origins of political principles, as well as implications for these principles as they relate to issues of political identity, culture, the environment, ethics, distribution of wealth, and other social phenomena. Those interested in political philosophy may ask questions like: Where did the concept of ‘the state’ arise? What were the different ancient beliefs regarding the formation of states and cooperation within societies? How is power derived within systems, and what are the best theories to explain power dynamics? Individuals who are interested in political philosophy may find careers in teaching, research, journalism, or consulting.
 
-![Figure 1.1.4: Political philosophers are interested in a large scope of issues relating to the nature and basis of political power. They consider concepts like authority, equality, freedom, justice, legitimacy, and rights. The above-pictured political philosophers considered many of these themes. (Sources (from left to right): Confucious by Kanō Sansetsu is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en); Socrates, by Eric Gaba is licensed under [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/deed.en); Al Farabi, by Unknown Author is [CC01 - Universal Public Domain](https://creativecommons.org/publicdomain/zero/1.0/); Thomas Hobbes, Line engraving by W. Humphrys is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en); John Locke, by Godfrey Kneller is licensed under [CC01 - Universal Public Domain](https://creativecommons.org/publicdomain/zero/1.0/); Jean-Jacques Rousseau by Maurice Quentin de La Tour is licensed under [CC01 - Universal Public Domain](https://creativecommons.org/publicdomain/zero/1.0/)).](images/1.1.4.png){#fig-1-1-4 fig-alt="A montage of six historical portraits and busts of political philosophers side-by-side: from left to right, Confucius in traditional robes, a marble bust of Socrates, a miniature painting of Al-Farabi in a turban, an engraved portrait of Thomas Hobbes, an oil painting of John Locke, and a pastel portrait of Jean-Jacques Rousseau."}
+![Figure 1.1.4: Political philosophers are interested in a large scope of issues relating to the nature and basis of political power. They consider concepts like authority, equality, freedom, justice, legitimacy, and rights. The above-pictured political philosophers considered many of these themes. (Sources (from left to right): Confucious by Kanō Sansetsu is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en); Socrates, by Eric Gaba is licensed under [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/deed.en); Al Farabi, by Unknown Author is [CC01 - Universal Public Domain](https://creativecommons.org/publicdomain/zero/1.0/); Thomas Hobbes, Line engraving by W. Humphrys is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en); John Locke, by Godfrey Kneller is licensed under [CC01 - Universal Public Domain](https://creativecommons.org/publicdomain/zero/1.0/); Jean-Jacques Rousseau by Maurice Quentin de La Tour is licensed under [CC01 - Universal Public Domain](https://creativecommons.org/publicdomain/zero/1.0/)).](images/1.1.4.png){#fig-1-1-4 fig-alt="Montage of six historical political philosophers."}
 
 ### Research Methodology
 
@@ -67,7 +69,7 @@ Regardless of a quantitative or qualitative approach, topics of interest within 
 
 ### Political Economy
 
-This subfield of political science considers various economic theories (including capitalism, socialism, communism, and fascism), practices, and outcomes either within a country, or among and between countries in the global system. Those interested in political economy will become versed with the theories brought forth by Adam Smith, John Stuart Mill, Jean-Jacques Rousseau, Karl Marx, and Max Weber (among others) to gain greater understanding into economic systems, their outputs, and their effects on society. Political economy can be studied from the standpoints of a few other subfields in political science. For instance, a scholar of comparative politics may consider political economy when comparing and contrasting countries. A scholar of international relations may consider questions relating to global inequalities, relationships between poor and wealthy countries, or the role of non- governmental organizations or multinational corporations on international trade and finance. Graduates interested in political economy can pursue careers in market and financial analysis, economic research, teaching, or policy research.
+This subfield of political science considers various economic theories (including capitalism, socialism, communism, and fascism), practices, and outcomes either within a country, or among and between countries in the global system. Those interested in political economy will become versed with the theories brought forth by Adam Smith, John Stuart Mill, Jean-Jacques Rousseau, Karl Marx, and Max Weber (among others) to gain greater understanding into economic systems, their outputs, and their effects on society. Political economy can be studied from the standpoints of a few other subfields in political science. For instance, a scholar of comparative politics may consider political economy when comparing and contrasting countries. A scholar of international relations may consider questions relating to global inequalities, relationships between poor and wealthy countries, or the role of non-governmental organizations or multinational corporations on international trade and finance. Graduates interested in political economy can pursue careers in market and financial analysis, economic research, teaching, or policy research.
 
 ### Public Policy
 
@@ -77,7 +79,7 @@ This subfield of political science explores political policies and outcomes, and
 
 This subfield of political science weds together principles, themes, and research from political science and psychology to understand the psychological roots of political behavior. Is there a psychological reason world leaders behave in a certain way? Is a leader’s behavior strategic and, consciously or not, rooted in some psychological basis? Can theories of cognitive and social processes explain various political outcomes? Those who are interested in the psychological origins of political behavior may find interesting careers in teaching, research, and consulting.
 
-![Figure 1.1.5: Political psychologists are interested in the psychological roots of political behavior. To this end, they may conduct research and analysis on various personality types and potential psychological determinants for political behavior. Political psychologists have considered the personality characteristics of the three leaders pictured above: Kim Jong-Un (North Korea), Vladimir Putin (Russia), and Xi Jinping (China). (Sources (from left to right): Kim Jong-Un, by Alexei Nikolsky is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/); Vladimir Putin, by The Presidential Press and Information Office is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/); Xi Jinping, by Palácio do Planalto is licensed under [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/deed.en))](images/1.1.5.png){#fig-1-1-5 fig-alt="Three head-and-shoulder portraits side by side showing political leaders: on the left, Kim Jong-Un of North Korea; in the center, Vladimir Putin of Russia in a black suit and patterned tie; on the right, Xi Jinping of China smiling against the Chinese flag."}
+![Figure 1.1.5: Political psychologists are interested in the psychological roots of political behavior. To this end, they may conduct research and analysis on various personality types and potential psychological determinants for political behavior. Political psychologists have considered the personality characteristics of the three leaders pictured above: Kim Jong-Un (North Korea), Vladimir Putin (Russia), and Xi Jinping (China). (Sources (from left to right): Kim Jong-Un, by Alexei Nikolsky is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/); Vladimir Putin, by The Presidential Press and Information Office is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/); Xi Jinping, by Palácio do Planalto is licensed under [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/deed.en))](images/1.1.5.png){#fig-1-1-5 fig-alt="Three head-and-shoulder portraits side by side showing political leaders."}
 
 The subfields within political science can sometimes overlap and intersect with each other. For instance, public policy, political economy, and political psychology can each be analyzed through the lens of American politics, but they can also be the key point of consideration for studies within comparative politics or international relations. All of these subfields will need some level of specialization in research methodology to enable the systematic analysis of their subjects of interest. Without a basis in research methodology, these subfields would not be able to advance knowledge in the field in a substantive way.
 
@@ -107,20 +109,6 @@ Despite its extensive history, scholars still disagree on the exact definition o
 
 While the differences in Table 1.1.1 may appear small on the surface, debate on the definition of comparative politics can sometimes be contentious. For example, Zahariadis (1996) argued that comparative politics needs to be a study of *foreign* countries. If this is true, does it mean that someone who lives in a country is unable to study their own country and still call it comparative politics? Was Aristotle’s study of city-states methodologically flawed since he occasionally lived in different city-states? As another example, comparativists often disagree on the appropriate sample size for inquiry. Does the definition of comparative politics mandate that a researcher study a certain number of countries at a time? When Alexis de Tocqueville wrote *Democracy in America* (1835), was this study flawed because it only considered the political lives of Americans? If applying Zahariadis’ definition, de Tocqueville did focus on a *foreign* country, but since it was only one country, does it fall outside the realm of comparative politics? Scholars continue to debate these methodological questions. Rather than offering definitive answers, Chapter 2 provides an overview of the various methodologies used within comparative politics.
 
-::: {.knowledge-check-card}
-<span class="kc-badge" aria-hidden="true"><i class="bi bi-question-circle-fill"></i> Concept Check 1.1</span>
-<div class="kc-question" id="kc-q1">What is the essential distinction between the scope of Comparative Politics and International Relations?</div>
-<button type="button" class="kc-toggle-btn" aria-expanded="false" aria-controls="kc-answer-1" aria-labelledby="kc-q1">Reveal Explanation & Answer</button>
-<div id="kc-answer-1" class="kc-answer" role="region" aria-labelledby="kc-q1">
-<strong>Key Distinction:</strong>
-<p>While both subfields examine global politics, their analytical unit differs fundamentally:</p>
-<ul>
-  <li><strong>Comparative Politics:</strong> Looks <em>within</em> countries first, analyzing domestic structures (constitutions, legislatures, social movements, regime types) and comparing them side-by-side across countries.</li>
-  <li><strong>International Relations:</strong> Looks primarily <em>between and across</em> countries, analyzing cross-border interactions such as war, international diplomacy, globalization, and multinational treaties.</li>
-</ul>
-</div>
-:::
-
 ## 1.2: Approaches to Comparative Politics
 
 ::: callout-note
@@ -142,13 +130,13 @@ No matter the approach to comparative analysis, comparativists often study insti
 
 Institutions are therefore predictable, stable, and affect individual behavior, yet they come in many shapes and sizes. There are **formal institutions**, which are based on a clear set of rules that have been formalized, often with the authority to enforce the rules through punitive measures. These institutions often maintain a physical presence, such as an office headquarters, a sports arena, or a university campus.
 
-There are also **informal institutions**, which are based on an unwritten set of social rules and expectations. Informal institutions are based on conventions on how one should behave, and there is no authority that monitors the behavior. An example of an informal institution is the societal expectation for waiting in line. Expectations for waiting in line vary significantly across settings. A cafeteria operates on a first-come, first-served basis, while an emergency room prioritizes the severity of a patient's medical need.  In both cases, people are generally expected to self-regulate
+There are also **informal institutions**, which are based on an unwritten set of social rules and expectations. Informal institutions are based on conventions on how one should behave, and there is no authority that monitors the behavior. An example of an informal institution is the societal expectation for waiting in line. Expectations for waiting in line vary significantly across settings. A cafeteria operates on a first-come, first-served basis, while an emergency room prioritizes the severity of a patient's medical need. In both cases, people are generally expected to self-regulate.
 
 Finally, there are political institutions, which can be formal or informal. **Political institutions** are “structures that lend the polity its integrity” (Orren & Skowronek, 1995, p. 298). These are the spaces in which the majority of politics and political decisions take place. Formal political institutions include written constitutions, legislatures, judiciaries, executives, militaries, and police forces. Informal political institutions, as one example, include expectations during negotiations. During the lawmaking process, lawmakers may logroll, or exchange reciprocal promises of voting support for legislation. Without logrolling, the number of laws passed would likely decrease substantially. Other examples of informal political institutions include norms surrounding levels of corruption, political ideology, and political culture.
 
 The study of formal, informal, and political institutions occurs in each of the three broad approaches to comparative analysis: area studies, cross-national studies, and subnational studies. These approaches demonstrate what comparativists call the ‘**unit of analysis**,’ or the primary entity or level that a researcher is studying or comparing. Each of these units-of-analysis enables the researcher to look at the issues from different levels in order to learn and develop greater understanding of the topic.
 
-![Figure 1.2.1: Political institutions can be either formal or informal. A Trump supporter, pictured on the left, represents informal political institutions through political culture. The Supreme Court, pictured on the right, is a formal institution. (Sources (from left to right): [Trump Supporter](https://www.flickr.com/photos/johnnysilvercloud/27686095712/), by Johnny Silvercloud is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/deed.en); The Supreme Court, by Joe Ravi is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en))](images/1.2.1.png){#fig-1-2-1 fig-alt="Two contrasting photographs: on the left, a supporter in a red dress kneeling with raised hands draped in a Trump campaign flag on pavement; on the right, the neoclassical exterior of the U.S. Supreme Court building at dusk with illuminated Corinthian columns and broad marble steps."}
+![Figure 1.2.1: Political institutions can be either formal or informal. A campaign rally participant, pictured on the left, represents informal political institutions through political culture. The Supreme Court, pictured on the right, is a formal institution. (Sources (from left to right): [Trump Supporter](https://www.flickr.com/photos/johnnysilvercloud/27686095712/), by Johnny Silvercloud is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/deed.en); The Supreme Court, by Joe Ravi is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en))](images/1.2.1.png){#fig-1-2-1 fig-alt="Two contrasting illustrations of informal political culture and the formal U.S. Supreme Court building."}
 
 ### Area Studies
 
@@ -174,19 +162,19 @@ Despite the controversial origins of this approach to research, area studies are
 
 A second approach to comparative analysis is through **cross-national studies**, a type of research transcending national boundaries that is “explicitly comparative, that is, studies that utilize systematically comparable data from two or more nations” (Kohn, 1987, p. 714). Although area studies often involves comparing countries within a specific region, it remains distinct from broader cross-national studies in comparative politics. Cross-national studies place much emphasis on appropriately measuring variables across cases to increase external validity, the extent to which a researcher can generalize their findings.
 
-A good example of cross-national research is Arend Lijphart's (1999) book, Patterns of Democracy. In this seminal study, Lijphart examines 36 diverse democracies, comparing institutions ranging from electoral systems to the role of central banks to internal policy-making techniques. Another example is the cross-national analysis of the 38 countries making up the Organization for Economic Co-operation and Development (OECD), an intergovernmental organization that facilitates dialogue on macroeconomic policies. OECD countries, which span multiple continents, have harmonized their economic indicators, allowing for easier comparisons. A final example of cross-national research is the Polity data series, which ranks countries from strongly democratic to strongly autocratic based on political regime characteristics. To summarize the commonalities among these examples, in comparative politics, cross-national studies often involve the comparisons of countries, or country institutions, across geographical regions and through quantitative analysis.
+A good example of cross-national research is Arend Lijphart's (1999) book, *Patterns of Democracy*. In this seminal study, Lijphart examines 36 diverse democracies, comparing institutions ranging from electoral systems to the role of central banks to internal policy-making techniques. Another example is the cross-national analysis of the 38 countries making up the Organization for Economic Co-operation and Development (OECD), an intergovernmental organization that facilitates dialogue on macroeconomic policies. OECD countries, which span multiple continents, have harmonized their economic indicators, allowing for easier comparisons. A final example of cross-national research is the Polity data series, which ranks countries from strongly democratic to strongly autocratic based on political regime characteristics. To summarize the commonalities among these examples, in comparative politics, cross-national studies often involve the comparisons of countries, or country institutions, across geographical regions and through quantitative analysis.
 
 Due to the quantitative focus, one of the major critiques of cross-national studies relates to measurement. Can we properly measure variables and compare across large swaths of countries? Does consistent data exist across space and time? Do our measures have internal validity (that is, do they accurately reflect the concept we aim to measure)? Does our study have external validity (that is, is it generalizable)? These difficult questions have led some to reject cross-national research in comparative politics, but the attempt to systematize analyses across countries is important. Measurement is a problem that all social scientists face, and deliberations on how to appropriately measure concepts like democracy, capitalism, and election integrity are necessary to support shared understanding.
 
 ### Subnational Studies
 
-A third approach to comparative analysis is through **subnational studies**, research in which scholars compare subnational governments (any level of government lower than the national level). A researcher may compare subnational governments within a single country—such as examining state, county, and city levels within the United States.  Alternatively, they may conduct cross-national studies between equivalent units, such as Canadian provinces and Mexican states.
+A third approach to comparative analysis is through **subnational studies**, research in which scholars compare subnational governments (any level of government lower than the national level). A researcher may compare subnational governments within a single country—such as examining state, county, and city levels within the United States. Alternatively, they may conduct cross-national studies between equivalent units, such as Canadian provinces and Mexican states.
 
 Across countries, subnational governments vary significantly in their level of sovereignty. **Sovereignty** is fundamental governmental power and authority in decision-making within a given territory. This fundamental power and authority means that a government has the power to coerce others to do things they may not want to do, such as paying taxes or not speeding on freeways. In some countries, sovereignty is shared between the national government and subnational governments. An example is the United States, in which power is shared between the national government in Washington, D.C. and the 50 state governments. Countries with this shared power structure have **federal governments**. Other countries do not share power in this manner. When the power is concentrated at the national level, a country has a **unitary government**. An example is France, where the majority of power lies in Paris in the hands of the president and parliament. When power is instead concentrated at a subnational level, a country has a **confederal government**. While few contemporary examples exist, Switzerland offers one; within Switzerland, there are 26 subnational governmental units called cantons, and each canton has its own constitution.
 
 Subnational research traces its roots to the 1970s. At this time, there was a surge in the number of democracies worldwide and an increase in the empowerment of subnational governments through the process of decentralization (Snyder, 2001). This process is known as devolution. **Devolution** occurs when the central government in a country deliberately transfers power to a government at a lower level. Examples of devolution include the creation of parliaments in Scotland and Wales and the creation of the Catalan, Basque, and Galician autonomous regional governments in Spain.
 
-To study questions of sovereignty and devolution, subnational research can take two approaches. The first approach is a within- nation comparison. In a **within-nation comparison**, a researcher studies the subnational governments or institutions within a single country. For example, a researcher within the subfield of American politics might analyze and compare all 50 states’ policies toward COVID-19. The second approach is a **between-nation comparison**, in which a researcher compares subnational governments across different countries. As an example, a researcher studying postcolonial Africa may study contiguous subnational governments because tribal, ethnic, and religious group boundaries often overlap national borders.
+To study questions of sovereignty and devolution, subnational research can take two approaches. The first approach is a within-nation comparison. In a **within-nation comparison**, a researcher studies the subnational governments or institutions within a single country. For example, a researcher within the subfield of American politics might analyze and compare all 50 states’ policies toward COVID-19. The second approach is a **between-nation comparison**, in which a researcher compares subnational governments across different countries. As an example, a researcher studying postcolonial Africa may study contiguous subnational governments because tribal, ethnic, and religious group boundaries often overlap national borders.
 
 ## 1.3: Outline of the Textbook
 
@@ -245,19 +233,11 @@ While the scope of this textbook is somewhat extensive, there remain many unansw
 This textbook is an Open Educational Resource (OER) that consists of the 12 chapters. A team of political scientists at different community colleges in California co-authored this Open Educational Resource. The structure of each chapter is consistent, including the following seven elements: chapter outline, chapter sections, key terms, summary, review questions, critical thinking questions, and suggestions for further study.
 
 - The chapter outline provides a list of the chapter’s sections. A reader clicks on the name of the chapter section to move directly to that section. This outline is important because it quickly and concisely provides you an overview of the chapter and a clear sense of its contents.
-
-<!-- -->
-
 - The chapter sections include the substantive content of the chapter. While each chapter author has endeavored to write chapter sections as stand-alone parts, there will naturally be a flow and integration of the chapters.
-
-- The key terms, listed in alphabetical order, serve as a repository of definitions of key terms used throughout the chapter sections. 
-
+- The key terms, listed in alphabetical order, serve as a repository of definitions of key terms used throughout the chapter sections.
 - The summary of the chapter provides a one paragraph synopsis of each section of the chapter. The goal is to distill each chapter section into a bite-sized chunk that can be quickly referenced, but the summaries should not be viewed as replacements for reading chapter sections.
-
 - The review questions include at least five questions that could serve as a pop quiz, clicker questions, student self-check, or as part of a question bank used for a summative assessment.
-
 - The critical thinking questions include at least three questions that can serve as a short or long essay prompt for an in-class or at-home assessment.
-
 - The suggestions for further study section includes links to websites, journal articles, and books related to the chapter topic. The goal is to build a robust repository of resources, both open access and not, that students and faculty can explore.
 
 As noted in the first sub-section on this page, for most coherent use, the authors recommend that students read the chapters in the order presented. While reading each chapter in sequential order offers the most coherent progression, some instructors may prefer to assign specific chapters to complement their existing textbook or course materials.
@@ -306,7 +286,7 @@ Eckstein, H. (1963). A perspective on comparative politics, past and present. In
 
 Franco, J., Lee, C., Vue, K., Bozonelos, D., Omae, M., & Cauchon, S. (2020). *Introduction to political science research methods*. <http://ipsrm.com/>
 
-Jackman, R. W. (1985). Cross-national statistical research and the study of comparative politics. *American Journal of Political Science, 29*(1), 161–182.
+Jackman, R. W. (1985). Cross-national statistical research and the study of comparative politics. *American Political Science Review, 29*(1), 161–182.
 
 Katznelson, I., & Milner, H. V. (Eds.). (2002). *Political science: The state of the discipline*. W. W. Norton.
 
@@ -363,60 +343,36 @@ Zahariadis, N. (1996). *Theory, case, and method in comparative politics*. Cenga
 ### Key Terms
 
 - **American politics** is a subfield of political science that focuses on political institutions and behaviors within the United States.
-
 - **Area studies** is an approach to comparison in which scholarship is organized geographically.
-
 - **Between-nation comparisons** are comparisons in which a researcher compares subnational governments across different countries.
-
 - **Comparative politics** is a subfield of political science that seeks to advance understanding of political structures around the world in an organized, methodological, and clear way.
-
 - **Confederal government** is a system of government in which sovereignty is held at subnational levels.
-
 - **Cross-national studies** is an approach to comparison involving two or more countries. Unlike area studies, the countries are not necessarily confined to one region.
-
 - **Devolution** occurs when a country's central government deliberately transfers power to a government at a lower level.
-
 - **Federal government** is a national or centralized authority differentiated from state and local governments.
-
 - **Formal institutions** are based on a clear set of rules that have been formalized, often with the authority to enforce the rules through punitive measures.
-
 - **Informal institutions** are based on an unwritten set of rules that have not necessarily been formalized, but rather come from conventions on how one should behave.
-
 - **Institutions** are the beliefs, norms, and organizations that structure social and political life.
-
 - **International relations** is a subfield of political science that focuses on how countries and/or international organizations interact with each other.
-
 - **Political economy** is a subfield of political science that considers various economic theories, practices, and outcomes either within a state, or among and between states in the global system.
-
 - **Political institutions** are the spaces in which the majority of politics and political decisions take place.
-
 - **Political philosophy** is a subfield of political science that reflects on the philosophical origins of politics, the state, government, fairness, equality, equity, authority, and legitimacy.
-
 - **Political psychology** is a subfield of political science that weds together principles, themes, and research from political science and psychology to understand the psychological roots of political behavior.
-
 - **Political science** is a field of social scientific inquiry that seeks to advance knowledge of political institutions, behavior, activities, and outcomes using systematic and logical research methods to test and refine theories about how the political world operates.
-
 - **Public policy** is a subfield of political science that explores political policies and outcomes, focusing on the strength, legitimacy and effectiveness of political institutions.
-
 - **Qualitative research** is a type of research that centers on exploring ideas and phenomena, potentially with the goal of consolidating information or developing evidence to form a theory or hypothesis to test. Qualitative research involves categorizing, summarizing, and analyzing cases thoroughly to gain greater understanding, often using a small sample.
-
 - **Quantitative research** is a type of research that centers on testing a theory or hypothesis, usually through mathematical and statistical means, using data from a large sample.
-
 - **Research methodology** is a subfield of political science that seeks to consider the best practices for analyzing themes within political science through discussion, testing, and critical analysis of how research is constructed and implemented.
-
 - **Sovereignty** is fundamental governmental power and authority in decision-making within a given territory.
-
 - **Subnational studies** is an approach to comparison in which researchers compare subnational governments.
-
 - **Unitary government** is a type of government in which power is centralized at the national level.
-
 - **Within-nation comparisons** are comparisons in which a researcher compares the subnational governments or institutions within a single country.
 
 ### Summary
 
 #### Section 1.1: What is Comparative Politics?
 
-Comparative politics is a subfield of study within political science that seeks to advance understanding of political structures from around the world in an organized, methodological, and clear way. There is still ample scholarly debate over the definition and scope of comparative politics, with scholars occasionally disagreeing about the ideal methodological approaches and methods for case selection. Comparativists (those who study comparative politics) use both qualitiative and quantitative research methods to advance the field. Beyond comparative politics, a number of other subfields exist within political science, including American politics, international relations, political philosophy, research methodology, political economy, public policy, and political psychology.
+Comparative politics is a subfield of study within political science that seeks to advance understanding of political structures from around the world in an organized, methodological, and clear way. There is still ample scholarly debate over the definition and scope of comparative politics, with scholars occasionally disagreeing about the ideal methodological approaches and methods for case selection. Comparativists (those who study comparative politics) use both qualitative and quantitative research methods to advance the field. Beyond comparative politics, a number of other subfields exist within political science, including American politics, international relations, political philosophy, research methodology, political economy, public policy, and political psychology.
 
 #### Section 1.2: Ways Comparativists Look at the World
 
@@ -432,33 +388,35 @@ Comparative politics is a diverse field that focuses on a number of different to
     a.  Comparative politics
     b.  Comparative advantage
     c.  American politics
-    d.  Research methodology\
+    d.  Research methodology
 2.  Which approach to comparison focuses on state relations from similar geographic regions?
     a.  Area studies
     b.  Cross-national studies
     c.  Subnational studies
-    d.  None of the above\
+    d.  None of the above
 3.  Who is considered the father of political science?
     a.  Socrates
     b.  Plato
     c.  Aristotle
-    d.  Homer\
+    d.  Homer
 4.  A country's constitution is an example of which of the following types of institutions? *Choose all that apply.*
     a.  Formal institution
     b.  Informal institution
     c.  Political institution
-    d.  Economic institution\
+    d.  Economic institution
 5.  Which of the following areas of inquiry falls outside the domain of comparative politics?
     a.  Voting behavior
     b.  Democracy and regime transitions
     c.  Political violence
-    d.  None of the above\
+    d.  None of the above
+
+Answers: 1.b, 2.a, 3.c, 4.a, c, 5.d
 
 ### Critical Thinking Questions
 
 1.  What are some of the key differences in studying comparative politics versus international relations? What tends to be the research methodologies of choice in each of these fields?
 
-2.  Consider the approaches of area studies, cross-national studies, and subnational studies. What can be the benefits or drawbacks of using these approaches? Which approach do you think would be most appropriate if considering the spread of COVID-19 or other pandemics? Similarly, which approach would be best if looking at climate change or environmental problems?
+2.  Consider the approaches of area studies, cross-national studies, and subnational studies. What can be the benefits or drawbacks of using these approaches? Which approach would be most appropriate if considering the spread of COVID-19 or other pandemics? Similarly, which approach would be best if looking at climate change or environmental problems?
 
 3.  Considering how political science and comparative politics are defined, are these fields scientific? In what ways are these fields scientific, and how do they approach questions of politics in other countries?
 
@@ -477,7 +435,7 @@ Comparative politics is a diverse field that focuses on a number of different to
 #### Journal Articles
 
 - Abadie, A., Diamond, A., & Hainmueller, J. (2015). [Comparative Politics and the Synthetic Control Method](http://www.jstor.org/stable/24363579). *American Journal of Political Science*, 59(2), 495–510.
-- Lijphart, A. (1971). [Comparative Politics and the Comparative Method.](https://socialsci.libretexts.org/https%3A%2F%2Fdoi.org/10.2307/1955513) *The American Political Science Review*, 65(3), 682–693.
+- Lijphart, A. (1971). [Comparative Politics and the Comparative Method.](https://doi.org/10.2307/1955513) *The American Political Science Review*, 65(3), 682–693.
 - Munck, G. L. (2001). [Game Theory and Comparative Politics: New Perspectives and Old Concerns](http://www.jstor.org/stable/25054144). *World Politics*, 53(2), 173–204.
 
 #### Books
