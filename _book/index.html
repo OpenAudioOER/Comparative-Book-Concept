@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Dino Bozonelos, Dr.&nbsp;Julia Wendt, Dr.&nbsp;Charlotte Lee, Jessica Scarffe, Brian Barrick, Dr.&nbsp;Masahiro Omae, Dr.&nbsp;Josh Franco, Dr.&nbsp;Byran Martin, and Stefan Veldhuis">
-<meta name="dcterms.date" content="2026-10-20">
+<meta name="dcterms.date" content="2026-10-21">
 
 <title>Introduction to Comparative Government and Politics, 2nd Edition</title>
 <style>
@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-f410f26c2051512d7613bb4373d45db7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ea107ff2cc27718f95fe2b92bdf21100.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-74ae26077dc95f9db6c504d43e25ccc7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-ea107ff2cc27718f95fe2b92bdf21100.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-385ae7bc5596f1dfbcfb3626e3b84dd1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d3060acfa9d653e1ad51ee9a23155b93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-385ae7bc5596f1dfbcfb3626e3b84dd1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -388,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 20, 2026</p>
+      <p class="date">October 21, 2026</p>
     </div>
   </div>
   
@@ -534,12 +534,31 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     toggleBtn.addEventListener("click", () => {
+      const savedX = window.scrollX || window.pageXOffset || 0;
+      const savedY = window.scrollY || window.pageYOffset || 0;
+      const origScrollTo = window.scrollTo;
+
+      // Neutralize Quarto's built-in Safari window.scrollTo(0, 1) / window.scrollTo(0, 0) hack (#1455)
+      // so toggling dark/light mode on iPhone/macOS Safari never jumps back to the top of the chapter.
+      window.scrollTo = function () {
+        origScrollTo.call(window, savedX, savedY);
+      };
+
       if (typeof window.quartoToggleColorScheme === "function") {
         window.quartoToggleColorScheme();
       }
+
+      origScrollTo.call(window, savedX, savedY);
+
       setTimeout(() => {
         syncThemeButton();
+        origScrollTo.call(window, savedX, savedY);
       }, 15);
+
+      setTimeout(() => {
+        window.scrollTo = origScrollTo;
+        window.scrollTo(savedX, savedY);
+      }, 90);
     });
 
     const obs = new MutationObserver(syncThemeButton);
@@ -583,6 +602,147 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       true
     );
+  }
+
+  // -------------------------------------------------------------------------
+  // 0b. Mobile "Sections" Floating Pill & Popover Sheet (< 992px viewports)
+  // -------------------------------------------------------------------------
+  const desktopToc = document.querySelector("#TOC");
+  const desktopTocList = desktopToc ? desktopToc.querySelector("ul") : null;
+  if (
+    desktopTocList &&
+    desktopTocList.querySelectorAll("a.nav-link").length > 0 &&
+    !document.getElementById("tb-mobile-toc-toggle")
+  ) {
+    const tocBtn = document.createElement("button");
+    tocBtn.id = "tb-mobile-toc-toggle";
+    tocBtn.type = "button";
+    tocBtn.className = "tb-mobile-toc-toggle";
+    tocBtn.setAttribute("aria-label", "In This Chapter section navigation");
+    tocBtn.setAttribute("aria-expanded", "false");
+    tocBtn.setAttribute("aria-controls", "tb-mobile-toc-sheet");
+
+    const listIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>`;
+    const chevronUpSvg = `<svg class="toc-pill-chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>`;
+    tocBtn.innerHTML = `${listIconSvg}<span>Sections</span>${chevronUpSvg}`;
+
+    const backdrop = document.createElement("div");
+    backdrop.className = "tb-mobile-toc-backdrop";
+    backdrop.setAttribute("aria-hidden", "true");
+    backdrop.hidden = true;
+
+    const sheet = document.createElement("div");
+    sheet.id = "tb-mobile-toc-sheet";
+    sheet.className = "tb-mobile-toc-sheet";
+    sheet.setAttribute("role", "dialog");
+    sheet.setAttribute("aria-modal", "false");
+    sheet.setAttribute("aria-label", "In This Chapter");
+    sheet.hidden = true;
+
+    const clonedList = desktopTocList.cloneNode(true);
+    // Strip duplicate IDs and expand any collapsed sub-lists for quick mobile browsing
+    clonedList.querySelectorAll("[id]").forEach((el) => el.removeAttribute("id"));
+    clonedList.querySelectorAll("ul.collapse").forEach((ul) => {
+      ul.classList.remove("collapse");
+    });
+
+    sheet.innerHTML = `
+      <div class="tb-mobile-toc-header">
+        <span class="tb-mobile-toc-title">${listIconSvg}<span>In This Chapter</span></span>
+        <button type="button" class="tb-mobile-toc-close" aria-label="Close section navigation">✕</button>
+      </div>
+      <nav class="tb-mobile-toc-body" aria-label="Chapter sections"></nav>
+    `;
+    sheet.querySelector(".tb-mobile-toc-body").appendChild(clonedList);
+
+    const syncActiveSectionInSheet = () => {
+      const headings = Array.from(
+        document.querySelectorAll("main.content section[id] > h2, main.content section[id] > h3")
+      );
+      let currentId = "";
+      const threshold = 120;
+      for (const h of headings) {
+        const sec = h.closest("section[id]");
+        if (!sec) continue;
+        const rect = h.getBoundingClientRect();
+        if (rect.top <= threshold) {
+          currentId = sec.id;
+        }
+      }
+      if (!currentId && headings.length > 0) {
+        const firstSec = headings[0].closest("section[id]");
+        if (firstSec) currentId = firstSec.id;
+      }
+
+      sheet.querySelectorAll("a.nav-link").forEach((a) => {
+        const href = a.getAttribute("href") || a.getAttribute("data-scroll-target") || "";
+        const isMatch = currentId && href === `#${currentId}`;
+        a.classList.toggle("active", Boolean(isMatch));
+      });
+    };
+
+    const setSheetOpen = (open) => {
+      sheet.hidden = !open;
+      backdrop.hidden = !open;
+      tocBtn.classList.toggle("is-open", open);
+      tocBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        syncActiveSectionInSheet();
+        const activeLink = sheet.querySelector("a.nav-link.active");
+        if (activeLink) {
+          activeLink.scrollIntoView({ block: "nearest" });
+        }
+      }
+    };
+
+    tocBtn.addEventListener("click", () => {
+      setSheetOpen(sheet.hidden);
+    });
+
+    backdrop.addEventListener("click", () => {
+      setSheetOpen(false);
+    });
+
+    sheet.querySelector(".tb-mobile-toc-close").addEventListener("click", () => {
+      setSheetOpen(false);
+    });
+
+    sheet.querySelectorAll("a.nav-link").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetSel = link.getAttribute("href") || link.getAttribute("data-scroll-target");
+        if (targetSel && targetSel.startsWith("#")) {
+          const targetEl = document.getElementById(targetSel.slice(1));
+          if (targetEl) {
+            e.preventDefault();
+            setSheetOpen(false);
+            const headerEl = document.getElementById("quarto-header");
+            const headerOffset = headerEl ? headerEl.offsetHeight + 16 : 72;
+            const targetTop =
+              targetEl.getBoundingClientRect().top + window.scrollY - headerOffset;
+            window.scrollTo({
+              top: Math.max(0, targetTop),
+              behavior: "smooth",
+            });
+            try {
+              history.replaceState(null, "", targetSel);
+            } catch (err) {}
+          }
+        } else {
+          setSheetOpen(false);
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !sheet.hidden) {
+        setSheetOpen(false);
+        tocBtn.focus();
+      }
+    });
+
+    document.body.appendChild(backdrop);
+    document.body.appendChild(sheet);
+    document.body.appendChild(tocBtn);
   }
   // -------------------------------------------------------------------------
   // 0. Accessible Top Scroll Progress Bar
@@ -1042,6 +1202,61 @@ document.addEventListener("DOMContentLoaded", function () {
           );
         }
       );
+    }
+
+    // Mobile-friendly responsive table transformation (zero horizontal overflow & full readable font)
+    const table = tblDiv.querySelector("table.table");
+    if (table) {
+      const headers = Array.from(table.querySelectorAll("thead th")).map((th) =>
+        th.textContent.trim()
+      );
+      const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+      // Stamp data-label on each cell from its column header
+      rows.forEach((tr) => {
+        Array.from(tr.querySelectorAll("td")).forEach((td, idx) => {
+          if (headers[idx]) {
+            td.setAttribute("data-label", headers[idx]);
+          }
+        });
+      });
+
+      // Check if this is a multi-column category list table (4+ columns where cells are short phrases, like Table 1.2.1)
+      const allCells = Array.from(table.querySelectorAll("tbody td"));
+      const maxCellLen = allCells.reduce(
+        (max, td) => Math.max(max, td.textContent.trim().length),
+        0
+      );
+
+      if (headers.length >= 4 && maxCellLen > 0 && maxCellLen <= 45) {
+        table.classList.add("tb-has-mobile-category-grid");
+        const catGrid = document.createElement("div");
+        catGrid.className = "tb-mobile-category-grid";
+        catGrid.setAttribute("aria-hidden", "true");
+
+        headers.forEach((colTitle, colIdx) => {
+          const colCard = document.createElement("div");
+          colCard.className = "tb-mobile-category-card";
+          const items = rows
+            .map((tr) => {
+              const cell = tr.querySelectorAll("td")[colIdx];
+              return cell ? cell.innerHTML.trim() : "";
+            })
+            .filter(Boolean);
+
+          colCard.innerHTML = `
+            <div class="tb-mobile-category-header">${colTitle}</div>
+            <ul class="tb-mobile-category-list">
+              ${items.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          `;
+          catGrid.appendChild(colCard);
+        });
+
+        table.insertAdjacentElement("afterend", catGrid);
+      } else if (headers.length >= 2 && headers.length <= 3) {
+        table.classList.add("tb-stackable-table");
+      }
     }
   });
 
