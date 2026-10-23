@@ -368,11 +368,11 @@
         clean-main.push(box(
           fill: rgb("#eff6ff"),
           radius: 4pt,
-          inset: (x: 6pt, y: 3pt),
+          inset: (x: 5pt, y: 2.2pt),
           stroke: 0.6pt + rgb("#bfdbfe"),
           text(font: font-sans, size: 8pt, weight: "bold", fill: rgb("#1e40af"))[#fig-label]
         ))
-        clean-main.push(h(6pt))
+        clean-main.push(h(4pt))
         i += 1
         // If next is colon, skip it
         if i < main-children.len() and main-children.at(i).has("text") and main-children.at(i).text.trim() == ":" {
@@ -425,10 +425,14 @@
     
     [
       #main-content
-      #v(8pt)
-      #line(length: 100%, stroke: (paint: brand-border-light, dash: "dashed", thickness: 0.6pt))
+      #v(5pt)
+      #line(length: 100%, stroke: (paint: brand-border, dash: "dashed", thickness: 0.5pt))
       #v(4pt)
-      #text(font: font-sans, size: 7.5pt, fill: brand-muted)[#source-content]
+      #block(spacing: 0pt)[
+        #set text(font: font-sans, size: 7.5pt, fill: brand-muted)
+        #set par(leading: 0.32em, justify: false)
+        #source-content
+      ]
     ]
   }
 
@@ -439,38 +443,33 @@
       return it.body
     }
 
-    set align(center)
     block(
       width: 100%,
       stroke: 0.75pt + brand-border,
       radius: 10pt,
       fill: rgb("#ffffff"),
       clip: true,
-      spacing: 2em,
+      spacing: 1.8em,
       breakable: false,
+      inset: (x: 10pt, top: 10pt, bottom: 8.5pt),
       [
-        #block(
-          width: 100%,
-          inset: (x: 12pt, top: 12pt, bottom: 10pt),
-          align(center)[
-            #block(
-              radius: 6pt,
-              clip: true,
-              stroke: 0.5pt + brand-border-light,
-              it.body
-            )
-          ]
-        )
+        #align(center)[
+          #block(
+            radius: 6pt,
+            clip: true,
+            stroke: 0.5pt + brand-border-light,
+            spacing: 0pt,
+            it.body
+          )
+        ]
+        #v(7pt)
         #line(length: 100%, stroke: 0.5pt + brand-border-light)
-        #block(
-          width: 100%,
-          inset: (x: 14pt, top: 10pt, bottom: 12pt),
-          align(left)[
-            #set text(font: font-serif, size: 9pt, fill: brand-ink)
-            #set par(leading: 0.68em, justify: false)
-            #format-caption(it.caption.body)
-          ]
-        )
+        #v(6pt)
+        #align(left)[
+          #set text(font: font-serif, size: 9pt, fill: brand-ink)
+          #set par(leading: 0.38em, justify: false)
+          #format-caption(it.caption.body)
+        ]
       ]
     )
   }
