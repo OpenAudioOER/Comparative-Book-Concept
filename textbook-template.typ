@@ -105,22 +105,33 @@
     paper: "us-letter",
     margin: (top: 2.5cm, bottom: 2.5cm, left: 2.8cm, right: 2.4cm),
     header: context {
+      let cur-phys = here().page()
       let page-num = counter(page).get().first()
-      // Suppress headers on first 4 pages (frontmatter) and chapter start pages
-      let is-chapter-start = query(heading.where(level: 1)).any(h => h.location().page() == page-num)
-      if page-num > 4 and not is-chapter-start {
+      // Suppress headers on chapter start pages
+      let is-chapter-start = query(heading.where(level: 1)).any(h => h.location().page() == cur-phys)
+      if not is-chapter-start {
         set text(font: font-sans, size: 8.5pt, fill: brand-muted)
         if calc.odd(page-num) {
           // Odd page (Recto): Section title left, page number right
-          let current-h2 = query(selector(heading.where(level: 2)).before(here()))
-          let section-title = if current-h2.len() > 0 { current-h2.last().body } else { title }
+          let h2-on-page = query(heading.where(level: 2)).filter(h => h.location().page() == cur-phys)
+          let section-title = if h2-on-page.len() > 0 {
+            h2-on-page.first().body
+          } else {
+            let current-h2 = query(selector(heading.where(level: 2)).before(here()))
+            if current-h2.len() > 0 { current-h2.last().body } else { title }
+          }
           box(width: 100%, inset: (bottom: 4pt), stroke: (bottom: 0.5pt + brand-border-light))[
             #section-title #h(1fr) #strong(str(page-num))
           ]
         } else {
           // Even page (Verso): Page number left, Chapter title right
-          let current-h1 = query(selector(heading.where(level: 1)).before(here()))
-          let chapter-title = if current-h1.len() > 0 { current-h1.last().body } else { title }
+          let h1-on-page = query(heading.where(level: 1)).filter(h => h.location().page() == cur-phys)
+          let chapter-title = if h1-on-page.len() > 0 {
+            h1-on-page.first().body
+          } else {
+            let current-h1 = query(selector(heading.where(level: 1)).before(here()))
+            if current-h1.len() > 0 { current-h1.last().body } else { title }
+          }
           box(width: 100%, inset: (bottom: 4pt), stroke: (bottom: 0.5pt + brand-border-light))[
             #strong(str(page-num)) #h(1fr) #chapter-title
           ]
@@ -128,10 +139,11 @@
       }
     },
     footer: context {
+      let cur-phys = here().page()
       let page-num = counter(page).get().first()
       // Bottom page number only on chapter openers
-      let is-chapter-start = query(heading.where(level: 1)).any(h => h.location().page() == page-num)
-      if page-num > 4 and is-chapter-start {
+      let is-chapter-start = query(heading.where(level: 1)).any(h => h.location().page() == cur-phys)
+      if is-chapter-start {
         set text(font: font-sans, size: 9pt, fill: brand-muted)
         align(center)[#page-num]
       }
@@ -186,7 +198,7 @@
   // Headings
   // ---------------------------------------------------------------------------
   show heading: it => {
-    set text(font: font-sans)
+    set text(font: font-sans, hyphenate: false)
     if it.level == 1 {
       // Level 1: Chapter Opener (Starts on a fresh page)
       is-first-section.update(true)
