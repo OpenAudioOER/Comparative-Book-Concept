@@ -364,22 +364,6 @@
     )
   }
 
-  // ---------------------------------------------------------------------------
-  // Table of Contents Styling
-  // ---------------------------------------------------------------------------
-  show outline.entry.where(level: 1): it => {
-    v(0.6em)
-    text(font: font-sans, weight: "bold", size: 10.5pt, fill: brand-navy)[
-      #it
-    ]
-  }
-
-  show outline.entry.where(level: 2): it => {
-    text(font: font-serif, size: 9.5pt, fill: brand-ink)[
-      #it
-    ]
-  }
-
   doc
 }
 
@@ -529,7 +513,7 @@
 // =============================================================================
 #page(
   paper: "us-letter",
-  margin: (top: 2.5cm, bottom: 2.5cm, left: 2.8cm, right: 2.4cm),
+  margin: (top: 2.2cm, bottom: 2.2cm, left: 2.8cm, right: 2.4cm),
   header: none,
   footer: context [
     #set align(center)
@@ -537,15 +521,30 @@
     #counter(page).display("i")
   ]
 )[
-  #v(0.8cm)
-  #text(font: font-sans, size: 18pt, weight: "bold", fill: brand-navy)[Table of Contents]
   #v(0.4cm)
+  #text(font: font-sans, size: 18pt, weight: "bold", fill: brand-navy)[Table of Contents]
+  #v(0.3cm)
   #line(length: 100%, stroke: 1.5pt + brand-navy)
-  #v(0.6cm)
+  #v(0.4cm)
+
+  #show outline.entry.where(level: 1): it => {
+    v(0.65em)
+    text(font: font-sans, weight: "bold", size: 10pt, fill: brand-navy)[
+      #it
+    ]
+  }
+
+  #show outline.entry.where(level: 2): it => {
+    v(0.12em)
+    text(font: font-serif, weight: "regular", size: 9pt, fill: rgb("#334155"))[
+      #it
+    ]
+  }
+
   #outline(
     title: none,
     depth: 2,
-    indent: 1.2em,
+    indent: 1.4em,
   )
 ]
 
