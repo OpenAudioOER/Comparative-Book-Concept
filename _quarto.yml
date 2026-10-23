@@ -46,3 +46,18 @@ format:
     link-external-newwindow: true
     respect-user-color-scheme: false
     include-after-body: textbook-enhancements.html
+  typst:
+    template: textbook-template.typ
+    keep-typ: true
+    papersize: us-letter
+    margin:
+      top: 2.5cm
+      bottom: 2.5cm
+      left: 2.8cm
+      right: 2.4cm
+    mainfont: "Source Serif 4"
+    sansfont: "Plus Jakarta Sans"
+    monofont: "JetBrains Mono"
+    fontsize: 10.5pt
+    section-numbering: 1.1.1
+    toc: false

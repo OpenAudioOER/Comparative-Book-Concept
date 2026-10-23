@@ -15,6 +15,7 @@
 *.out
 *.synctex.gz
 index.tex
+index.typ
 index.aux
 index.log
 index.toc
