@@ -43,7 +43,7 @@ Fourth, scientific research depends on method rather than subject matter. This m
 
 The **scientific method** follows a sequence of steps to standardize the research process: asking a research question, conducting background research, developing hypotheses, testing hypotheses, analyzing results, and reporting findings. The following overview examines each phase.
 
-**Step One: Asking a Research Question**
+#### Step One: Asking a Research Question
 
 The first step in the research process is to develop a clear, focused, and relevant research question. What characteristics define a good research question in political science?
 
@@ -53,7 +53,7 @@ Suppose a political scientist started with the following research question: "Is 
 
 Now consider a political scientist who asks: "Does investing heavily in a country's education system always mean that country will eventually become democratic?" This question presents two distinct technical limitations. First, the word “always” implies that a researcher will have to verify every single past and future instance of educational investment worldwide (in addition to defining what "heavily" means). Second, the word "eventually" introduces an untestable time horizon. After all, a country investing in education today might eventually become democratic 500, 700, or even 900 years into the future. Because it is simply impossible to gather the necessary evidence to evaluate the premise, the question as currently phrased is non-falsifiable. These examples point to the importance of formulating research questions that are both specific and testable.
 
-**Step Two: Conducting Background Research**
+#### Step Two: Conducting Background Research
 
 The second step in the research process is to conduct background research. Before formulating a hypothesis or gathering data, researchers need to complete a ‘literature review’ to situate themselves within the field. A **literature review** is a survey and synthesis of existing scholarly research on a topic. It summarizes prior research findings, methodological approaches, relevant theories, remaining limitations, and unresolved questions.
 
@@ -61,18 +61,13 @@ By reviewing existing scholarship, researchers can identify what is already know
 
 A literature review may take various forms, depending on the nature of the research question.
 
-- **Chronological:**\
-  This approach arranges the research in historical order, beginning with foundational early research and culminating in the most recent studies on a topic.
-
-- **Thematic:**\
-  This approach organizes previous research into specific groups or categories. For example, scholars A, B, and C argue that democracy leads to economic growth, while scholars X, Y, and Z argue that economic growth leads to democracy.
-
-- **Methodological or Theoretical:**\
-  This approach focuses on the varying methods or theories that previous scholars have used to explain the topic.
+- **Chronological:** This approach arranges the research in historical order, beginning with foundational early research and culminating in the most recent studies on a topic.
+- **Thematic:** This approach organizes previous research into specific groups or categories. For example, scholars A, B, and C argue that democracy leads to economic growth, while scholars X, Y, and Z argue that economic growth leads to democracy.
+- **Methodological or Theoretical:** This approach focuses on the varying methods or theories that previous scholars have used to explain the topic.
 
 No matter the form it takes, conducting background research to create a literature review is an important phase of the research process. It allows a scholar to showcase, summarize, and synthesize previous research, while simultaneously demonstrating why their specific research question deserves attention.
 
-**Step Three: Developing Hypotheses**
+#### Step Three: Developing Hypotheses
 
 The third step in the research process is to develop a hypothesis, or a set of hypotheses. A **hypothesis** is a specific and testable prediction about the relationship between variables. A **variable** is any factor that can vary, meaning it can take on different values. In a hypothesis, the researcher will identify two core types of variables: an independent variable and a dependent variable. In a cause-and-effect relationship, the independent variable (also called an ‘explanatory variable’) is the presumed cause, while the dependent variable (also called an ‘outcome variable’) is the assumed effect. The independent variable leads to a change in the value of the dependent variable. In other words, the dependent variable's value depends on the changes in the independent variable. For example, consider the hypothesis: "Spending more time consuming political videos on social media increases an individual's animosity toward opposing political groups." In this scenario, the time spent consuming these videos is the independent variable because it is the presumed cause. One's level of animosity is the dependent variable because it is expected to change based on one's video consumption levels.
 
@@ -80,13 +75,13 @@ While a hypothesis is a testable prediction about a specific relationship, a the
 
 To develop (step three), or later test (step four), a hypothesis, researchers may use either inductive or deductive reasoning. **Inductive reasoning** is a bottom-up approach where researchers gather specific observations to build a hypothesis and, eventually, a broader theory. **Deductive reasoning** is a top-down approach where researchers start with an existing broad theory and then collect specific observations to test its validity.
 
-**Steps Four and Five: Testing Hypotheses and Analyzing Results**
+#### Steps Four and Five: Testing Hypotheses and Analyzing Results
 
 The fourth and fifth steps in the research process work in tandem: testing hypotheses and analyzing results. The precise manner in which a researcher tests hypotheses depends on the research method they employ (which will be explored in detail in the following section), but all testing requires a researcher to make observations on the relationship between the variables in the hypothesis.
 
 When the testing is complete, researchers analyze their results and draw conclusions about their findings. Do the results provide evidence in support of the hypothesis? If so, this suggests that the researcher may be on the right track. If not, the researcher will need to go back to the drawing board, develop a new hypothesis, and conduct testing again.
 
-**Step Six: Reporting Findings**
+#### Step Six: Reporting Findings
 
 The sixth step in the research process is to report findings. While not all research results in formal academic publication, researchers can still share their findings through conferences, books, articles, or digital media. This open information-sharing allows others to provide feedback, spot errors, and inform their own research on the topic. It also spawns new and interesting directions for future research.
 
@@ -119,12 +114,12 @@ When assessing the relationship between an independent variable (X) and a depend
 
 **Correlation does not imply causation.** Just because a researcher observes a relationship between two variables does not mean that one *causes* the other. Connections are sometimes spurious, meaning the relationship is misleading and does not reflect a true causal connection. For instance, suppose a researcher observes a positive correlation between ice cream sales and crime rates. As ice cream sales increase, crime rates also increase. This does not mean that ice cream sales cause crime. In this case, both variables tend to increase with warm weather. Warm weather is thus a ‘confounding variable’ that influences both variables, creating a spurious relationship. In research, spurious relationships often arise if a researcher leaves out variables that influence both the independent and dependent variables in their analysis (referred to as ‘omitted variable bias’).
 
-::: {}
+::: {#fig-2-2-1}
 ![Figure 2.2.1: These images illustrate the difference between causation and correlation. The image on the left represents causation: Variable X directly leads to Variable Y. The image on the right highlights correlation: Variable X and Variable Y show a relationship. The arrows indicate that there is no way to assess causality (meaning it is unclear whether X leads to Y or Y leads to X).](images/2.2.1.png){fig-alt="Conceptual diagram contrasting causation and correlation: on the left, a single directional arrow shows Variable X directly causing Variable Y; on the right, a bidirectional arrow shows Variable X and Variable Y moving together with an unclear causal direction."}
 :::
 
-In comparative politics research, a clear positive correlation exists between *economic development* and *democracy*. Countries with higher levels of economic development, measured by GDP per capita, tend to be more democratic when measured by a democracy index. However, this correlation does not automatically prove a causal relationship. Economic development may cause democracy, democracy may cause economic development, or a third variable (Z) may cause both. For example, political stability arising from the absence of war (Z) may facilitate both economic development and democracy. Alternatively, there may be an intervening variable (A) linking the two. For instance, economic development might lead to an accumulation of wealth (A), which then supports democratization.\
-\
+In comparative politics research, a clear positive correlation exists between *economic development* and *democracy*. Countries with higher levels of economic development, measured by GDP per capita, tend to be more democratic when measured by a democracy index. However, this correlation does not automatically prove a causal relationship. Economic development may cause democracy, democracy may cause economic development, or a third variable (Z) may cause both. For example, political stability arising from the absence of war (Z) may facilitate both economic development and democracy. Alternatively, there may be an intervening variable (A) linking the two. For instance, economic development might lead to an accumulation of wealth (A), which then supports democratization.
+
 Because there are so many plausible explanations, a researcher cannot claim a causal link based on correlation. In fact, there are even numerous exceptions to this pattern. Oil-producing countries in the Persian Gulf, such as Saudi Arabia and the United Arab Emirates, have high levels of economic development without democracy. Meanwhile, countries like Senegal and India are democratic despite their relatively low levels of economic development.
 
 These potential challenges force researchers to be very careful when making causal inferences in political science. Establishing causality is always difficult, but this is especially true when the unit of analysis involves countries, as is often the case in comparative politics.
@@ -133,27 +128,27 @@ These potential challenges force researchers to be very careful when making caus
 
 One way that a researcher can attempt to establish causality is through experimental methods. **Experiments** are "laboratory studies in which investigators retain control over the recruitment, assignment to random conditions, treatment, and measurement of subjects" (McDermott, 2002, p. 32). In an experiment, the researcher directly controls the independent variable of interest, known as the ‘treatment.’  Through random assignment, this treatment is given to some cases (the treatment group) and withheld from others (the control group). The researcher then observes the effect that the treatment has on the outcome, the dependent variable of interest. This random assignment allows the researcher to ‘control’ for any potential confounding variables—observable or unobservable—because the randomization process evenly distributes participants across the treatment and control groups. The experimental method therefore reduces bias (Druckman, et. al., 2011) by ensuring comparability across groups, which allows a researcher to isolate the causal impact of the treatment. While a laboratory experiment provides the absolute best conditions for researcher control, conducting a lab experiment at the country level is impossible. There are, however, field experiments and natural experiments, both of which are frequently used by comparativists to establish causality. A **field experiment** takes place in a real-world setting rather than a laboratory. For example, a researcher may want to learn how a political candidate's ethnic background (X) influences voter behavior (Y). Prior to an election, the researcher may distribute informational flyers to voters, randomly assigning one group to receive a flyer highlighting the candidate's ethnic background (the treatment group) while another group receives a flyer without that information (the control group). The researcher then measures the effect of the treatment on actual voting behavior. Because these studies happen in the real world, the researcher possesses less control over the environment than they would in a laboratory experiment.  As a result, they must be aware that there is a higher risk of bias in field experiments than in a lab.
 
-A ‘natural experiment’ is not an experiment designed by the researcher, but rather a specific type of observational study. In an **observational study**, the researcher does not control a treatment (as they would in a laboratory or a field experiment), but instead simply observes outcomes. A **natural experiment** occurs when the random assignment of a ‘treatment’ occurs naturally or due to some factor outside of the researcher’s control. For example, suppose a national government uses a random lottery to select some local governments to receive a massive influx of education funding. Setting aside the ethical concerns of this hypothetical policy, a researcher could take this opportunity to study the policy’s impact, comparing the educational outcomes of the lucky recipients (the treatment group) against those that received nothing (the control group). If true randomization exists, which is a claim that the researcher must clearly demonstrate, a natural experiment can provide a basis for establishing causality.\
+A ‘natural experiment’ is not an experiment designed by the researcher, but rather a specific type of observational study. In an **observational study**, the researcher does not control a treatment (as they would in a laboratory or a field experiment), but instead simply observes outcomes. A **natural experiment** occurs when the random assignment of a ‘treatment’ occurs naturally or due to some factor outside of the researcher’s control. For example, suppose a national government uses a random lottery to select some local governments to receive a massive influx of education funding. Setting aside the ethical concerns of this hypothetical policy, a researcher could take this opportunity to study the policy’s impact, comparing the educational outcomes of the lucky recipients (the treatment group) against those that received nothing (the control group). If true randomization exists, which is a claim that the researcher must clearly demonstrate, a natural experiment can provide a basis for establishing causality.
 
 ### Statistical Methods
 
-Statistical methods offer another important approach to comparative research. As discussed in Chapter 1, statistical methods are central to quantitative research, which focuses on testing hypotheses through mathematical analysis of large datasets. This approach allows scholars to uncover patterns and correlations in large-N research, which are studies that include a large sample size. However, these methods are primarily a mode of analysis and their use, on its own, does not typically allow researchers to claim causation.\
-\
+Statistical methods offer another important approach to comparative research. As discussed in Chapter 1, statistical methods are central to quantitative research, which focuses on testing hypotheses through mathematical analysis of large datasets. This approach allows scholars to uncover patterns and correlations in large-N research, which are studies that include a large sample size. However, these methods are primarily a mode of analysis and their use, on its own, does not typically allow researchers to claim causation.
+
 Many researchers default to statistical analysis to uncover correlations in applied research. Applied research is "research that attempts to explain social phenomena with immediate public policy implications" (Knoke, et al., 2002, p. 7). Scholars frequently utilize existing data from various sources, including government agencies, think tanks, and other research institutions, probing for correlations among variables to test their hypotheses (Omae and Bozonelos, 2020). For example, a researcher interested in education policy might pull state-level data from the U.S. Department of Education and analyze whether per-pupil spending correlates with standardized test scores. Finding a positive correlation would not, on its own, prove that spending causes higher scores—other factors, like household income or teacher experience, could be driving both—but it would give policymakers a data-driven starting point for further investigation. This same approach is also essential for analyzing public opinion survey data, a topic that will be explored in greater detail in Chapter 10.
 
 ### Comparative Methods
 
-Comparative methods offer a flexible approach that can accommodate either quantitative or qualitative research, as well as ‘mixed-methods’ designs that combine the two. While statistical methods rely on large datasets, qualitative research instead explores fewer cases in greater depth.  This provides the researcher an opportunity to explore ideas, develop evidence, build theories, or test hypotheses.  The scholar will thoroughly categorize, summarize, and analyze a small sample of cases to gain a deeper understanding of their research subject. \
+Comparative methods offer a flexible approach that can accommodate either quantitative or qualitative research, as well as ‘mixed-methods’ designs that combine the two. While statistical methods rely on large datasets, qualitative research instead explores fewer cases in greater depth. This provides the researcher an opportunity to explore ideas, develop evidence, build theories, or test hypotheses. The scholar will thoroughly categorize, summarize, and analyze a small sample of cases to gain a deeper understanding of their research subject.
 
-Regardless of sample size, all comparative methods focus on analyzing the specific differences and similarities across cases. This approach requires clear conceptualization and operationalization.  In other words, the concepts explored must first be clearly defined and made measurable.  For political scientists, these concepts are generally “nonmathematical and deal with substantive issues” in the real world (Goertz, 2006).  For example, suppose that a researcher wants to compare democracy across nations.  They must first begin by establishing what exactly constitutes a democracy.  They will then formulate specific measurements that appropriately translate that abstract idea into observable and measurable data.\
-\
-When a researcher wants to look beyond a single country but lacks a large dataset, they will typically rely on comparative methods. The comparative method has historically been defined as "the analysis of a small number of cases, entailing at least two observations” (Lijphart, 1971; Collier, 1993, p. 106).  Essentially, this approach provides a sort of middle ground for analysis: including too few cases for traditional statistical analysis, but enough to draw meaningful comparisons.  This ‘intermediate-N’ research allows a scholar to analyze anywhere from a few to a few dozen cases.
+Regardless of sample size, all comparative methods focus on analyzing the specific differences and similarities across cases. This approach requires clear conceptualization and operationalization. In other words, the concepts explored must first be clearly defined and made measurable. For political scientists, these concepts are generally “nonmathematical and deal with substantive issues” in the real world (Goertz, 2006). For example, suppose that a researcher wants to compare democracy across nations. They must first begin by establishing what exactly constitutes a democracy. They will then formulate specific measurements that appropriately translate that abstract idea into observable and measurable data.
+
+When a researcher wants to look beyond a single country but lacks a large dataset, they will typically rely on comparative methods. The comparative method has historically been defined as "the analysis of a small number of cases, entailing at least two observations” (Lijphart, 1971; Collier, 1993, p. 106). Essentially, this approach provides a sort of middle ground for analysis: including too few cases for traditional statistical analysis, but enough to draw meaningful comparisons. This ‘intermediate-N’ research allows a scholar to analyze anywhere from a few to a few dozen cases.
 
 ### Case Study Methods
 
 Moving from intermediate-N to ‘single-N’ research, a **case study** is an intensive look into a single case, often with the intent that the single case will help researchers to better understand a particular variable of interest. A **case** is a "spatially delimited phenomenon (a unit) observed at a single point in time, or over some period of time" (Gerring, 2007). Others define a case as "factual description of events that happened at some point in the past" (Naumes and Naumes, 2015). Depending on the study, a case could be an individual, a family household, a group or community, an institution, or a subnational unit within a country. Most frequently, however, comparativists will treat an entire country as their primary case of interest.
 
-While a traditional case study examines a single case in-depth, a **comparative case study** systematically compares two or more cases. In addition to choosing how many cases to include in their study, a researcher must also consider the specific level of analysis.  A **subnational case study**, for example, explores subnational governments rather than entire countries. Subnational case studies may occur entirely within one country (for example, examining policy responses across Mexican states) or across countries (such as examining policy responses among regional governments in the European Union).
+While a traditional case study examines a single case in-depth, a **comparative case study** systematically compares two or more cases. In addition to choosing how many cases to include in their study, a researcher must also consider the specific level of analysis. A **subnational case study**, for example, explores subnational governments rather than entire countries. Subnational case studies may occur entirely within one country (for example, examining policy responses across Mexican states) or across countries (such as examining policy responses among regional governments in the European Union).
 
 ::: {#fig-2-2-2}
 ![Figure 2.2.2: Diagram summarizing empirical research approaches. There are experimental methods. There are also non-experimental methods, including large-N (statistical) methods, intermediate-N (comparative), and single-N (case studies).](images/2.2.2.png){fig-alt="Flowchart diagram of empirical research methods branching from scientific methods into experimental methods and non-experimental methods, which encompass large-N statistical methods, intermediate-N comparative methods, and single-N case studies."}
@@ -161,9 +156,9 @@ While a traditional case study examines a single case in-depth, a **comparative 
 
 ### Use of Case Studies in Comparative Politics
 
-Case studies are vital to theory development within political science. They are the cornerstones of different discourses in the discipline. Blatter and Haverland (2012) note that a number of case studies are considered foundational within political science. These include Robert Dahl's *Who Governs?* (1961), Graham T. Allison's *Essence of Decision* (1971), Theda Skocpol's *States and Social Revolutions* (1979), and Arend Lijphart's *The Politics of Accommodation* (1968). Each of these classics is a seminal study into an important aspect of political science. Dahl's work popularized the concept of pluralism, where different actors hold and exercise power. Allison studied the decision-making processes during the 1962 Cuban Missile Crisis, and this work became influential for public policy analysis. Skocpol's book laid out the conditions from which a revolution may take place. Lijphart defined concepts that remain central to comparative studies of democracy, such as ‘politics of accommodation’ and ‘consensus democracy.’ These classic works demonstrate the importance of the case study, as their findings each generated major breakthroughs that reshaped the discipline of political science.\
-\
-As previously mentioned, countries (which comparativists typically refer to as ‘states’) are the most commonly selected cases in comparative politics. Comparisons often focus on regime types (democratic and non-democratic), political economies, political identities, social movements, and political violence. All of these comparisons require scholars to look within countries and then compare. As stated in Chapter 1, this practice of ‘looking within’ is what separates comparative politics from other subfields of political science. Thus, because the country is the primary setting for these political realities, it is naturally the central emphasis of comparative research.\
+Case studies are vital to theory development within political science. They are the cornerstones of different discourses in the discipline. Blatter and Haverland (2012) note that a number of case studies are considered foundational within political science. These include Robert Dahl's *Who Governs?* (1961), Graham T. Allison's *Essence of Decision* (1971), Theda Skocpol's *States and Social Revolutions* (1979), and Arend Lijphart's *The Politics of Accommodation* (1968). Each of these classics is a seminal study into an important aspect of political science. Dahl's work popularized the concept of pluralism, where different actors hold and exercise power. Allison studied the decision-making processes during the 1962 Cuban Missile Crisis, and this work became influential for public policy analysis. Skocpol's book laid out the conditions from which a revolution may take place. Lijphart defined concepts that remain central to comparative studies of democracy, such as ‘politics of accommodation’ and ‘consensus democracy.’ These classic works demonstrate the importance of the case study, as their findings each generated major breakthroughs that reshaped the discipline of political science.
+
+As previously mentioned, countries (which comparativists typically refer to as ‘states’) are the most commonly selected cases in comparative politics. Comparisons often focus on regime types (democratic and non-democratic), political economies, political identities, social movements, and political violence. All of these comparisons require scholars to look within countries and then compare. As stated in Chapter 1, this practice of ‘looking within’ is what separates comparative politics from other subfields of political science. Thus, because the country is the primary setting for these political realities, it is naturally the central emphasis of comparative research.
 
 ## 2.3: Case Selection
 
@@ -188,14 +183,9 @@ Depending on the research question, a researcher may choose cases that are typic
 
 Unlike descriptive case studies, **causal case studies** are "organized around a central hypothesis about how X affects Y" (Gerring, 2017). In a causal case study, the researcher identifies a **causal mechanism**, which "explain\[s\] how and why a hypothesized cause, in a given context, contributes to a particular outcome" (Falleti and Lynch, 2009). Case selection in causal case studies may follow an exploratory, estimating, or diagnostic approach, depending on how the researcher aims to generate, test, or refine a hypothesis.
 
-- **Exploratory Case Studies:**\
-  Researchers use exploratory case studies to identify potential causal hypotheses. In this approach, a researcher singles out the independent variables (X) that seem to exert the strongest influence on the outcome, or dependent variable (Y). The case study provides context that allows a researcher to assert a potential *causal mechanism*. If the scholar is looking to develop an "ideal-type" through their case study, they might seek out an extreme case. For example, a researcher aiming to understand the ideal-type capitalist system may investigate a country that practices an exceptionally pure, or extreme, form of capitalism.
-
-- **Estimating Case Studies:**\
-  Researchers use estimating case studies when they have already developed a hypothesis. In this approach, they utilize the case study to gather empirical evidence and rigorously test that claim. Therefore, the appropriate cases to select depend on the nature of the  hypothesis being evaluated.
-
-- **Diagnostic Case Studies:**\
-  Researchers use diagnostic case studies to "confirm, disconfirm, or refine a hypothesis" (Gerring 2017). In this approach, a researcher may choose a *least-likely case*, which is a case that should provide surprising evidence against the hypothesis. For example, modernization theory suggests that economic development is a prerequisite for democracy to develop and endure. Yet, despite its high level of ethno-linguistic diversity, its relatively underdeveloped economy, and its low level of modernization through large swaths of the country, India has been a stable democracy for over 75 years. This makes India a classic ‘least-likely’ case that may challenge the modernization hypothesis.
+- **Exploratory Case Studies:** Researchers use exploratory case studies to identify potential causal hypotheses. In this approach, a researcher singles out the independent variables (X) that seem to exert the strongest influence on the outcome, or dependent variable (Y). The case study provides context that allows a researcher to assert a potential *causal mechanism*. If the scholar is looking to develop an "ideal-type" through their case study, they might seek out an extreme case. For example, a researcher aiming to understand the ideal-type capitalist system may investigate a country that practices an exceptionally pure, or extreme, form of capitalism.
+- **Estimating Case Studies:** Researchers use estimating case studies when they have already developed a hypothesis. In this approach, they utilize the case study to gather empirical evidence and rigorously test that claim. Therefore, the appropriate cases to select depend on the nature of the hypothesis being evaluated.
+- **Diagnostic Case Studies:** Researchers use diagnostic case studies to "confirm, disconfirm, or refine a hypothesis" (Gerring 2017). In this approach, a researcher may choose a *least-likely case*, which is a case that should provide surprising evidence against the hypothesis. For example, modernization theory suggests that economic development is a prerequisite for democracy to develop and endure. Yet, despite its high level of ethno-linguistic diversity, its relatively underdeveloped economy, and its low level of modernization through large swaths of the country, India has been a stable democracy for over 75 years. This makes India a classic ‘least-likely’ case that may challenge the modernization hypothesis.
 
 ### Methods of Agreement and Difference
 
@@ -324,63 +314,34 @@ Skocpol, Theda, and Margaret Somers. (1980). “The Uses of Comparative History 
 ### Key Terms
 
 - **Applied research** is "research that attempts to explain social phenomena with immediate public policy implications."
-
 - **Case** is a "spatially delimited phenomenon (a unit) observed at a single point in time, or over some period of time."
-
 - **Case study** is an intensive look into a single case, often with the intent that the single case will help researchers to better understand a particular variable of interest.
-
 - **Causal case studies** are case studies "organized around a central hypothesis about how X affects Y."
-
 - **Causal mechanism** "explains how and why a hypothesized cause, in a given context, contributes to a particular outcome."
-
 - **Causal relationship** is a cause-and-effect relationship between two variables.
-
 - **Correlation** describes how two variables change in relation to one another.
-
 - **Comparative case study** is a study that compares two or more cases.
-
 - **Deductive reasoning** occurs when researchers start with a broad theory and then test it with specific observations.
-
 - **Dependent variable**, also called "outcome variable," is the assumed effect.
-
 - **Descriptive case studies** are case studies "not organized around a central, overarching causal hypothesis or theory."
-
 - **Empirical research** is analysis based on experiment, experience or observation.
-
 - **Experiments** are "laboratory studies in which investigators retain control over the recruitment, assignment to random conditions, treatment, and measurement of subjects."
-
 - **Falsifiability**, a term coined by Karl Popper, is the ability for a statement to be logically contradicted through empirical testing.
-
 - **Field experiment** is an experiment that takes place in a real-world setting instead of in a laboratory.
-
 - **Hypothesis** is a specific and testable prediction about the relationship between variables.
-
 - **Independent variable**, also called "explanatory variable," is the presumed cause.
-
 - **Inductive reasoning** occurs when researchers make specific observations and attempt to form a hypothesis (and eventually a broader theory).
-
 - **Inference** is a process of drawing a conclusion about an unobserved phenomenon, based on observed (empirical) information.
-
 - **Literature review** is a survey and synthesis of existing scholarly research that discusses existing knowledge and remaining limitations related to the question of interest.
-
 - **Most Different Systems Design (MDSD)** is a research design in which the cases selected for comparison are different from each other, but the outcomes are similar.
-
 - **Most Similar Systems Design (MSSD)** is a research design in which the cases selected for comparison are similar to each other, but the outcomes differ.
-
 - **Natural experiment** is an observational study that occurs when random assignment of a "treatment" occurs naturally or due to some factor other than a researcher.
-
 - **Non-falsifiable** refers to a research question or claim that cannot be proven false.
-
 - **Observational study** is a type of research in which researchers do not control a treatment (as in an experiment), but simply observe outcomes.
-
 - **Science** is the systematic and organized approach to any area of inquiry that utilizes scientific methods to acquire and build a body of knowledge, and political scientists use the scientific method to gain knowledge.
-
 - **Scientific method** is a process by which knowledge is acquired through a sequence of steps, which generally include the following components: question, observation, hypothesis, testing of the hypothesis, analysis of the outcomes, and reporting of the findings.
-
 - **Subnational case study** is when subnational governments, such provincial governments, regional governments, and other local governments often referred to as municipalities, are the cases that are compared.
-
 - **Theory** is a statement that explains the patterns seen in the world based on repeated experiences and observations.
-
 - **Variable** is a factor that can vary (take on different values).
 
 ### Summary
@@ -400,54 +361,30 @@ Case selection is an important part of any research design. Deciding how many ca
 ### Review Questions
 
 1.  The scientific method involves following steps. Which of these steps comes first?
-
-<!-- -->
-
-a.  conduct an experiment
-b.  form Hypotheses
-c.  ask a question
-d.  communicate findings
-
-<!-- -->
-
+    a.  conduct an experiment
+    b.  form Hypotheses
+    c.  ask a question
+    d.  communicate findings
 2.  What is an inference?
-
-<!-- -->
-
-a.  a process to acquire knowledge through a sequence of steps
-b.  an educated guess
-c.  a process of drawing a conclusion about an unobserved phenomenon based on observed information
-d.  the ability for a statement to be proven true or false
-
-<!-- -->
-
+    a.  a process to acquire knowledge through a sequence of steps
+    b.  an educated guess
+    c.  a process of drawing a conclusion about an unobserved phenomenon based on observed information
+    d.  the ability for a statement to be proven true or false
 3.  Who coined the term "falsifiable"?
-
-<!-- -->
-
-a.  Plato
-b.  Karl Popper
-c.  John Locke
-d.  Sidney Verba
-
-<!-- -->
-
+    a.  Plato
+    b.  Karl Popper
+    c.  John Locke
+    d.  Sidney Verba
 4.  Consider this question: Is chocolate ice cream better than vanilla ice cream? Why is this question NOT falsifiable?
-
-<!-- -->
-
-a.  it is not specific enough
-b.  it is too technical
-c.  it is subjective
-d.  it IS falsifiable
-
-<!-- -->
-
+    a.  it is not specific enough
+    b.  it is too technical
+    c.  it is subjective
+    d.  it IS falsifiable
 5.  When might using a comparative case study be ideal?
-a. when using a large sample size of data from a number of countries
-b. when comparing many countries at once
-c. when considering a small number of countries
-d. when a researcher wants to make a sweeping statement about many countries 
+    a.  when using a large sample size of data from a number of countries
+    b.  when comparing many countries at once
+    c.  when considering a small number of countries
+    d.  when a researcher wants to make a sweeping statement about many countries 
 
 Answers: 1.c, 2.c, 3.b, 4.c., 5.c
 
@@ -464,25 +401,18 @@ Answers: 1.c, 2.c, 3.b, 4.c., 5.c
 #### Websites
 
 - [CIA World Factbook](https://www.cia.gov/the-world-factbook/)
-
 - [Our World in Data](https://ourworldindata.org/democracy)
-
 - [World Development Indicators](https://www.worldbank.org/en/home)
 
 #### Journal Articles
 
 - Achen, Chris. (2005). “Let’s Put Garbage Can Regressions and Garbage Can Probits Where They Belong.” Conflict Management and Peace Science, 22(4), 327-339.
-
 - Achen, Chris. (2005). “Let’s Put Garbage Can Regressions and Garbage Can Probits Where They Belong.” *Conflict Management and Peace Science*, 22(4), 327–339.
-
 - Geddes, Barbara. (1990). “How the Cases You Choose Affect the Answers You Get: Selection Bias in Comparative Politics.” *Political Analysis*, 2, 131–50.
-
 - Kalleberg, Arthur L. (1966). “The Logic of Comparison: A Methodological Note on the Comparative Study of Political Systems.” *World Politics*, 19(1), 72.
 
 #### Books
 
 - Brady, Henry, & Collier, David, eds. (2000). *Rethinking Social Inquiry: Diverse Tools, Shared Standards*. Berkeley, CA: Rowman & Littlefield Publishers.
-
 - Franco, J., Lee, C., Vue, K., Bozonelos, D., Omae, M., & Cauchon, S. (2020). *Introduction to Political Science Research Methods* (1st ed.). PDF Version ISBN: 978-1-7351980-0-2.
-
 - King, Gary, Keohane, Robert, & Verba, Sidney. (1994). *Designing Social Inquiry: Scientific Inference in Qualitative Research*. Princeton: Princeton University Press.
