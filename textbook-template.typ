@@ -62,6 +62,7 @@
   body_background_color: rgb("#f8faff")
 ) = {
   block(
+    fill: rgb("#f8faff"),
     width: 100%,
     stroke: (
       left: 4.5pt + rgb("#1d4ed8"),
@@ -80,6 +81,9 @@
         width: 100%,
         inset: (x: 14pt, y: 9.5pt),
         stroke: (bottom: 1pt + rgb("#bfdbfe")),
+        spacing: 0pt,
+        above: 0pt,
+        below: 0pt,
         [
           #box(baseline: 15%)[
             #circle(radius: 5pt, stroke: 0.9pt + rgb("#1d4ed8"), fill: none)[
@@ -95,6 +99,9 @@
         fill: rgb("#f8faff"),
         width: 100%,
         inset: (x: 14pt, top: 12pt, bottom: 14pt),
+        spacing: 0pt,
+        above: 0pt,
+        below: 0pt,
         [
           #set text(font: font-serif, size: 9.7pt, fill: rgb("#0f172a"))
           #set par(leading: 0.68em)
