@@ -53,39 +53,55 @@
 // -----------------------------------------------------------------------------
 // Callout Boxes: Modern Left-Accent Card Matching HTML Theme
 // -----------------------------------------------------------------------------
-#let info-circle-icon(color) = box(baseline: 16%)[
-  #circle(radius: 4.8pt, stroke: 0.85pt + color, fill: none)[
-    #align(center + horizon)[#text(font: font-serif, size: 7.2pt, weight: "bold", fill: color, style: "italic")[i]]
-  ]
-]
-
 #let callout(
   body: [],
   title: "Callout",
   background_color: rgb("#f0f7ff"),
   icon: none,
-  icon_color: rgb("#1e3a8a"),
-  body_background_color: rgb("#f8fbff")
+  icon_color: rgb("#1d4ed8"),
+  body_background_color: rgb("#f8faff")
 ) = {
   block(
-    breakable: false,
-    fill: rgb("#f8fbff"),
-    stroke: (left: 3.5pt + icon_color, rest: 0.5pt + brand-border),
     width: 100%,
-    radius: (right: 6pt, left: 0pt),
-    inset: (x: 14pt, y: 12pt),
-    spacing: 1.5em,
+    stroke: (
+      left: 4.5pt + rgb("#1d4ed8"),
+      top: 0.75pt + rgb("#bfdbfe"),
+      right: 0.75pt + rgb("#bfdbfe"),
+      bottom: 0.75pt + rgb("#bfdbfe"),
+    ),
+    radius: 8pt,
+    clip: true,
+    spacing: 1.8em,
+    breakable: false,
     [
-      #block(width: 100%, below: 10pt)[
-        #info-circle-icon(icon_color)
-        #h(6pt)
-        #text(font: font-sans, weight: "bold", fill: brand-navy, size: 10.5pt)[#title]
-        #v(7pt)
-        #line(length: 100%, stroke: 0.5pt + brand-border-light)
-      ]
-      #text(font: font-serif, size: 9.6pt, fill: brand-ink)[
-        #body
-      ]
+      // Distinct Header Banner matching HTML .callout-header
+      #block(
+        fill: rgb("#eff6ff"),
+        width: 100%,
+        inset: (x: 14pt, y: 9.5pt),
+        stroke: (bottom: 1pt + rgb("#bfdbfe")),
+        [
+          #box(baseline: 15%)[
+            #circle(radius: 5pt, stroke: 0.9pt + rgb("#1d4ed8"), fill: none)[
+              #align(center + horizon)[#text(font: font-serif, size: 7.5pt, weight: "bold", fill: rgb("#1d4ed8"), style: "italic")[i]]
+            ]
+          ]
+          #h(7pt)
+          #text(font: font-sans, weight: 700, fill: rgb("#1e3a8a"), size: 10.2pt)[#title]
+        ]
+      )
+      // Card Body Area matching HTML .callout-body
+      #block(
+        fill: rgb("#f8faff"),
+        width: 100%,
+        inset: (x: 14pt, top: 12pt, bottom: 14pt),
+        [
+          #set text(font: font-serif, size: 9.7pt, fill: rgb("#0f172a"))
+          #set par(leading: 0.68em)
+          #set list(spacing: 1.1em, marker: text(fill: rgb("#1e293b"), size: 7.5pt)[•])
+          #body
+        ]
+      )
     ]
   )
 }

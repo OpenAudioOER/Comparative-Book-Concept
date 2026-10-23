@@ -83,7 +83,25 @@ function Pandoc(doc)
   return doc
 end
 
+function Div(d)
+  if not quarto.doc.is_format("typst") then
+    return d
+  end
+
+  -- Style callout intro text (e.g., "By the end of this section, you will be able to:")
+  -- to match HTML theme's sans-serif semi-bold lead style
+  if d.classes:includes("callout-note") or (d.classes:includes("callout") and not d.classes:includes("audio-timestamps")) then
+    if #d.content >= 3 and d.content[2].t == "Para" and d.content[3].t == "BulletList" then
+      local p_text = pandoc.utils.stringify(d.content[2])
+      d.content[2] = pandoc.RawBlock("typst", string.format('#block(below: 8pt)[#text(font: font-sans, weight: "bold", size: 9.3pt, fill: brand-slate)[%s]]', p_text))
+    end
+  end
+
+  return d
+end
+
 return {
   { Table = Table },
+  { Div = Div },
   { Pandoc = Pandoc }
 }
