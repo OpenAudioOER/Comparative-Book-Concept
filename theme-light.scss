@@ -336,6 +336,11 @@ main.content {
       border-color: var(--tb-blue);
       background-color: var(--tb-recessed);
     }
+
+    // Removed in desktop mode per user preference
+    @media (min-width: 768px) {
+      display: none !important;
+    }
   }
 
   .chapter-audio-float-btn {
@@ -440,19 +445,31 @@ main.content {
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      transition: all 0.2s ease;
 
-      .chapter-audio-tracks-header {
+      .chapter-audio-tracks-toggle {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
         padding: 0.42rem 0.75rem;
         background-color: var(--tb-recessed);
+        border: none;
         border-bottom: 1px solid var(--tb-border);
+        font-family: var(--tb-sans);
         font-size: 0.72rem;
         font-weight: 700;
         color: var(--tb-ink-secondary);
+        cursor: pointer;
+        text-align: left;
+        transition: background-color 0.15s ease, color 0.15s ease;
 
-        .tracks-header-title {
+        &:hover {
+          background-color: var(--tb-recessed-hover);
+          color: var(--tb-heading);
+        }
+
+        .tracks-toggle-title {
           display: inline-flex;
           align-items: center;
           gap: 0.35rem;
@@ -462,12 +479,19 @@ main.content {
           }
         }
 
+        .tracks-toggle-meta {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+        }
+
         .tracks-cued-status {
           display: inline-block;
           font-size: 0.68rem;
           font-weight: 700;
-          color: #065f46;
-          background-color: #d1fae5;
+          color: var(--tb-navy);
+          background-color: var(--tb-blue-soft);
+          border: 1px solid var(--tb-blue-border);
           padding: 0.1rem 0.45rem;
           border-radius: 9999px;
 
@@ -475,10 +499,16 @@ main.content {
             display: none !important;
           }
         }
+
+        .tracks-chevron {
+          font-size: 0.75rem;
+          transition: transform 0.2s ease;
+          color: var(--tb-muted);
+        }
       }
 
       .chapter-audio-tracks-list {
-        max-height: 200px;
+        max-height: 180px;
         overflow-y: auto;
         padding: 0.25rem 0.35rem;
         display: flex;
@@ -518,6 +548,7 @@ main.content {
           border-radius: 4px;
           padding: 0.1rem 0.35rem;
           flex-shrink: 0;
+          transition: all 0.14s ease;
         }
 
         .track-name {
@@ -544,8 +575,9 @@ main.content {
           }
 
           .cue-cued {
-            color: #065f46;
-            background-color: #d1fae5;
+            color: var(--tb-navy);
+            background-color: var(--tb-blue-soft);
+            border: 1px solid var(--tb-blue-border);
             border-radius: 4px;
             padding: 0.1rem 0.35rem;
 
@@ -579,15 +611,30 @@ main.content {
           border-color: var(--tb-blue-border);
 
           .track-badge {
-            background-color: #10b981;
+            background-color: var(--tb-navy);
             color: #ffffff;
-            border-color: #059669;
+            border-color: var(--tb-navy);
           }
 
           .track-name {
             color: var(--tb-navy);
             font-weight: 700;
           }
+        }
+      }
+
+      // Collapsed / Minimized state (used in pinned mode and on toggle)
+      &.is-collapsed {
+        .chapter-audio-tracks-toggle {
+          border-bottom: none;
+
+          .tracks-chevron {
+            transform: rotate(-90deg);
+          }
+        }
+
+        .chapter-audio-tracks-list {
+          display: none !important;
         }
       }
     }
@@ -614,6 +661,10 @@ main.content {
       right: 1rem;
       width: auto;
       max-width: calc(100vw - 2rem);
+    }
+
+    .chapter-audio-tracks-panel .chapter-audio-tracks-list {
+      max-height: 135px;
     }
 
     .chapter-audio-floating-header {
@@ -669,9 +720,9 @@ main.content {
   gap: 0.32rem;
   margin-left: 0.55rem;
   vertical-align: middle;
-  background-color: var(--tb-blue-soft);
-  color: var(--tb-navy);
-  border: 1px solid var(--tb-blue-border);
+  background-color: var(--tb-recessed);
+  color: var(--tb-ink-secondary);
+  border: 1px solid var(--tb-border);
   border-radius: 9999px;
   padding: 0.18rem 0.52rem;
   font-family: var(--tb-sans);
@@ -683,43 +734,30 @@ main.content {
   line-height: 1;
 
   svg {
-    color: var(--tb-blue);
+    color: var(--tb-muted);
     flex-shrink: 0;
   }
 
   &:hover {
-    background-color: #dbeafe;
-    border-color: var(--tb-blue);
+    background-color: var(--tb-blue-soft);
+    border-color: var(--tb-blue-border);
     color: var(--tb-navy);
     transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.16);
+    box-shadow: 0 2px 6px rgba(30, 58, 138, 0.12);
+
+    svg {
+      color: var(--tb-blue);
+    }
   }
 
   &.is-active {
-    background-color: #ecfdf5;
-    border-color: #a7f3d0;
-    color: #065f46;
+    background-color: var(--tb-blue-soft);
+    border-color: var(--tb-blue-border);
+    color: var(--tb-navy);
 
     svg {
-      color: #059669;
+      color: var(--tb-navy);
     }
-  }
-}
-
-// Subtle pulse highlight on section heading when jumped to
-.heading-audio-highlight {
-  animation: audioSectionPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1);
-  border-radius: 6px;
-}
-
-@keyframes audioSectionPulse {
-  0% {
-    background-color: rgba(37, 99, 235, 0.22);
-    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.22);
-  }
-  100% {
-    background-color: transparent;
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
   }
 }
 

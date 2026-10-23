@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-f410f26c2051512d7613bb4373d45db7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6551ee9b14c5b54026b0ab48ffde98ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-a0b3508fee4543700831772e941ab73f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-6551ee9b14c5b54026b0ab48ffde98ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2f65d0ca2a2a7539017e9b3ef15b738c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-524ba03eeb4427a6002f4a7cda5976ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-2f65d0ca2a2a7539017e9b3ef15b738c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -1695,19 +1695,23 @@ document.addEventListener("DOMContentLoaded", function () {
           ${
             audioTracks.length > 0
               ? `<div class="chapter-audio-tracks-panel">
-                  <div class="chapter-audio-tracks-header">
-                    <span class="tracks-header-title">${listSvg} Chapter Audio Timestamps</span>
-                    <span class="tracks-cued-status" hidden></span>
-                  </div>
+                  <button type="button" class="chapter-audio-tracks-toggle" aria-expanded="true" title="Toggle section timestamps list">
+                    <span class="tracks-toggle-title">
+                      ${listSvg}
+                      <span class="tracks-toggle-text">Sections &amp; Timestamps (${audioTracks.length})</span>
+                    </span>
+                    <span class="tracks-toggle-meta">
+                      <span class="tracks-cued-status" hidden></span>
+                      <span class="tracks-chevron" aria-hidden="true">▾</span>
+                    </span>
+                  </button>
                   <div class="chapter-audio-tracks-list" role="list">
                     ${audioTracks
                       .map(
                         (tr, i) => `
                       <button type="button" class="chapter-audio-track" data-track-index="${i}" data-seconds="${
                           tr.seconds
-                        }" ${
-                          tr.targetId ? `data-target-id="${tr.targetId}"` : ""
-                        } role="listitem">
+                        }" role="listitem">
                         <span class="track-badge">${tr.displayTime}</span>
                         <span class="track-name">${tr.title}</span>
                         <span class="track-cue-label">
@@ -1787,13 +1791,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       };
 
+      const tracksPanel = drawer.querySelector(".chapter-audio-tracks-panel");
+      const tracksToggle = drawer.querySelector(".chapter-audio-tracks-toggle");
+
+      const setTracksPanelCollapsed = (collapsed) => {
+        if (!tracksPanel) return;
+        tracksPanel.classList.toggle("is-collapsed", collapsed);
+        if (tracksToggle) {
+          tracksToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+        }
+      };
+
+      if (tracksToggle) {
+        tracksToggle.addEventListener("click", () => {
+          const isCollapsed = tracksPanel.classList.contains("is-collapsed");
+          setTracksPanelCollapsed(!isCollapsed);
+        });
+      }
+
       const cueToTimestamp = (seconds, trackIndex, options = {}) => {
-        const { scrollTarget = true, preferFloating = false } = options;
+        const { preferFloating = false } = options;
         setOpenState(true);
 
         if (preferFloating || window.scrollY > 300) {
           audioWrapper.classList.add("is-floating");
           floatLabel.textContent = "Pinned to corner";
+          // In pinned mode, minimize the timestamps list by default to save screen space
+          setTracksPanelCollapsed(true);
         }
 
         ensureIframe(seconds);
@@ -1824,19 +1848,7 @@ document.addEventListener("DOMContentLoaded", function () {
           statusEl.textContent = `Cued at ${track.displayTime}`;
         }
 
-        if (scrollTarget && track && track.targetId) {
-          const el =
-            document.getElementById(track.targetId) ||
-            main.querySelector(`[data-anchor-id="${track.targetId}"]`);
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth", block: "start" });
-            el.classList.add("heading-audio-highlight");
-            setTimeout(
-              () => el.classList.remove("heading-audio-highlight"),
-              2400
-            );
-          }
-        }
+        // NOTE: Strictly no scrolling or changing page location!
       };
 
       // Attach heading audio pills to matching sections in chapter body
@@ -1876,10 +1888,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (!isOpen) {
             setOpenState(true);
           }
-          const panel = drawer.querySelector(".chapter-audio-tracks-panel");
-          if (panel) {
-            panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
-          }
+          setTracksPanelCollapsed(false);
         });
       }
 
@@ -1887,7 +1896,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.addEventListener("click", () => {
           const idx = parseInt(btn.getAttribute("data-track-index"), 10);
           const secs = parseInt(btn.getAttribute("data-seconds"), 10);
-          cueToTimestamp(secs, idx, { scrollTarget: true });
+          cueToTimestamp(secs, idx);
         });
       });
 
@@ -1897,7 +1906,6 @@ document.addEventListener("DOMContentLoaded", function () {
           const idx = parseInt(pill.getAttribute("data-track-index"), 10);
           const secs = parseInt(pill.getAttribute("data-seconds"), 10);
           cueToTimestamp(secs, idx, {
-            scrollTarget: false,
             preferFloating: true,
           });
         });
@@ -1909,6 +1917,10 @@ document.addEventListener("DOMContentLoaded", function () {
         floatLabel.textContent = floating
           ? "Pinned to corner"
           : "Pin while reading";
+        if (floating) {
+          // Collapse sections list in pinned mode to keep footprint minimal
+          setTracksPanelCollapsed(true);
+        }
       });
 
       unpinBtn.addEventListener("click", () => {
