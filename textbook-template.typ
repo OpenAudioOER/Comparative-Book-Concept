@@ -335,34 +335,148 @@
   }
 
   // ---------------------------------------------------------------------------
-  // Figures: Framed with Fine-Print Captions (body-only caption, 7.6pt)
+  // Figures: Framed Cards with Soft Blue Badges & Muted Source Attribution
   // ---------------------------------------------------------------------------
-  show figure.caption: it => {
-    set align(center)
-    set par(leading: 0.55em)
-    text(font: font-sans, size: 7.6pt, fill: brand-slate)[#it.body]
+  let format-caption(body) = {
+    if not body.has("children") {
+      return body
+    }
+    
+    let children = body.children
+    let source-start = none
+    
+    for (i, child) in children.enumerate() {
+      if child.has("text") and (child.text.contains("(Source") or child.text.contains("(source")) {
+        source-start = i
+        break
+      }
+    }
+    
+    let main-children = if source-start != none { children.slice(0, source-start) } else { children }
+    let source-children = if source-start != none { children.slice(source-start) } else { () }
+    
+    // Format main-children: find Figure label, style as pill badge, and drop following colon
+    let clean-main = ()
+    let i = 0
+    while i < main-children.len() {
+      let child = main-children.at(i)
+      if child.has("text") and child.text.starts-with("Figure ") and clean-main.len() <= 1 {
+        let fig-label = child.text
+        if fig-label.ends-with(":") {
+          fig-label = fig-label.slice(0, -1).trim()
+        }
+        clean-main.push(box(
+          fill: rgb("#eff6ff"),
+          radius: 4pt,
+          inset: (x: 6pt, y: 3pt),
+          stroke: 0.6pt + rgb("#bfdbfe"),
+          text(font: font-sans, size: 8pt, weight: "bold", fill: rgb("#1e40af"))[#fig-label]
+        ))
+        clean-main.push(h(6pt))
+        i += 1
+        // If next is colon, skip it
+        if i < main-children.len() and main-children.at(i).has("text") and main-children.at(i).text.trim() == ":" {
+          i += 1
+        }
+        // If next is space, skip it
+        if i < main-children.len() and main-children.at(i).has("text") and main-children.at(i).text == " " {
+          i += 1
+        }
+      } else {
+        clean-main.push(child)
+        i += 1
+      }
+    }
+    
+    // Clean up trailing space in main content if any
+    if clean-main.len() > 0 and clean-main.last() == [ ] {
+      let _ = clean-main.pop()
+    }
+    
+    let main-content = clean-main.join("")
+    
+    if source-children.len() == 0 {
+      return main-content
+    }
+    
+    // Clean source-children (strip leading '(' and trailing ')')
+    let clean-source = ()
+    for (idx, child) in source-children.enumerate() {
+      if idx == 0 and child.has("text") {
+        let t = child.text.trim()
+        if t.starts-with("(") {
+          t = t.slice(1).trim()
+        }
+        clean-source.push(text(t))
+      } else if idx == source-children.len() - 1 and child.has("text") {
+        let t = child.text.trim()
+        if t.ends-with(").") {
+          t = t.slice(0, -2).trim()
+        } else if t.ends-with(")") {
+          t = t.slice(0, -1).trim()
+        }
+        clean-source.push(text(t))
+      } else {
+        clean-source.push(child)
+      }
+    }
+    
+    let source-content = clean-source.join("")
+    
+    [
+      #main-content
+      #v(8pt)
+      #line(length: 100%, stroke: (paint: brand-border-light, dash: "dashed", thickness: 0.6pt))
+      #v(4pt)
+      #text(font: font-sans, size: 7.5pt, fill: brand-muted)[#source-content]
+    ]
   }
 
-  show figure.where(kind: image): it => {
+  let render-figure-card(it) = {
+    // If figure has no caption or empty caption (e.g. Quarto wrapper float container), transparently unwrap body
+    let has-real-caption = it.has("caption") and it.caption != none and content-to-string(it.caption.body).trim() != ""
+    if not has-real-caption {
+      return it.body
+    }
+
     set align(center)
     block(
       width: 100%,
-      spacing: 1.5em,
+      stroke: 0.75pt + brand-border,
+      radius: 10pt,
+      fill: rgb("#ffffff"),
+      clip: true,
+      spacing: 2em,
+      breakable: false,
       [
         #block(
-          stroke: 0.75pt + brand-border,
-          radius: 4pt,
-          clip: true,
-          inset: 0pt,
-          it.body
+          width: 100%,
+          inset: (x: 12pt, top: 12pt, bottom: 10pt),
+          align(center)[
+            #block(
+              radius: 6pt,
+              clip: true,
+              stroke: 0.5pt + brand-border-light,
+              it.body
+            )
+          ]
         )
-        #if it.has("caption") [
-          #v(5pt)
-          #it.caption
-        ]
+        #line(length: 100%, stroke: 0.5pt + brand-border-light)
+        #block(
+          width: 100%,
+          inset: (x: 14pt, top: 10pt, bottom: 12pt),
+          align(left)[
+            #set text(font: font-serif, size: 9pt, fill: brand-ink)
+            #set par(leading: 0.68em, justify: false)
+            #format-caption(it.caption.body)
+          ]
+        )
       ]
     )
   }
+
+  show figure.where(kind: "quarto-float-fig"): it => render-figure-card(it)
+  show figure.where(kind: image): it => render-figure-card(it)
 
   doc
 }
