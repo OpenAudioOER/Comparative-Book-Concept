@@ -51,8 +51,14 @@
 ]
 
 // -----------------------------------------------------------------------------
-// Callout Boxes: Modern Left-Accent Card (Icon removed, elegant tracked header)
+// Callout Boxes: Modern Left-Accent Card Matching HTML Theme
 // -----------------------------------------------------------------------------
+#let info-circle-icon(color) = box(baseline: 16%)[
+  #circle(radius: 4.8pt, stroke: 0.85pt + color, fill: none)[
+    #align(center + horizon)[#text(font: font-serif, size: 7.2pt, weight: "bold", fill: color, style: "italic")[i]]
+  ]
+]
+
 #let callout(
   body: [],
   title: "Callout",
@@ -66,14 +72,16 @@
     fill: rgb("#f8fbff"),
     stroke: (left: 3.5pt + icon_color, rest: 0.5pt + brand-border),
     width: 100%,
-    radius: (right: 5pt, left: 0pt),
-    inset: (x: 14pt, y: 11pt),
-    spacing: 1.4em,
+    radius: (right: 6pt, left: 0pt),
+    inset: (x: 14pt, y: 12pt),
+    spacing: 1.5em,
     [
-      #block(below: 8pt)[
-        #text(font: font-sans, weight: "bold", fill: icon_color, size: 9pt, tracking: 1.2pt)[
-          #upper(title)
-        ]
+      #block(width: 100%, below: 10pt)[
+        #info-circle-icon(icon_color)
+        #h(6pt)
+        #text(font: font-sans, weight: "bold", fill: brand-navy, size: 10.5pt)[#title]
+        #v(7pt)
+        #line(length: 100%, stroke: 0.5pt + brand-border-light)
       ]
       #text(font: font-serif, size: 9.6pt, fill: brand-ink)[
         #body
