@@ -311,6 +311,33 @@ main.content {
     }
   }
 
+  .chapter-audio-tracks-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: transparent;
+    color: var(--tb-ink-secondary);
+    border: 1px solid var(--tb-border);
+    border-radius: 999px;
+    padding: 0.3rem 0.72rem;
+    font-family: var(--tb-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    svg {
+      color: var(--tb-blue);
+    }
+
+    &:hover {
+      color: var(--tb-navy);
+      border-color: var(--tb-blue);
+      background-color: var(--tb-recessed);
+    }
+  }
+
   .chapter-audio-float-btn {
     display: inline-flex;
     align-items: center;
@@ -403,6 +430,167 @@ main.content {
       width: 100%;
       border-radius: 12px;
     }
+
+    // Timestamps Panel
+    .chapter-audio-tracks-panel {
+      margin-top: 0.55rem;
+      background-color: var(--tb-card);
+      border: 1px solid var(--tb-border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      .chapter-audio-tracks-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.42rem 0.75rem;
+        background-color: var(--tb-recessed);
+        border-bottom: 1px solid var(--tb-border);
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--tb-ink-secondary);
+
+        .tracks-header-title {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+
+          svg {
+            color: var(--tb-blue);
+          }
+        }
+
+        .tracks-cued-status {
+          display: inline-block;
+          font-size: 0.68rem;
+          font-weight: 700;
+          color: #065f46;
+          background-color: #d1fae5;
+          padding: 0.1rem 0.45rem;
+          border-radius: 9999px;
+
+          &[hidden] {
+            display: none !important;
+          }
+        }
+      }
+
+      .chapter-audio-tracks-list {
+        max-height: 200px;
+        overflow-y: auto;
+        padding: 0.25rem 0.35rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: var(--tb-border-strong);
+          border-radius: 9999px;
+        }
+      }
+
+      .chapter-audio-track {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        width: 100%;
+        padding: 0.32rem 0.5rem;
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        text-align: left;
+        font-family: var(--tb-sans);
+        cursor: pointer;
+        transition: all 0.14s ease;
+
+        .track-badge {
+          font-variant-numeric: tabular-nums;
+          font-size: 0.7rem;
+          font-weight: 700;
+          color: var(--tb-muted);
+          background-color: var(--tb-recessed);
+          border: 1px solid var(--tb-border);
+          border-radius: 4px;
+          padding: 0.1rem 0.35rem;
+          flex-shrink: 0;
+        }
+
+        .track-name {
+          flex: 1;
+          font-size: 0.74rem;
+          font-weight: 600;
+          color: var(--tb-ink);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .track-cue-label {
+          flex-shrink: 0;
+          font-size: 0.68rem;
+          font-weight: 700;
+          border-radius: 4px;
+          padding: 0.12rem 0.42rem;
+          transition: all 0.14s ease;
+
+          .cue-idle {
+            color: var(--tb-muted);
+            opacity: 0.8;
+          }
+
+          .cue-cued {
+            color: #065f46;
+            background-color: #d1fae5;
+            border-radius: 4px;
+            padding: 0.1rem 0.35rem;
+
+            &[hidden] {
+              display: none !important;
+            }
+          }
+        }
+
+        &:hover {
+          background-color: var(--tb-recessed);
+          border-color: var(--tb-border);
+
+          .track-name {
+            color: var(--tb-navy);
+          }
+
+          .track-badge {
+            color: var(--tb-navy);
+            border-color: var(--tb-blue-border);
+          }
+
+          .cue-idle {
+            color: var(--tb-navy);
+            opacity: 1;
+          }
+        }
+
+        &.is-active {
+          background-color: var(--tb-blue-soft);
+          border-color: var(--tb-blue-border);
+
+          .track-badge {
+            background-color: #10b981;
+            color: #ffffff;
+            border-color: #059669;
+          }
+
+          .track-name {
+            color: var(--tb-navy);
+            font-weight: 700;
+          }
+        }
+      }
+    }
   }
 
   // Docked / Floating Picture-in-Picture Mode (Bottom-Left)
@@ -471,6 +659,67 @@ main.content {
         }
       }
     }
+  }
+}
+
+// In-text Section Audio Pill attached to H2/H3 Headings
+.heading-audio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  margin-left: 0.55rem;
+  vertical-align: middle;
+  background-color: var(--tb-blue-soft);
+  color: var(--tb-navy);
+  border: 1px solid var(--tb-blue-border);
+  border-radius: 9999px;
+  padding: 0.18rem 0.52rem;
+  font-family: var(--tb-sans);
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  line-height: 1;
+
+  svg {
+    color: var(--tb-blue);
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background-color: #dbeafe;
+    border-color: var(--tb-blue);
+    color: var(--tb-navy);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.16);
+  }
+
+  &.is-active {
+    background-color: #ecfdf5;
+    border-color: #a7f3d0;
+    color: #065f46;
+
+    svg {
+      color: #059669;
+    }
+  }
+}
+
+// Subtle pulse highlight on section heading when jumped to
+.heading-audio-highlight {
+  animation: audioSectionPulse 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 6px;
+}
+
+@keyframes audioSectionPulse {
+  0% {
+    background-color: rgba(37, 99, 235, 0.22);
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.22);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
   }
 }
 

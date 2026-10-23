@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-f410f26c2051512d7613bb4373d45db7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-092cc4e355f0f09c47e8ceae508967d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-ea3481a4bd8e7697a31c228f385ba857.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-092cc4e355f0f09c47e8ceae508967d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6551ee9b14c5b54026b0ab48ffde98ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a0b3508fee4543700831772e941ab73f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-6551ee9b14c5b54026b0ab48ffde98ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -921,10 +921,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // -------------------------------------------------------------------------
-  // 1a. Chapter Audio Bar & On-Demand Spotify Player
+  // 1a. Chapter Audio Bar & On-Demand Spotify Player with Section Timestamps
   //     Automatically detects any open.spotify.com/episode/... link (and
   //     optional podcasts.apple.com link) at the top of the chapter or inside
   //     "Student Resources" and builds a clean editorial audio bar under H1.
+  //     Optionally parses a ::: audio-timestamps block (Approach A) to cue
+  //     Spotify playback at exact time offsets and jump between textbook sections.
   // -------------------------------------------------------------------------
   const titleHeader = document.getElementById("title-block-header");
   const spotifyLinkEl = main.querySelector(
@@ -954,9 +956,142 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
+      // -----------------------------------------------------------------------
+      // Parse ::: audio-timestamps (Approach A)
+      // -----------------------------------------------------------------------
+      const timestampsBlock = main.querySelector(".audio-timestamps, #audio-timestamps");
+      const audioTracks = [];
+      if (timestampsBlock) {
+        const rawItems = timestampsBlock.querySelectorAll("li");
+        const entries =
+          rawItems.length > 0
+            ? Array.from(rawItems).map((li) => ({
+                text: li.textContent.trim(),
+                link: li.querySelector("a"),
+              }))
+            : timestampsBlock.textContent
+                .split("\n")
+                .map((l) => l.trim())
+                .filter((l) =>
+                  /^\s*(?:[-*•]|\d+\.)?\s*\[?\d{1,2}:\d{2}/.test(l)
+                )
+                .map((l) => ({
+                  text: l.replace(/^[-*•]\s*/, ""),
+                  link: null,
+                }));
+
+        const contentHeadings = Array.from(
+          main.querySelectorAll("h2, h3, h4")
+        ).filter(
+          (h) =>
+            !h.closest(
+              "#toc-title, .callout-header, .chapter-audio-wrapper, #title-block-header"
+            )
+        );
+
+        const normStr = (s) =>
+          (s || "")
+            .toLowerCase()
+            .replace(/[^\w\s]/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+
+        entries.forEach((entry, idx) => {
+          const raw = entry.text;
+          const match = raw.match(
+            /^(?:\[?\s*)?(\d{1,2}:\d{2}(?::\d{2})?)(?:\]?\s*[-–—:]?\s*)(.+)$/
+          );
+          if (!match) return;
+
+          const timeStr = match[1];
+          const rawTitle = entry.link
+            ? entry.link.textContent.trim()
+            : match[2].trim();
+
+          const parts = timeStr.split(":").map(Number);
+          const seconds =
+            parts.length === 3
+              ? parts[0] * 3600 + parts[1] * 60 + parts[2]
+              : parts.length === 2
+              ? parts[0] * 60 + parts[1]
+              : 0;
+
+          const h = Math.floor(seconds / 3600);
+          const m = Math.floor((seconds % 3600) / 60);
+          const s = seconds % 60;
+          const pad = (n) => String(n).padStart(2, "0");
+          const displayTime =
+            h > 0 ? `${h}:${pad(m)}:${pad(s)}` : `${m}:${pad(s)}`;
+
+          let targetEl = null;
+          let targetId = null;
+
+          if (entry.link && entry.link.getAttribute("href")?.startsWith("#")) {
+            targetId = entry.link.getAttribute("href").slice(1);
+            targetEl =
+              document.getElementById(targetId) ||
+              main.querySelector(`[data-anchor-id="${targetId}"]`);
+          }
+
+          if (!targetEl) {
+            const normTitle = normStr(rawTitle);
+            const numMatch = rawTitle.match(/^(\d+(?:\.\d+)+)/);
+            if (numMatch) {
+              const prefix = numMatch[1];
+              targetEl = contentHeadings.find((hd) => {
+                const hNorm = normStr(hd.textContent);
+                return (
+                  hNorm.startsWith(prefix) ||
+                  hNorm.startsWith("chapter " + prefix)
+                );
+              });
+            }
+            if (!targetEl && normTitle) {
+              targetEl = contentHeadings.find(
+                (hd) => normStr(hd.textContent) === normTitle
+              );
+            }
+            if (!targetEl && normTitle) {
+              targetEl = contentHeadings.find((hd) => {
+                const hNorm = normStr(hd.textContent);
+                return (
+                  hNorm &&
+                  (normTitle.includes(hNorm) || hNorm.includes(normTitle))
+                );
+              });
+            }
+          }
+
+          if (targetEl) {
+            targetId =
+              targetEl.getAttribute("data-anchor-id") ||
+              targetEl.id ||
+              targetEl.closest("section")?.id;
+            if (!targetId) {
+              targetId = "sec-audio-track-" + idx;
+              targetEl.id = targetId;
+            }
+          }
+
+          audioTracks.push({
+            index: idx,
+            seconds,
+            timeStr,
+            displayTime,
+            title: rawTitle,
+            targetId,
+            targetEl,
+          });
+        });
+
+        // Safely remove the raw authoring container from the page view
+        timestampsBlock.remove();
+      }
+
       const headphonesSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>`;
       const extArrowSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>`;
       const pinSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 14h6v4H9z"/></svg>`;
+      const listSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>`;
 
       const audioWrapper = document.createElement("div");
       audioWrapper.className = "chapter-audio-wrapper";
@@ -967,6 +1102,14 @@ document.addEventListener("DOMContentLoaded", function () {
             <span class="audio-toggle-label">Listen to Chapter</span>
             <span class="audio-toggle-chevron" aria-hidden="true">▾</span>
           </button>
+          ${
+            audioTracks.length > 0
+              ? `<button type="button" class="chapter-audio-tracks-btn" title="Jump to textbook section by timestamp">
+                  ${listSvg}
+                  <span class="tracks-btn-label">Sections (${audioTracks.length})</span>
+                </button>`
+              : ""
+          }
           <button type="button" class="chapter-audio-float-btn" hidden title="Float player in corner while scrolling">
             ${pinSvg}
             <span class="float-btn-label">Pin while reading</span>
@@ -990,6 +1133,36 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
           <div class="chapter-audio-frame-holder"></div>
+          ${
+            audioTracks.length > 0
+              ? `<div class="chapter-audio-tracks-panel">
+                  <div class="chapter-audio-tracks-header">
+                    <span class="tracks-header-title">${listSvg} Chapter Audio Timestamps</span>
+                    <span class="tracks-cued-status" hidden></span>
+                  </div>
+                  <div class="chapter-audio-tracks-list" role="list">
+                    ${audioTracks
+                      .map(
+                        (tr, i) => `
+                      <button type="button" class="chapter-audio-track" data-track-index="${i}" data-seconds="${
+                          tr.seconds
+                        }" ${
+                          tr.targetId ? `data-target-id="${tr.targetId}"` : ""
+                        } role="listitem">
+                        <span class="track-badge">${tr.displayTime}</span>
+                        <span class="track-name">${tr.title}</span>
+                        <span class="track-cue-label">
+                          <span class="cue-idle">Jump</span>
+                          <span class="cue-cued" hidden>Cued</span>
+                        </span>
+                      </button>
+                    `
+                      )
+                      .join("")}
+                  </div>
+                </div>`
+              : ""
+          }
         </div>
       `;
 
@@ -997,6 +1170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const toggleBtn = audioWrapper.querySelector(".chapter-audio-toggle");
       const toggleLabel = audioWrapper.querySelector(".audio-toggle-label");
+      const tracksBtn = audioWrapper.querySelector(".chapter-audio-tracks-btn");
       const floatBtn = audioWrapper.querySelector(".chapter-audio-float-btn");
       const floatLabel = audioWrapper.querySelector(".float-btn-label");
       const linksEl = audioWrapper.querySelector(".chapter-audio-links");
@@ -1008,21 +1182,33 @@ document.addEventListener("DOMContentLoaded", function () {
       const closeBtn = audioWrapper.querySelector(".floating-close-btn");
 
       let iframeLoaded = false;
-      const ensureIframe = () => {
-        if (iframeLoaded) return;
+      const getSpotifyEmbedUrl = (timeOffset) => {
         const isDark = document.body.classList.contains("quarto-dark");
         const themeParam = isDark ? "&theme=0" : "";
-        const iframe = document.createElement("iframe");
-        iframe.src = `https://open.spotify.com/embed/episode/${episodeId}?utm_source=generator${themeParam}`;
-        iframe.width = "100%";
-        iframe.height = "152";
-        iframe.frameBorder = "0";
-        iframe.allow =
-          "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
-        iframe.loading = "lazy";
-        iframe.title = "Spotify Chapter Audio Player";
-        frameHolder.appendChild(iframe);
-        iframeLoaded = true;
+        const tParam =
+          typeof timeOffset === "number" && timeOffset > 0
+            ? `&t=${timeOffset}`
+            : "";
+        return `https://open.spotify.com/embed/episode/${episodeId}?utm_source=generator${themeParam}${tParam}`;
+      };
+
+      const ensureIframe = (timeOffset) => {
+        let iframe = frameHolder.querySelector("iframe");
+        if (!iframe) {
+          iframe = document.createElement("iframe");
+          iframe.src = getSpotifyEmbedUrl(timeOffset);
+          iframe.width = "100%";
+          iframe.height = "152";
+          iframe.frameBorder = "0";
+          iframe.allow =
+            "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+          iframe.loading = "lazy";
+          iframe.title = "Spotify Chapter Audio Player";
+          frameHolder.appendChild(iframe);
+          iframeLoaded = true;
+        } else if (typeof timeOffset === "number") {
+          iframe.src = getSpotifyEmbedUrl(timeOffset);
+        }
       };
 
       const setOpenState = (open) => {
@@ -1042,9 +1228,120 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       };
 
+      const cueToTimestamp = (seconds, trackIndex, options = {}) => {
+        const { scrollTarget = true, preferFloating = false } = options;
+        setOpenState(true);
+
+        if (preferFloating || window.scrollY > 300) {
+          audioWrapper.classList.add("is-floating");
+          floatLabel.textContent = "Pinned to corner";
+        }
+
+        ensureIframe(seconds);
+
+        drawer.querySelectorAll(".chapter-audio-track").forEach((btn) => {
+          const isThis =
+            parseInt(btn.getAttribute("data-track-index"), 10) === trackIndex;
+          btn.classList.toggle("is-active", isThis);
+          btn.setAttribute("aria-selected", isThis ? "true" : "false");
+          const idleSpan = btn.querySelector(".cue-idle");
+          const cuedSpan = btn.querySelector(".cue-cued");
+          if (idleSpan && cuedSpan) {
+            idleSpan.hidden = isThis;
+            cuedSpan.hidden = !isThis;
+          }
+        });
+
+        main.querySelectorAll(".heading-audio-pill").forEach((pill) => {
+          const isThis =
+            parseInt(pill.getAttribute("data-track-index"), 10) === trackIndex;
+          pill.classList.toggle("is-active", isThis);
+        });
+
+        const track = audioTracks[trackIndex];
+        const statusEl = drawer.querySelector(".tracks-cued-status");
+        if (statusEl && track) {
+          statusEl.hidden = false;
+          statusEl.textContent = `Cued at ${track.displayTime}`;
+        }
+
+        if (scrollTarget && track && track.targetId) {
+          const el =
+            document.getElementById(track.targetId) ||
+            main.querySelector(`[data-anchor-id="${track.targetId}"]`);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+            el.classList.add("heading-audio-highlight");
+            setTimeout(
+              () => el.classList.remove("heading-audio-highlight"),
+              2400
+            );
+          }
+        }
+      };
+
+      // Attach heading audio pills to matching sections in chapter body
+      audioTracks.forEach((tr) => {
+        if (!tr.targetEl) return;
+        const pillBtn = document.createElement("button");
+        pillBtn.type = "button";
+        pillBtn.className = "heading-audio-pill";
+        pillBtn.setAttribute("data-seconds", tr.seconds);
+        pillBtn.setAttribute("data-track-index", tr.index);
+        pillBtn.setAttribute(
+          "aria-label",
+          `Listen to audio from ${tr.displayTime}: ${tr.title}`
+        );
+        pillBtn.title = `Listen from ${tr.displayTime} (${tr.title})`;
+        pillBtn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+          <span class="pill-time">${tr.displayTime}</span>
+        `;
+        const anchorLink = tr.targetEl.querySelector(".anchorjs-link");
+        if (anchorLink) {
+          tr.targetEl.insertBefore(pillBtn, anchorLink);
+        } else {
+          tr.targetEl.appendChild(pillBtn);
+        }
+      });
+
+      // Events
       toggleBtn.addEventListener("click", () => {
         const isOpen = audioWrapper.classList.contains("is-open");
         setOpenState(!isOpen);
+      });
+
+      if (tracksBtn) {
+        tracksBtn.addEventListener("click", () => {
+          const isOpen = audioWrapper.classList.contains("is-open");
+          if (!isOpen) {
+            setOpenState(true);
+          }
+          const panel = drawer.querySelector(".chapter-audio-tracks-panel");
+          if (panel) {
+            panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+        });
+      }
+
+      drawer.querySelectorAll(".chapter-audio-track").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const idx = parseInt(btn.getAttribute("data-track-index"), 10);
+          const secs = parseInt(btn.getAttribute("data-seconds"), 10);
+          cueToTimestamp(secs, idx, { scrollTarget: true });
+        });
+      });
+
+      main.querySelectorAll(".heading-audio-pill").forEach((pill) => {
+        pill.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const idx = parseInt(pill.getAttribute("data-track-index"), 10);
+          const secs = parseInt(pill.getAttribute("data-seconds"), 10);
+          cueToTimestamp(secs, idx, {
+            scrollTarget: false,
+            preferFloating: true,
+          });
+        });
       });
 
       floatBtn.addEventListener("click", () => {

@@ -2,6 +2,17 @@
 
 [Listen on Spotify](https://open.spotify.com/episode/7HOiM3L5he2hcgFav70Zqi?si=0rvl4zKYRX2bR1fk2lYWWw)
 
+::: audio-timestamps
+- 0:00:00 Welcome & Introduction
+- 0:00:45 1.1: What is Comparative Politics?
+- 0:02:15 Overview & Comparative Politics Subfield
+- 0:04:30 American Politics, IR & Political Philosophy
+- 0:06:50 1.2: Approaches to Comparative Politics
+- 0:08:40 Area Studies, Cross-National & Subnational Studies
+- 0:11:15 1.3: Outline of the Textbook
+- 0:13:30 1.5: Student Resources
+:::
+
 ## 1.1: What is Comparative Politics?
 
 ::: callout-note
