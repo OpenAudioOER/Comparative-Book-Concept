@@ -85,7 +85,7 @@
         above: 0pt,
         below: 0pt,
         [
-          #box(baseline: 15%)[
+          #box(baseline: 2.7pt)[
             #circle(radius: 5pt, stroke: 0.9pt + rgb("#1d4ed8"), fill: none)[
               #align(center + horizon)[#text(font: font-serif, size: 7.5pt, weight: "bold", fill: rgb("#1d4ed8"), style: "italic")[i]]
             ]
