@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dr.&nbsp;Dino Bozonelos, Dr.&nbsp;Julia Wendt, Dr.&nbsp;Charlotte Lee, Jessica Scarffe, Brian Barrick, Dr.&nbsp;Masahiro Omae, Dr.&nbsp;Josh Franco, Dr.&nbsp;Byran Martin, and Stefan Veldhuis">
-<meta name="dcterms.date" content="2026-10-21">
+<meta name="dcterms.date" content="2026-10-22">
 
 <title>Introduction to Comparative Government and Politics, 2nd Edition</title>
 <style>
@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-f410f26c2051512d7613bb4373d45db7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-385ae7bc5596f1dfbcfb3626e3b84dd1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d3060acfa9d653e1ad51ee9a23155b93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-385ae7bc5596f1dfbcfb3626e3b84dd1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-092cc4e355f0f09c47e8ceae508967d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ea3481a4bd8e7697a31c228f385ba857.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-092cc4e355f0f09c47e8ceae508967d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -297,7 +297,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2: How to Study Comparative Politics – Using Comparative Methods</span></a>
+  <a href="./chapter-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2: How to Study Comparative Politics: Using Comparative Methods</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -388,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 21, 2026</p>
+      <p class="date">October 22, 2026</p>
     </div>
   </div>
   
@@ -1417,6 +1417,50 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    const positionKeyTermPopover = (strong, pop) => {
+      const vw = document.documentElement.clientWidth || window.innerWidth;
+      const vh = document.documentElement.clientHeight || window.innerHeight;
+      const margin = 14;
+      const rects = strong.getClientRects();
+      const wordRect = rects.length > 0 ? rects[0] : strong.getBoundingClientRect();
+
+      pop.style.position = "fixed";
+      pop.style.bottom = "auto";
+      pop.style.transform = "none";
+
+      if (vw <= 640) {
+        pop.style.left = `${margin}px`;
+        pop.style.right = `${margin}px`;
+        pop.style.width = "auto";
+        pop.style.maxWidth = `${vw - margin * 2}px`;
+      } else {
+        const popW = Math.min(320, vw - margin * 2);
+        pop.style.width = `${popW}px`;
+        pop.style.maxWidth = `${vw - margin * 2}px`;
+        pop.style.right = "auto";
+        const idealLeft = wordRect.left + wordRect.width / 2 - popW / 2;
+        const clampedLeft = Math.max(
+          margin,
+          Math.min(idealLeft, vw - popW - margin)
+        );
+        pop.style.left = `${Math.round(clampedLeft)}px`;
+      }
+
+      const popRect = pop.getBoundingClientRect();
+      const popH = popRect.height || 130;
+      const headerEl = document.getElementById("quarto-header");
+      const topSafe = (headerEl ? headerEl.offsetHeight : 56) + 10;
+
+      // Prefer placing above the word; flip below if there is not enough room at top of screen
+      let topPos = wordRect.top - popH - 10;
+      if (topPos < topSafe) {
+        const lastRect =
+          rects.length > 0 ? rects[rects.length - 1] : wordRect;
+        topPos = Math.min(vh - popH - margin, lastRect.bottom + 10);
+      }
+      pop.style.top = `${Math.max(margin, Math.round(topPos))}px`;
+    };
+
     main.querySelectorAll("p strong").forEach((strong) => {
       if (
         strong.closest('section[id*="student-resources"]') ||
@@ -1437,8 +1481,41 @@ document.addEventListener("DOMContentLoaded", function () {
         pop.setAttribute("role", "tooltip");
         pop.innerHTML = `<span class="popover-term-title">${matched.canonical}</span><div>${matched.definition}</div>`;
         strong.appendChild(pop);
+
+        const updatePos = () => positionKeyTermPopover(strong, pop);
+        strong.addEventListener("mouseenter", updatePos);
+        strong.addEventListener("focus", updatePos);
+        strong.addEventListener("click", (e) => {
+          e.stopPropagation();
+          document.querySelectorAll("strong.key-term-inline.is-active").forEach((el) => {
+            if (el !== strong) el.classList.remove("is-active");
+          });
+          strong.classList.toggle("is-active");
+          updatePos();
+        });
       }
     });
+
+    // Dismiss active key term popover when tapping outside or scrolling on mobile
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest("strong.key-term-inline")) {
+        document.querySelectorAll("strong.key-term-inline.is-active").forEach((el) => {
+          el.classList.remove("is-active");
+          el.blur();
+        });
+      }
+    });
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        document.querySelectorAll("strong.key-term-inline.is-active").forEach((el) => {
+          el.classList.remove("is-active");
+          el.blur();
+        });
+      },
+      { passive: true }
+    );
   }
 });
 </script>

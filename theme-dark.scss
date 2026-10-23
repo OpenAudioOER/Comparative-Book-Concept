@@ -1316,7 +1316,8 @@ strong.key-term-inline {
   border-radius: 3px;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.is-active {
     background-color: var(--tb-blue-soft);
     color: var(--tb-blue-hover);
     outline: none;
@@ -1326,12 +1327,14 @@ strong.key-term-inline {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    position: absolute;
-    bottom: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%) translateY(4px);
+    position: fixed;
+    top: 1rem;
+    left: 14px;
     width: 320px;
-    max-width: 85vw;
+    max-width: calc(100vw - 28px);
+    max-height: 65vh;
+    overflow-y: auto;
+    box-sizing: border-box;
     background-color: #1e2736;
     color: var(--tb-ink);
     font-family: var(--tb-sans);
@@ -1344,8 +1347,8 @@ strong.key-term-inline {
     border: 1px solid var(--tb-border-strong);
     border-top: 3.5px solid var(--tb-blue);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
-    z-index: 1050;
-    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 1060;
+    transition: opacity 0.16s ease;
     text-align: left;
 
     .popover-term-title {
@@ -1363,10 +1366,10 @@ strong.key-term-inline {
   }
 
   &:hover .key-term-popover,
-  &:focus .key-term-popover {
+  &:focus .key-term-popover,
+  &.is-active .key-term-popover {
     visibility: visible;
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
   }
 }
 
