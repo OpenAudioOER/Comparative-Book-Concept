@@ -197,56 +197,46 @@
   // ---------------------------------------------------------------------------
   // Headings
   // ---------------------------------------------------------------------------
-  show heading: it => {
-    set text(font: font-sans, hyphenate: false)
-    if it.level == 1 {
-      // Level 1: Chapter Opener (Starts on a fresh page)
-      is-first-section.update(true)
-      pagebreak(weak: true)
-      v(1.8cm)
-      block(width: 100%)[
-        #text(fill: brand-ink, size: 22pt, weight: "bold")[
-          #it.body
-        ]
-        #v(6pt)
-        #line(length: 100%, stroke: 1.5pt + brand-navy)
-      ]
-      v(1.2cm)
-    } else if it.level == 2 {
-      // Level 2: Major Section (Starts on fresh page for section 2+, sits under chapter opener for section 1)
-      context {
-        if not is-first-section.get() {
-          pagebreak(weak: true)
-        }
-      }
-      is-first-section.update(false)
-      v(1.4em)
-      text(fill: brand-slate, size: 14pt, weight: "bold")[
+  show heading: set text(font: font-sans, hyphenate: false)
+
+  show heading.where(level: 1): it => {
+    // Level 1: Chapter Opener (Starts on a fresh page)
+    is-first-section.update(true)
+    pagebreak(weak: true)
+    v(1.8cm)
+    block(width: 100%)[
+      #text(fill: brand-ink, size: 22pt, weight: "bold")[
         #it.body
       ]
-      v(0.6em)
-    } else if it.level == 3 {
-      // Level 3: Subsection (Inline flow)
-      v(1.3em)
-      text(fill: brand-slate, size: 11.5pt, weight: "bold")[
-        #it.body
-      ]
-      v(0.5em)
-    } else if it.level == 4 {
-      // Level 4: Sub-subsection
-      v(1.1em)
-      text(fill: brand-slate, size: 10.5pt, weight: "bold")[
-        #it.body
-      ]
-      v(0.4em)
-    } else {
-      v(0.9em)
-      text(fill: brand-slate, size: 10pt, weight: "bold")[
-        #it.body
-      ]
-      v(0.4em)
-    }
+      #v(6pt)
+      #line(length: 100%, stroke: 1.5pt + brand-navy)
+    ]
+    v(1.2cm)
   }
+
+  show heading.where(level: 2): it => {
+    // Level 2: Major Section (Starts on fresh page for section 2+, sits under chapter opener for section 1)
+    context {
+      if not is-first-section.get() {
+        pagebreak(weak: true)
+      }
+    }
+    is-first-section.update(false)
+    v(1.4em)
+    text(fill: brand-slate, size: 14pt, weight: "bold")[
+      #it.body
+    ]
+    v(0.6em)
+  }
+
+  show heading.where(level: 3): set text(fill: brand-slate, size: 11.5pt, weight: "bold")
+  show heading.where(level: 3): set block(above: 1.6em, below: 0.8em)
+
+  show heading.where(level: 4): set text(fill: brand-slate, size: 10.5pt, weight: "bold")
+  show heading.where(level: 4): set block(above: 1.4em, below: 0.6em)
+
+  show heading.where(level: 5): set text(fill: brand-slate, size: 10pt, weight: "bold")
+  show heading.where(level: 5): set block(above: 1.2em, below: 0.5em)
 
   // ---------------------------------------------------------------------------
   // Tables: Modern Framed Card Matching HTML Theme
