@@ -68,7 +68,7 @@ function Pandoc(doc)
 
     -- 4. Apply hanging indent to references paragraphs
     elseif in_references and block.t == "Para" then
-      local open_typst = pandoc.RawBlock("typst", "#block(spacing: 0.9em)[#set par(hanging-indent: 1.5em, justify: false)\n")
+      local open_typst = pandoc.RawBlock("typst", "#block(spacing: 1.15em)[#set par(hanging-indent: 1.5em, justify: false, leading: 0.52em)\n")
       local close_typst = pandoc.RawBlock("typst", "]\n")
       table.insert(new_blocks, open_typst)
       table.insert(new_blocks, block)

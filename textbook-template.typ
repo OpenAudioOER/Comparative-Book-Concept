@@ -103,7 +103,7 @@
         [
           #set text(font: font-serif, size: 9.7pt, fill: rgb("#0f172a"))
           #set par(leading: 0.68em)
-          #set list(spacing: 1.1em, marker: text(fill: rgb("#1e293b"), size: 7.5pt)[•])
+          #set list(spacing: 1.1em, marker: text(fill: rgb("#1e293b"), size: 9.5pt)[•])
           #body
         ]
       )
@@ -193,6 +193,10 @@
     first-line-indent: 0pt,
     spacing: 1.1em,
   )
+
+  // Lists
+  set list(spacing: 0.9em)
+  set enum(spacing: 0.9em)
 
   // Code blocks
   show raw.where(block: true): set block(
@@ -628,26 +632,26 @@
   header: none,
   footer: context [
     #set align(center)
-    #set text(font: font-sans, size: 8.5pt, fill: brand-muted)
+    #set text(font: font-sans, size: 8.5pt, fill: black)
     #counter(page).display("i")
   ]
 )[
   #v(0.4cm)
-  #text(font: font-sans, size: 18pt, weight: "bold", fill: brand-navy)[Table of Contents]
+  #text(font: font-sans, size: 18pt, weight: "bold", fill: black)[Table of Contents]
   #v(0.3cm)
-  #line(length: 100%, stroke: 1.5pt + brand-navy)
+  #line(length: 100%, stroke: 1.5pt + black)
   #v(0.4cm)
 
   #show outline.entry.where(level: 1): it => {
     v(0.65em)
-    text(font: font-sans, weight: "bold", size: 10pt, fill: brand-navy)[
+    text(font: font-sans, weight: "bold", size: 10pt, fill: black)[
       #it
     ]
   }
 
   #show outline.entry.where(level: 2): it => {
     v(0.12em)
-    text(font: font-serif, weight: "regular", size: 9pt, fill: rgb("#334155"))[
+    text(font: font-serif, weight: "regular", size: 9pt, fill: black)[
       #it
     ]
   }
