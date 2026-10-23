@@ -1,4 +1,4 @@
-# Chapter 2: How to Study Comparative Politics: Using Comparative Methods
+# Chapter 2: How to Study Comparative Politics — Using Comparative Methods
 
 ## 2.1: The Scientific Method and Comparative Politics
 
@@ -194,11 +194,12 @@ The previous section focuses on selecting a single case. However, conducting com
 To address these challenges, political scientists rely on the work of English scholar John Stuart Mill (1806-1873). Mill developed several approaches to comparison with the explicit goal of isolating a cause within a complex environment. Two of these methods, the ‘method of agreement’ and the ‘method of difference,’ are foundational to comparative politics. In the **method of agreement**, a researcher compares two or more cases that share the same outcome, looking for the one common characteristic they all share to identify the cause. In the **method of difference**, a researcher compares cases that are nearly identical in their characteristics but have different outcomes. The goal is to isolate the one variable that the cases do not have in common, identifying it as the cause of the difference. From these two methods, comparativists have developed two primary research designs.
 
 #### Visualizing Mill’s Logic
+
 ::: {#tbl-2-3-1}
 **Table 2.3.1: Visualizing Mill’s Logic**
 
 | Method | Scenario | What To Look For | The Logical Conclusion |
-|:-----------------|:-----------------|:-----------------|:-----------------|
+|:---|:---|:---|:---|
 | Method of Agreement (Leads to MDSD) | Five people each go to different restaurants but they all get food poisoning. | The one factor common to all cases (for instance, eating the same brand of spinach). | That shared factor is the likely cause of the illness. |
 | Method of Difference (Leads to MSSD) | Two siblings live in the same house and eat the same meals, but only one gets sick. | The one factor present only in the sick case (for instance, one sibling went swimming at a public pool while the other did not). | That differing factor is the likely cause of the illness. |
 :::
@@ -384,7 +385,7 @@ Case selection is an important part of any research design. Deciding how many ca
     a.  when using a large sample size of data from a number of countries
     b.  when comparing many countries at once
     c.  when considering a small number of countries
-    d.  when a researcher wants to make a sweeping statement about many countries 
+    d.  when a researcher wants to make a sweeping statement about many countries
 
 Answers: 1.c, 2.c, 3.b, 4.c., 5.c
 
