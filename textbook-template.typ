@@ -249,34 +249,67 @@
   }
 
   // ---------------------------------------------------------------------------
-  // Tables: Academic Booktabs
+  // Tables: Modern Framed Card Matching HTML Theme
   // ---------------------------------------------------------------------------
-  set table(
-    stroke: none,
-    fill: (col, row) => if row == 0 { brand-header-bg } else { none },
-    inset: (x: 8pt, y: 7pt),
-  )
+  show figure.where(kind: "quarto-float-tbl"): it => {
+    set align(left)
+    show strong: s => {
+      let txt = content-to-string(s)
+      let parts = txt.split(":")
+      if parts.len() >= 2 and parts.at(0).starts-with("Table") {
+        let badge = parts.at(0).trim()
+        let rest = parts.slice(1).join(":").trim()
+        block(width: 100%, below: 12pt)[
+          #box(
+            fill: rgb("#eff6ff"),
+            radius: 4pt,
+            inset: (x: 6pt, y: 3.5pt),
+            outset: 0pt,
+            stroke: 0.5pt + rgb("#bfdbfe"),
+          )[
+            #text(font: font-sans, weight: "bold", size: 8.2pt, fill: brand-navy)[#badge]
+          ]
+          #h(8pt)
+          #text(font: font-sans, weight: "bold", size: 10pt, fill: brand-slate)[#rest]
+          #v(8pt)
+          #line(length: 100%, stroke: 0.5pt + brand-border-light)
+        ]
+      } else {
+        s
+      }
+    }
 
-  show table.hline: it => line(length: 100%, stroke: 0.75pt + brand-navy)
-
-  show table: it => {
     block(
       width: 100%,
-      stroke: (top: 1.5pt + brand-navy, bottom: 1.5pt + brand-navy),
-      it
+      stroke: (top: 3.5pt + brand-navy, rest: 0.75pt + brand-border),
+      radius: 8pt,
+      fill: white,
+      inset: (x: 14pt, top: 12pt, bottom: 12pt),
+      spacing: 1.8em,
+      breakable: false,
+      [
+        #it.body
+      ]
     )
   }
 
+  set table(
+    stroke: (x, y) => (bottom: 0.5pt + brand-border-light),
+    fill: (col, row) => if row == 0 { rgb("#f0f7ff") } else { none },
+    inset: (x: 8pt, y: 8.5pt),
+  )
+
+  show table.hline: it => line(length: 100%, stroke: 1.8pt + rgb("#2563eb"))
+
   show table.cell: it => {
-    set par(justify: false, leading: 0.52em)
+    set text(font: font-sans)
+    set par(justify: false, leading: 0.58em)
     if it.y == 0 {
-      text(font: font-sans, weight: "bold", size: 8.5pt, fill: brand-slate)[
-        #pad(top: 4pt, bottom: 4pt, it.body)
-      ]
+      set text(weight: "bold", size: 8pt, fill: brand-navy, tracking: 0.8pt)
+      it
     } else {
-      text(font: font-serif, size: 8.2pt, fill: brand-ink)[
-        #pad(top: 3pt, bottom: 3pt, it.body)
-      ]
+      set text(size: 8.5pt, fill: brand-ink)
+      it
     }
   }
 

@@ -2,7 +2,42 @@
 -- Typst print-enhancements filter:
 -- 1. Suppresses Spotify links and audio-timestamps
 -- 2. Formats References sections with hanging indents
--- 3. Balances table column widths for 4-column tables like Table 2.3.1
+-- 3. Balances table column widths and uppercases table headers
+
+function Table(tbl)
+  if not quarto.doc.is_format("typst") then
+    return tbl
+  end
+
+  -- Balance column widths
+  if #tbl.colspecs == 4 then
+    tbl.colspecs = {
+      {pandoc.AlignLeft, 0.18},
+      {pandoc.AlignLeft, 0.28},
+      {pandoc.AlignLeft, 0.27},
+      {pandoc.AlignLeft, 0.27}
+    }
+  elseif #tbl.colspecs == 2 then
+    tbl.colspecs = {
+      {pandoc.AlignLeft, 0.32},
+      {pandoc.AlignLeft, 0.68}
+    }
+  end
+
+  -- Uppercase table header row
+  if tbl.head and tbl.head.rows then
+    for _, row in ipairs(tbl.head.rows) do
+      for _, cell in ipairs(row.cells) do
+        local div = pandoc.walk_block(pandoc.Div(cell.contents), {
+          Str = function(s) return pandoc.Str(s.text:upper()) end
+        })
+        cell.contents = div.content
+      end
+    end
+  end
+
+  return tbl
+end
 
 function Pandoc(doc)
   if not quarto.doc.is_format("typst") then
@@ -39,19 +74,6 @@ function Pandoc(doc)
       table.insert(new_blocks, block)
       table.insert(new_blocks, close_typst)
 
-    -- 5. Balance table columns for 4-column tables
-    elseif block.t == "Table" then
-      if #block.colspecs == 4 then
-        -- Column 1 is method label (narrower); columns 2-4 are descriptive scenarios
-        block.colspecs = {
-          {pandoc.AlignLeft, 0.18},
-          {pandoc.AlignLeft, 0.28},
-          {pandoc.AlignLeft, 0.27},
-          {pandoc.AlignLeft, 0.27}
-        }
-      end
-      table.insert(new_blocks, block)
-
     else
       table.insert(new_blocks, block)
     end
@@ -60,3 +82,8 @@ function Pandoc(doc)
   doc.blocks = new_blocks
   return doc
 end
+
+return {
+  { Table = Table },
+  { Pandoc = Pandoc }
+}
