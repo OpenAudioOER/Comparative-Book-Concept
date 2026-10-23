@@ -9,7 +9,7 @@
   <rect x="28" y="28" width="744" height="264" rx="4" fill="none" stroke="#1B365D" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="4 4"/>
   <rect x="340" y="76" width="120" height="28" rx="4" fill="#1B365D"/>
   <text x="400" y="95" font-family="Plus Jakarta Sans, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">FIGURE 1.1.1</text>
-  <text x="400" y="155" font-family="Source Serif 4, Georgia, serif" font-size="23" font-weight="700" fill="#14243B" text-anchor="middle">Seats of Executive & State Power Across Regimes</text>
+  <text x="400" y="155" font-family="Source Serif 4, Georgia, serif" font-size="23" font-weight="700" fill="#14243B" text-anchor="middle">Seats of Executive &amp; State Power Across Regimes</text>
   <line x1="320" y1="180" x2="480" y2="180" stroke="#8B2635" stroke-width="2"/>
   <text x="400" y="212" font-family="Plus Jakarta Sans, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#5A6270" text-anchor="middle">White House (USA) · Imperial Palace (Japan) · Royal Palace (Spain) · 10 Downing St (UK) · Bessastaðir (Iceland)</text>
   <text x="400" y="255" font-family="Plus Jakarta Sans, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#8B2635" text-anchor="middle" letter-spacing="0.8">[ Replace with high-resolution figure in images/1.1.1.png ]</text>
