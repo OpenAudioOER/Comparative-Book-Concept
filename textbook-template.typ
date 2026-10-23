@@ -30,9 +30,9 @@
   }
 }
 
-#let font-sans = ("Helvetica Neue", "Arial")
-#let font-serif = ("Charter", "Georgia")
-#let font-mono = ("Menlo", "Courier New")
+#let font-sans = ("Plus Jakarta Sans", "Helvetica Neue", "Arial")
+#let font-serif = ("Source Serif 4", "Charter", "Georgia")
+#let font-mono = ("JetBrains Mono", "Menlo", "Courier New")
 
 // -----------------------------------------------------------------------------
 // Pandoc Helper Functions
@@ -51,7 +51,7 @@
 ]
 
 // -----------------------------------------------------------------------------
-// Callout Boxes: Modern Left-Accent Card
+// Callout Boxes: Modern Left-Accent Card (Icon removed, elegant tracked header)
 // -----------------------------------------------------------------------------
 #let callout(
   body: [],
@@ -71,16 +71,18 @@
     spacing: 1.4em,
     [
       #block(below: 8pt)[
-        #text(font: font-sans, weight: "bold", fill: icon_color, size: 10pt)[
-          #if icon != none [#icon #h(5pt)]#title
+        #text(font: font-sans, weight: "bold", fill: icon_color, size: 9pt, tracking: 1.2pt)[
+          #upper(title)
         ]
       ]
-      #text(font: font-serif, size: 9.8pt, fill: brand-ink)[
+      #text(font: font-serif, size: 9.6pt, fill: brand-ink)[
         #body
       ]
     ]
   )
 }
+
+#let is-first-section = state("is-first-section", true)
 
 // -----------------------------------------------------------------------------
 // Main Document Layout Rule
@@ -187,6 +189,7 @@
     set text(font: font-sans)
     if it.level == 1 {
       // Level 1: Chapter Opener (Starts on a fresh page)
+      is-first-section.update(true)
       pagebreak(weak: true)
       v(1.8cm)
       block(width: 100%)[
@@ -198,14 +201,20 @@
       ]
       v(1.2cm)
     } else if it.level == 2 {
-      // Level 2: Section (e.g. 1.1)
-      v(1.6em)
+      // Level 2: Major Section (Starts on fresh page for section 2+, sits under chapter opener for section 1)
+      context {
+        if not is-first-section.get() {
+          pagebreak(weak: true)
+        }
+      }
+      is-first-section.update(false)
+      v(1.4em)
       text(fill: brand-slate, size: 14pt, weight: "bold")[
         #it.body
       ]
       v(0.6em)
     } else if it.level == 3 {
-      // Level 3: Subsection (e.g. 1.1.1)
+      // Level 3: Subsection (Inline flow)
       v(1.3em)
       text(fill: brand-slate, size: 11.5pt, weight: "bold")[
         #it.body
@@ -247,30 +256,32 @@
   }
 
   show table.cell: it => {
-    set par(justify: false)
+    set par(justify: false, leading: 0.52em)
     if it.y == 0 {
-      text(font: font-sans, weight: "bold", size: 9pt, fill: brand-slate)[
+      text(font: font-sans, weight: "bold", size: 8.5pt, fill: brand-slate)[
         #pad(top: 4pt, bottom: 4pt, it.body)
       ]
     } else {
-      text(font: font-serif, size: 9pt, fill: brand-ink)[
+      text(font: font-serif, size: 8.2pt, fill: brand-ink)[
         #pad(top: 3pt, bottom: 3pt, it.body)
       ]
     }
   }
 
   // ---------------------------------------------------------------------------
-  // Figures: Framed with Captions (body-only caption to avoid duplicate prefix)
+  // Figures: Framed with Fine-Print Captions (body-only caption, 7.6pt)
   // ---------------------------------------------------------------------------
   show figure.caption: it => {
-    text(font: font-sans, size: 8.8pt, fill: brand-slate)[#it.body]
+    set align(center)
+    set par(leading: 0.55em)
+    text(font: font-sans, size: 7.6pt, fill: brand-slate)[#it.body]
   }
 
   show figure.where(kind: image): it => {
     set align(center)
     block(
       width: 100%,
-      spacing: 1.6em,
+      spacing: 1.5em,
       [
         #block(
           stroke: 0.75pt + brand-border,
@@ -280,7 +291,7 @@
           it.body
         )
         #if it.has("caption") [
-          #v(6pt)
+          #v(5pt)
           #it.caption
         ]
       ]

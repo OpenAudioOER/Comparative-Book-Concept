@@ -22,3 +22,8 @@ index.toc
 
 # Vercel deployment folder
 .vercel
+
+# PDF builds
+_book/*.pdf
+*.pdf
+

@@ -49,6 +49,8 @@ format:
   typst:
     template: textbook-template.typ
     keep-typ: true
+    filters:
+      - filters/typst-omit-audio.lua
     papersize: us-letter
     margin:
       top: 2.5cm
