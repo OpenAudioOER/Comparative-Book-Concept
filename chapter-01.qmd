@@ -205,11 +205,11 @@ Although students could, in theory, read chapters in this textbook according to 
 
 Following the discussion of research methodology in Chapter 2, this textbook contains three major sections: institutions and institutional change, intersections and boundaries, and comparative political behavior.
 
-- Institutions and institutional change: Part one delves into many of the basic terms and questions within comparative politics. What is the state? How do we identify important institutions for analysis, and how do comparativists understand how and why institutions change? What is a political regime? How do regime types vary, and how do transitions between them occur?
+- **Institutions and institutional change:** Part one delves into many of the basic terms and questions within comparative politics. What is the state? How do we identify important institutions for analysis, and how do comparativists understand how and why institutions change? What is a political regime? How do regime types vary, and how do transitions between them occur?
 
-- Intersections and boundaries: Part two considers how important internal structures and components differ across countries, focusing on political identity and political economy. While the concept of political identity is incredibly large in scope, this textbook will consider the influence of race, ethnicity, gender, nationalism, religion, and class on collective political outcomes.
+- **Intersections and boundaries:** Part two considers how important internal structures and components differ across countries, focusing on political identity and political economy. While the concept of political identity is incredibly large in scope, this textbook will consider the influence of race, ethnicity, gender, nationalism, religion, and class on collective political outcomes.
 
-- Comparative political behavior: Part three examines several manifestations of political behavior, such as how social movements vary, how public opinion influences political outcomes, and how political violence occurs.
+- **Comparative political behavior:** Part three examines several manifestations of political behavior, such as how social movements vary, how public opinion influences political outcomes, and how political violence occurs.
 
 By reading this textbook in a linear manner, students will gain a progressively wider understanding of the scope of topics and issues within comparative politics. The following sub-sections provide additional details about the three major sections of the textbook.
 

@@ -7,6 +7,5 @@ Preface and overview materials for *Introduction to Comparative Government and P
 
 Use the navigation menu on the left to preview the completed sample chapters:
 
-- **[Chapter 1: Why Study Comparative Politics?](chapter-01.html)**
-- **[Chapter 3: States and Regimes](chapter-03.html)**
+- **Chapter 1: Why Study Comparative Politics?**
 :::
