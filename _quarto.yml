@@ -55,8 +55,8 @@ format:
     margin:
       top: 2.5cm
       bottom: 2.5cm
-      left: 2.8cm
-      right: 2.4cm
+      left: 2.5cm
+      right: 2.5cm
     mainfont: "Source Serif 4"
     sansfont: "Plus Jakarta Sans"
     monofont: "JetBrains Mono"

@@ -130,10 +130,10 @@
     author: "Dr. Dino Bozonelos, Dr. Julia Wendt, Dr. Charlotte Lee, Jessica Scarffe, Brian Barrick, Dr. Masahiro Omae, Dr. Josh Franco, Dr. Byran Martin, and Stefan Veldhuis",
   )
 
-  // Page geometry (US Letter)
+  // Page geometry (US Letter) - Standardized symmetric side margins for digital/screen reading & personal printing
   set page(
     paper: "us-letter",
-    margin: (top: 2.5cm, bottom: 2.5cm, inside: 3.0cm, outside: 2.4cm),
+    margin: (top: 2.5cm, bottom: 2.5cm, left: 2.5cm, right: 2.5cm),
     header: context {
       let cur-phys = here().page()
       let page-num = counter(page).get().first()
@@ -141,31 +141,21 @@
       let is-chapter-start = query(heading.where(level: 1)).any(h => h.location().page() == cur-phys)
       if not is-chapter-start {
         set text(font: font-sans, size: 8.5pt, fill: brand-muted)
-        if calc.odd(page-num) {
-          // Odd page (Recto): Section title left, page number right
-          let h2-on-page = query(heading.where(level: 2)).filter(h => h.location().page() == cur-phys)
-          let section-title = if h2-on-page.len() > 0 {
-            h2-on-page.first().body
-          } else {
-            let current-h2 = query(selector(heading.where(level: 2)).before(here()))
-            if current-h2.len() > 0 { current-h2.last().body } else { title }
-          }
-          box(width: 100%, inset: (bottom: 4pt), stroke: (bottom: 0.5pt + brand-border-light))[
-            #section-title #h(1fr) #strong(str(page-num))
-          ]
+        let h2-on-page = query(heading.where(level: 2)).filter(h => h.location().page() == cur-phys)
+        let header-title = if h2-on-page.len() > 0 {
+          h2-on-page.first().body
         } else {
-          // Even page (Verso): Page number left, Chapter title right
-          let h1-on-page = query(heading.where(level: 1)).filter(h => h.location().page() == cur-phys)
-          let chapter-title = if h1-on-page.len() > 0 {
-            h1-on-page.first().body
+          let current-h2 = query(selector(heading.where(level: 2)).before(here()))
+          if current-h2.len() > 0 {
+            current-h2.last().body
           } else {
             let current-h1 = query(selector(heading.where(level: 1)).before(here()))
             if current-h1.len() > 0 { current-h1.last().body } else { title }
           }
-          box(width: 100%, inset: (bottom: 4pt), stroke: (bottom: 0.5pt + brand-border-light))[
-            #strong(str(page-num)) #h(1fr) #chapter-title
-          ]
         }
+        box(width: 100%, inset: (bottom: 4pt), stroke: (bottom: 0.5pt + brand-border-light))[
+          #header-title #h(1fr) #strong(str(page-num))
+        ]
       }
     },
     footer: context {
@@ -199,9 +189,9 @@
   set list(spacing: 0.9em)
   set enum(spacing: 0.9em)
 
-  // Multiple-choice options in Review Questions (compact spacing and orphan prevention)
-  show enum.where(numbering: "a."): it => block(breakable: false)[
-    #set enum(spacing: 0.4em)
+  // Multiple-choice options in Review Questions (compact spacing)
+  show enum.where(numbering: "a."): it => [
+    #set enum(spacing: 0.35em)
     #it
   ]
 
@@ -262,20 +252,18 @@
     is-first-section.update(true)
     pagebreak(weak: true)
     let (chap-label, chap-title) = parse-heading(it)
-    v(1.2cm)
+    v(0.5cm)
     block(width: 100%)[
       #set par(justify: false)
       #if chap-label != none [
         #text(font: font-sans, size: 9pt, weight: "bold", fill: brand-blue, tracking: 2pt)[#upper(chap-label)]
-        #v(0.35cm)
+        #v(0.3cm)
       ]
       #text(font: font-sans, size: 24pt, weight: "bold", fill: brand-ink)[#chap-title]
-      #v(0.5cm)
-      #line(length: 100%, stroke: 2pt + brand-navy)
-      #v(2.5pt)
-      #line(length: 100%, stroke: 0.5pt + rgb("#cbd5e1"))
+      #v(0.35cm)
+      #line(length: 100%, stroke: 1.5pt + brand-navy)
     ]
-    v(1.3cm)
+    v(0.6cm)
   }
 
   show heading.where(level: 2): it => {
@@ -529,7 +517,7 @@
 
 #page(
   paper: "us-letter",
-  margin: (top: 3.2cm, bottom: 2.8cm, left: 2.8cm, right: 2.4cm),
+  margin: (top: 3.2cm, bottom: 2.8cm, left: 2.5cm, right: 2.5cm),
   header: none,
   footer: none,
 )[
@@ -630,7 +618,7 @@
 // =============================================================================
 #page(
   paper: "us-letter",
-  margin: (top: 3.5cm, bottom: 2.5cm, inside: 3.0cm, outside: 2.4cm),
+  margin: (top: 3.5cm, bottom: 2.5cm, left: 2.5cm, right: 2.5cm),
   header: none,
   footer: none,
 )[
@@ -661,7 +649,7 @@
 // =============================================================================
 #page(
   paper: "us-letter",
-  margin: (top: 2.2cm, bottom: 2.2cm, inside: 3.0cm, outside: 2.4cm),
+  margin: (top: 2.2cm, bottom: 2.2cm, left: 2.5cm, right: 2.5cm),
   header: none,
   footer: context [
     #set align(center)

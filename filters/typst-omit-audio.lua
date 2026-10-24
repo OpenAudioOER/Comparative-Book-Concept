@@ -55,6 +55,8 @@ function Pandoc(doc)
   local new_blocks = {}
   local in_references = false
   local in_key_terms = false
+  local in_review_questions = false
+  local in_critical_thinking = false
 
   for _, block in ipairs(doc.blocks) do
     -- 1. Check for Headers
@@ -69,6 +71,16 @@ function Pandoc(doc)
         in_key_terms = true
       elseif block.level <= 3 then
         in_key_terms = false
+      end
+      if h_text:match("Review Questions") then
+        in_review_questions = true
+      elseif block.level <= 3 then
+        in_review_questions = false
+      end
+      if h_text:match("Critical Thinking") then
+        in_critical_thinking = true
+      elseif block.level <= 3 then
+        in_critical_thinking = false
       end
       table.insert(new_blocks, block)
 
@@ -100,7 +112,47 @@ function Pandoc(doc)
         table.insert(new_blocks, close_term)
       end
 
-    -- 6. Style Answer Key box in Review Questions
+    -- 6. Format Review Questions as unbreakable blocks with hanging numbers
+    elseif in_review_questions and block.t == "OrderedList" then
+      for i, item in ipairs(block.content) do
+        local open_rq = pandoc.RawBlock("typst", string.format(
+          "#block(breakable: false, spacing: 1.15em)[\n" ..
+          "  #grid(\n" ..
+          "    columns: (1.5em, 1fr),\n" ..
+          "    gutter: 0pt,\n" ..
+          "    align: (top + left, top + left),\n" ..
+          "    [%d.],\n" ..
+          "    [\n", i
+        ))
+        local close_rq = pandoc.RawBlock("typst", "    ]\n  )\n]\n")
+        table.insert(new_blocks, open_rq)
+        for _, sub_b in ipairs(item) do
+          table.insert(new_blocks, sub_b)
+        end
+        table.insert(new_blocks, close_rq)
+      end
+
+    -- 7. Format Critical Thinking Questions with generous spacing and hanging numbers
+    elseif in_critical_thinking and block.t == "OrderedList" then
+      for i, item in ipairs(block.content) do
+        local open_ct = pandoc.RawBlock("typst", string.format(
+          "#block(breakable: false, spacing: 1.4em)[\n" ..
+          "  #grid(\n" ..
+          "    columns: (1.5em, 1fr),\n" ..
+          "    gutter: 0pt,\n" ..
+          "    align: (top + left, top + left),\n" ..
+          "    [%d.],\n" ..
+          "    [\n", i
+        ))
+        local close_ct = pandoc.RawBlock("typst", "    ]\n  )\n]\n")
+        table.insert(new_blocks, open_ct)
+        for _, sub_b in ipairs(item) do
+          table.insert(new_blocks, sub_b)
+        end
+        table.insert(new_blocks, close_ct)
+      end
+
+    -- 8. Style Answer Key box in Review Questions
     elseif block.t == "Para" and pandoc.utils.stringify(block):match("^Answers%s*:") then
       local ans_str = pandoc.utils.stringify(block):gsub("^Answers%s*:%s*", "")
       ans_str = ans_str:gsub("%s+", " ")
