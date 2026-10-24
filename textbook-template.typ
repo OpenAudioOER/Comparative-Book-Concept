@@ -132,7 +132,7 @@
   // Page geometry (US Letter)
   set page(
     paper: "us-letter",
-    margin: (top: 2.5cm, bottom: 2.5cm, left: 2.8cm, right: 2.4cm),
+    margin: (top: 2.5cm, bottom: 2.5cm, inside: 3.0cm, outside: 2.4cm),
     header: context {
       let cur-phys = here().page()
       let page-num = counter(page).get().first()
@@ -251,18 +251,21 @@
   }
 
   show heading.where(level: 2): it => {
-    // Level 2: Major Section (Starts on fresh page for section 2+, sits under chapter opener for section 1)
+    // Level 2: Major Section (Flows naturally without forcing a new page)
     context {
-      if not is-first-section.get() {
-        pagebreak(weak: true)
+      if is-first-section.get() {
+        v(0.4em)
+      } else {
+        v(1.8em)
       }
     }
     is-first-section.update(false)
-    v(1.4em)
-    text(fill: brand-slate, size: 14pt, weight: "bold")[
-      #it.body
+    block(breakable: false, width: 100%)[
+      #text(fill: brand-slate, size: 14pt, weight: "bold")[
+        #it.body
+      ]
+      #v(0.6em)
     ]
-    v(0.6em)
   }
 
   show heading.where(level: 3): set text(fill: brand-slate, size: 11.5pt, weight: "bold")
@@ -600,7 +603,7 @@
 // =============================================================================
 #page(
   paper: "us-letter",
-  margin: (top: 3.5cm, bottom: 2.5cm, left: 2.8cm, right: 2.4cm),
+  margin: (top: 3.5cm, bottom: 2.5cm, inside: 3.0cm, outside: 2.4cm),
   header: none,
   footer: none,
 )[
@@ -631,12 +634,12 @@
 // =============================================================================
 #page(
   paper: "us-letter",
-  margin: (top: 2.2cm, bottom: 2.2cm, left: 2.8cm, right: 2.4cm),
+  margin: (top: 2.2cm, bottom: 2.2cm, inside: 3.0cm, outside: 2.4cm),
   header: none,
   footer: context [
     #set align(center)
     #set text(font: font-sans, size: 8.5pt, fill: black)
-    #counter(page).display("i")
+    #counter(page).display("1")
   ]
 )[
   #v(0.4cm)
@@ -667,9 +670,6 @@
 ]
 
 #pagebreak()
-
-// Reset page numbering for main body (Chapter 1 begins on Arabic Page 1)
-#counter(page).update(1)
 
 #show: doc => book-theme(
   title: [$title$],
