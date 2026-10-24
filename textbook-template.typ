@@ -340,7 +340,7 @@
     set text(font: font-sans)
     set par(justify: false, leading: 0.58em)
     if it.y == 0 {
-      set text(weight: "bold", size: 8pt, fill: brand-navy, tracking: 0.8pt)
+      set text(weight: "bold", size: 8pt, fill: brand-navy, tracking: 0.3pt)
       it
     } else {
       set text(size: 8.5pt, fill: brand-ink)
@@ -535,18 +535,18 @@
   #text(
     font: font-sans,
     fill: brand-ink,
-    size: 28pt,
+    size: 27pt,
     weight: "bold",
     hyphenate: false,
-  )[$title$]
+  )[Introduction to Comparative Government and Politics]
 
-  #v(0.5cm)
+  #v(0.4cm)
 
   // Subtitle
   #text(
     font: font-serif,
     fill: brand-navy,
-    size: 14pt,
+    size: 13.5pt,
     style: "italic",
   )[$subtitle$]
 
@@ -555,27 +555,26 @@
   // Oxford Navy Divider Rule
   #line(length: 100%, stroke: 2pt + brand-navy)
 
-  #v(1.2cm)
+  #v(1.4cm)
 
-  // Authors List
-  #text(
-    font: font-sans,
-    fill: rgb("#334155"),
-    size: 10pt,
-    weight: "medium",
-  )[
-    #text(weight: "bold", fill: brand-ink)[Authors:]\
-    #v(4pt)
-    Dr. Dino Bozonelos #h(8pt)·#h(8pt)
-    Dr. Julia Wendt #h(8pt)·#h(8pt)
-    Dr. Charlotte Lee\
-    Jessica Scarffe #h(8pt)·#h(8pt)
-    Brian Barrick #h(8pt)·#h(8pt)
-    Dr. Masahiro Omae\
-    Dr. Josh Franco #h(8pt)·#h(8pt)
-    Dr. Byran Martin #h(8pt)·#h(8pt)
-    Stefan Veldhuis
-  ]
+  // Contributing Authors Grid
+  #text(font: font-sans, size: 8.5pt, weight: "bold", fill: brand-muted, tracking: 1pt)[CONTRIBUTING AUTHORS]
+  #v(0.6cm)
+
+  #grid(
+    columns: (1fr, 1fr, 1fr),
+    row-gutter: 14pt,
+    column-gutter: 16pt,
+    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Dino Bozonelos]],
+    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Julia Wendt]],
+    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Charlotte Lee]],
+    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Jessica Scarffe]],
+    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Brian Barrick]],
+    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Masahiro Omae]],
+    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Josh Franco]],
+    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Byran Martin]],
+    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Stefan Veldhuis]]
+  )
 
   #v(1fr)
 

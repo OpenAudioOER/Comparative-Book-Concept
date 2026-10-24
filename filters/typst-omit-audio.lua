@@ -10,7 +10,15 @@ function Table(tbl)
   end
 
   -- Balance column widths
-  if #tbl.colspecs == 4 then
+  if #tbl.colspecs == 5 then
+    tbl.colspecs = {
+      {pandoc.AlignLeft, 0.17},
+      {pandoc.AlignLeft, 0.17},
+      {pandoc.AlignLeft, 0.22},
+      {pandoc.AlignLeft, 0.23},
+      {pandoc.AlignLeft, 0.21}
+    }
+  elseif #tbl.colspecs == 4 then
     tbl.colspecs = {
       {pandoc.AlignLeft, 0.18},
       {pandoc.AlignLeft, 0.28},
