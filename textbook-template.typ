@@ -11,6 +11,7 @@
 #let brand-border-light = rgb("#e2e8f0")
 #let brand-tint = rgb("#f0f7ff")
 #let brand-header-bg = rgb("#f1f5f9")
+#let brand-blue = rgb("#1d4ed8")
 
 #import "@preview/fontawesome:0.5.0": *
 
@@ -240,20 +241,41 @@
   // Headings
   // ---------------------------------------------------------------------------
   show heading: set text(font: font-sans, hyphenate: false)
+  show heading: set par(justify: false)
+
+  let parse-heading(it) = {
+    let b = if it.has("body") { it.body } else { it }
+    let raw-text = content-to-string(b)
+    let chap-label = none
+    let chap-title = b
+    
+    if raw-text.starts-with("Chapter ") and raw-text.contains(":") {
+      let colon-pos = raw-text.position(":")
+      chap-label = raw-text.slice(0, colon-pos).trim()
+      chap-title = raw-text.slice(colon-pos + 1).trim()
+    }
+    (chap-label, chap-title)
+  }
 
   show heading.where(level: 1): it => {
     // Level 1: Chapter Opener (Starts on a fresh page)
     is-first-section.update(true)
     pagebreak(weak: true)
-    v(1.8cm)
-    block(width: 100%)[
-      #text(fill: brand-ink, size: 22pt, weight: "bold")[
-        #it.body
-      ]
-      #v(6pt)
-      #line(length: 100%, stroke: 1.5pt + brand-navy)
-    ]
+    let (chap-label, chap-title) = parse-heading(it)
     v(1.2cm)
+    block(width: 100%)[
+      #set par(justify: false)
+      #if chap-label != none [
+        #text(font: font-sans, size: 9pt, weight: "bold", fill: brand-blue, tracking: 2pt)[#upper(chap-label)]
+        #v(0.35cm)
+      ]
+      #text(font: font-sans, size: 24pt, weight: "bold", fill: brand-ink)[#chap-title]
+      #v(0.5cm)
+      #line(length: 100%, stroke: 2pt + brand-navy)
+      #v(2.5pt)
+      #line(length: 100%, stroke: 0.5pt + rgb("#cbd5e1"))
+    ]
+    v(1.3cm)
   }
 
   show heading.where(level: 2): it => {
