@@ -198,6 +198,9 @@
   set list(spacing: 0.9em)
   set enum(spacing: 0.9em)
 
+  // Vocabulary / Strong text (prevent hyphenating bold words across lines)
+  show strong: set text(hyphenate: false)
+
   // Code blocks
   show raw.where(block: true): set block(
     fill: rgb("#f8fafc"),
