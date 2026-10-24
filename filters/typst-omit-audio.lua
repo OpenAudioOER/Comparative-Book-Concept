@@ -46,15 +46,21 @@ function Pandoc(doc)
 
   local new_blocks = {}
   local in_references = false
+  local in_key_terms = false
 
   for _, block in ipairs(doc.blocks) do
-    -- 1. Check for References header
-    if block.t == "Header" and block.level == 2 then
+    -- 1. Check for Headers
+    if block.t == "Header" then
       local h_text = pandoc.utils.stringify(block)
       if h_text:match("References") then
         in_references = true
       else
         in_references = false
+      end
+      if h_text:match("Key Terms") then
+        in_key_terms = true
+      elseif block.level <= 3 then
+        in_key_terms = false
       end
       table.insert(new_blocks, block)
 
@@ -73,6 +79,47 @@ function Pandoc(doc)
       table.insert(new_blocks, open_typst)
       table.insert(new_blocks, block)
       table.insert(new_blocks, close_typst)
+
+    -- 5. Format Key Terms as glossary entries (no bullets, hanging indent)
+    elseif in_key_terms and block.t == "BulletList" then
+      for _, item in ipairs(block.content) do
+        local open_term = pandoc.RawBlock("typst", "#block(spacing: 0.9em)[#set par(hanging-indent: 1.5em, justify: false, leading: 0.58em)\n")
+        local close_term = pandoc.RawBlock("typst", "]\n")
+        table.insert(new_blocks, open_term)
+        for _, sub_b in ipairs(item) do
+          table.insert(new_blocks, sub_b)
+        end
+        table.insert(new_blocks, close_term)
+      end
+
+    -- 6. Style Answer Key box in Review Questions
+    elseif block.t == "Para" and pandoc.utils.stringify(block):match("^Answers%s*:") then
+      local ans_str = pandoc.utils.stringify(block):gsub("^Answers%s*:%s*", "")
+      ans_str = ans_str:gsub("%s+", " ")
+      local raw_typst = "#v(1.2em)\n" ..
+        "#rect(\n" ..
+        "  fill: rgb(\"#f8fafc\"),\n" ..
+        "  stroke: 0.75pt + rgb(\"#cbd5e1\"),\n" ..
+        "  radius: 4pt,\n" ..
+        "  inset: (x: 12pt, y: 9pt),\n" ..
+        "  width: 100%,\n" ..
+        "  [\n" ..
+        "    #grid(\n" ..
+        "      columns: (auto, 1fr),\n" ..
+        "      gutter: 14pt,\n" ..
+        "      align: horizon,\n" ..
+        "      [\n" ..
+        "        #text(font: font-sans, size: 8pt, weight: \"bold\", fill: rgb(\"#475569\"))[ANSWER KEY]\n" ..
+        "      ],\n" ..
+        "      [\n" ..
+        "        #text(font: font-sans, size: 9pt, weight: \"medium\", fill: rgb(\"#1e293b\"))[" .. ans_str .. "]\n" ..
+        "      ]\n" ..
+        "    )\n" ..
+        "  ]\n" ..
+        ")\n" ..
+        "#v(0.6em)\n"
+      local answer_box = pandoc.RawBlock("typst", raw_typst)
+      table.insert(new_blocks, answer_box)
 
     else
       table.insert(new_blocks, block)

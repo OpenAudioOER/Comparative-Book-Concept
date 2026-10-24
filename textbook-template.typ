@@ -198,6 +198,12 @@
   set list(spacing: 0.9em)
   set enum(spacing: 0.9em)
 
+  // Multiple-choice options in Review Questions (compact spacing and orphan prevention)
+  show enum.where(numbering: "a."): it => block(breakable: false)[
+    #set enum(spacing: 0.4em)
+    #it
+  ]
+
   // Vocabulary / Strong text (prevent hyphenating bold words across lines)
   show strong: set text(hyphenate: false)
 
