@@ -473,7 +473,7 @@
       radius: 10pt,
       fill: rgb("#ffffff"),
       clip: true,
-      spacing: 1.8em,
+      spacing: 1.4em,
       breakable: false,
       inset: (x: 10pt, top: 10pt, bottom: 8.5pt),
       [

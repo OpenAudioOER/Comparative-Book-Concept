@@ -47,6 +47,20 @@ function Table(tbl)
   return tbl
 end
 
+function Image(img)
+  if not quarto.doc.is_format("typst") then
+    return img
+  end
+
+  -- Scale portrait book covers to a balanced, proportional size
+  local cap_text = pandoc.utils.stringify(img.caption)
+  if img.src:match("2%.1%.1") or img.src:match("2%.3%.1") or cap_text:match("Book cover") then
+    img.attributes["width"] = "2.1in"
+  end
+
+  return img
+end
+
 function Pandoc(doc)
   if not quarto.doc.is_format("typst") then
     return doc
@@ -209,6 +223,7 @@ end
 
 return {
   { Table = Table },
+  { Image = Image },
   { Div = Div },
   { Pandoc = Pandoc }
 }
