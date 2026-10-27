@@ -1,9 +1,14 @@
 # Preface & Course Overview {.unnumbered}
 
 ```{=html}
+<style>
+#title-block-header {
+  display: none !important;
+}
+</style>
 <div class="book-hero">
   <div class="hero-content">
-    <div class="hero-badge">Second Edition · Open Educational Resource</div>
+    <div class="hero-badge">Second Edition</div>
     <h2 class="hero-title" style="border:none; margin:0 0 0.5rem 0; padding:0; color:#ffffff;">Introduction to Comparative Government and Politics</h2>
     <div class="hero-subtitle">An Open Educational Resource Textbook</div>
     <div class="hero-author">
@@ -25,15 +30,7 @@
 
 Welcome to ***Introduction to Comparative Government and Politics* (2nd Edition)**. This textbook is designed as a foundational, accessible, and comprehensive introduction to the field of comparative politics for undergraduate students and transfer pathways (aligned with C-ID POLS 130).
 
-Comparative politics is the systematic study and comparison of the world's political systems. Rather than viewing domestic political phenomena in isolation, this subfield equips students with the empirical tools to compare institutions, leadership styles, regime trajectories, and public policies across diverse geographic, historical, and cultural contexts.
-
-### What’s New in the Second Edition?
-
-- **Refined Methodological Core:** Upfront, step-by-step guidance on scientific inference, qualitative and quantitative logic, and Mill’s Methods of Agreement and Difference.
-- **Embedded Comparative Case Studies:** Paired, real-world comparative case studies (such as the comparative analysis of Botswana and Somalia in Chapter 3) that put theoretical frameworks directly into empirical practice.
-- **Contemporary Global Data:** Updated political timelines, democratic index metrics, electoral results, and political economy indicators through 2024–2026.
-- **Multimodal Audio Integration:** Synchronized chapter audio episodes hosted on Spotify with timestamped listening guides for auditory and commuting learners.
-- **Accessible Design:** Enhanced semantic markup, WCAG 2.1 AAA accessible contrast, screen-reader optimized descriptions, and responsive mobile-ready typography.
+Comparative politics is the systematic study and comparison of the world’s political systems. Rather than viewing domestic political phenomena in isolation, this subfield equips students with the empirical tools to compare institutions, leadership styles, regime trajectories, and public policies across diverse geographic, historical, and cultural contexts.
 
 ---
 
@@ -53,39 +50,43 @@ Each chapter in this text is organized around a consistent active-learning frame
 
 ## Curricular Roadmap {#curricular-roadmap}
 
-The textbook is divided into four thematic units spanning twelve chapters:
+This textbook explores the core themes, methodologies, and debates of comparative politics across twelve comprehensive chapters:
 
-### Part I: Foundations of Comparative Inquiry
-- **[Chapter 1: Why Study Comparative Politics?](chapter-01.html)**  
-  Introduction to the discipline, subfields of political science, formal and informal institutions, and area vs. cross-national approaches.
-- **[Chapter 2: How to Study Comparative Politics — Using Comparative Methods](chapter-02.html)**  
-  The scientific method, hypothesis generation, qualitative vs. quantitative inquiry, Mill’s Methods, and Most Similar vs. Most Different Systems Design (MSSD/MDSD).
-- **[Chapter 3: States and Regimes](chapter-03.html)**  
-  Origins of the state, social contract theory, sovereignty, soft vs. hard power, Weberian legitimacy, and a comparative case study of Botswana and Somalia.
+- **Chapter 1: Why Study Comparative Politics?**  
+  An introduction to the subfield of comparative politics, its relationship to other political science subfields, formal and informal institutions, and the distinction between area studies and cross-national approaches.
 
-### Part II: Regime Types and Governance
-- **[Chapter 4: Democracies and Democratization](chapter-04.html)**  
-  Defining democracy, institutional designs (parliamentary, presidential, semi-presidential), electoral systems, and waves of democratization.
-- **[Chapter 5: Non-democracies and Democratic Backsliding](chapter-05.html)**  
-  Personalist regimes, military juntas, one-party states, illiberal democracies, and contemporary mechanisms of democratic erosion.
+- **Chapter 2: How to Study Comparative Politics — Using Comparative Methods**  
+  An exploration of the scientific method in political inquiry, hypothesis generation, qualitative and quantitative data, John Stuart Mill’s Methods of Agreement and Difference, and comparative research designs (Most Similar vs. Most Different Systems Designs).
 
-### Part III: Identity, Economy, and Society
-- **[Chapter 6: Political Identity — Culture, Race, Ethnicity, and Gender](chapter-06.html)**  
-  The construction of political identity, primordialism vs. constructivism, and the role of identity in state cohesion and representation.
-- **[Chapter 7: Political Identity — Nationalism, Religion, and Class](chapter-07.html)**  
-  Civic vs. ethnic nationalism, secularization vs. religious mobilization, and socio-economic class dynamics in political mobilization.
-- **[Chapter 8: Political Economy](chapter-08.html)**  
-  The state's role in the economy, market capitalism vs. social democracy, mercantilism, developmental states, and global trade dynamics.
+- **Chapter 3: States and Regimes**  
+  An examination of the state, social contract theory, internal and external sovereignty, hard versus soft power, Max Weber’s three types of legitimacy, and a comparative case study contrasting state capacity in Botswana and Somalia.
 
-### Part IV: Political Dynamics, Conflict, and Global Challenges
-- **[Chapter 9: Collective Action and Social Movements](chapter-09.html)**  
-  The collective action problem, free-riding, social movement theory, and digital political organizing.
-- **[Chapter 10: Comparative Public Opinion](chapter-10.html)**  
-  Measuring political culture, cross-national polling methodologies, socialization, and democratic values.
-- **[Chapter 11: Political Violence](chapter-11.html)**  
-  Revolutions, civil wars, insurgencies, state-sponsored violence, and terrorism in comparative perspective.
-- **[Chapter 12: Challenges and Questions in Comparative Politics](chapter-12.html)**  
-  Globalization, climate governance, migration, technological disruption, and the future of the nation-state.
+- **Chapter 4: Democracies and Democratization**  
+  A foundational analysis of democratic governance, constitutional and institutional frameworks (parliamentary, presidential, and semi-presidential systems), electoral mechanics, and historical waves of democratization.
+
+- **Chapter 5: Non-democracies and Democratic Backsliding**  
+  A critical study of authoritarian systems—including personalist regimes, military juntas, and one-party states—alongside the contemporary dynamics and early warning signs of democratic erosion and backsliding.
+
+- **Chapter 6: Political Identity — Culture, Race, Ethnicity, and Gender**  
+  An investigation into how political identities are formed, contested, and institutionalized, exploring primordial and constructivist perspectives and the impact of identity on political participation and representation.
+
+- **Chapter 7: Political Identity — Nationalism, Religion, and Class**  
+  A comparative look at the forces of civic versus ethnic nationalism, the relationship between religious mobilization and the state, and how socio-economic class shapes political cleavages.
+
+- **Chapter 8: Political Economy**  
+  An analysis of how politics and economics intersect, evaluating market capitalism, social democracy, mercantilism, the role of developmental states, and the political dimensions of international trade.
+
+- **Chapter 9: Collective Action and Social Movements**  
+  An exploration of how individuals organize to achieve common goals, examining Mancur Olson’s collective action problem, free-riding, social movement theory, and modern digital mobilization.
+
+- **Chapter 10: Comparative Public Opinion**  
+  A guide to measuring political culture and values across countries, examining survey methodologies, polling reliability, political socialization, and cross-national ideological trends.
+
+- **Chapter 11: Political Violence**  
+  A comparative inquiry into revolutions, civil wars, insurgencies, state-sponsored violence, and terrorism, analyzing the structural, institutional, and psychological causes of political conflict.
+
+- **Chapter 12: Challenges and Questions in Comparative Politics**  
+  A concluding reflection on urgent 21st-century global challenges, including globalization, environmental governance, transnational migration, technological disruption, and the evolving future of the nation-state.
 
 ---
 
