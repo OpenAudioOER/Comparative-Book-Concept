@@ -507,105 +507,107 @@
 // =============================================================================
 // FRONT COVER PAGE (Unnumbered Page 1)
 // =============================================================================
-// NOTE FOR FUTURE ARTWORK:
-// When your custom high-resolution cover artwork is ready (e.g. images/cover.png
-// or images/cover.pdf at 8.5 x 11 inches, 300 DPI), simply uncomment the line
-// below to use the full-bleed image cover and remove this programmatic block:
-//
-// #place(top + left, dx: -2.8cm, dy: -2.5cm, image("images/cover.png", width: 8.5in, height: 11in, fit: "cover"))
+// =============================================================================
+// FRONT COVER PAGE (Unnumbered Page 1)
 // =============================================================================
 
 #page(
   paper: "us-letter",
-  margin: (top: 3.2cm, bottom: 2.8cm, left: 2.5cm, right: 2.5cm),
+  margin: (top: 2.4cm, bottom: 2.0cm, left: 2.4cm, right: 2.4cm),
   header: none,
   footer: none,
+  // Native full-bleed artwork background
+  background: image("images/CoverFinal.png", width: 100%, height: 100%, fit: "cover"),
 )[
-  #v(0.5cm)
+  #set text(font: font-sans, fill: rgb("#ffffff"))
 
-  // Edition Badge
-  #rect(
-    fill: brand-navy,
-    radius: 4pt,
-    inset: (x: 10pt, y: 6pt),
-    outset: 0pt,
-  )[
-    #text(
-      font: font-sans,
-      fill: white,
-      size: 9.5pt,
-      weight: "bold",
-      tracking: 1.5pt,
-    )[SECOND EDITION]
-  ]
-
-  #v(1.2cm)
-
-  // Main Book Title
-  #text(
-    font: font-sans,
-    fill: brand-ink,
-    size: 27pt,
-    weight: "bold",
-    hyphenate: false,
-  )[Introduction to Comparative Government and Politics]
-
-  #v(0.4cm)
-
-  // Subtitle
-  #text(
-    font: font-serif,
-    fill: brand-navy,
-    size: 13.5pt,
-    style: "italic",
-  )[$subtitle$]
-
-  #v(0.6cm)
-
-  // Oxford Navy Divider Rule
-  #line(length: 100%, stroke: 2pt + brand-navy)
-
-  #v(1.4cm)
-
-  // Contributing Authors Grid
-  #text(font: font-sans, size: 8.5pt, weight: "bold", fill: brand-muted, tracking: 1pt)[CONTRIBUTING AUTHORS]
-  #v(0.6cm)
-
-  #grid(
-    columns: (1fr, 1fr, 1fr),
-    row-gutter: 14pt,
-    column-gutter: 16pt,
-    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Dino Bozonelos]],
-    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Julia Wendt]],
-    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Charlotte Lee]],
-    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Jessica Scarffe]],
-    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Brian Barrick]],
-    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Masahiro Omae]],
-    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Josh Franco]],
-    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Dr. Byran Martin]],
-    [#text(font: font-sans, size: 9.5pt, weight: "semibold", fill: brand-ink)[Stefan Veldhuis]]
+  // -----------------------------------------------------------------------------
+  // Top Header Block
+  // -----------------------------------------------------------------------------
+  #stack(
+    spacing: 0pt,
+    
+    rect(
+      fill: rgb("#ffffff").transparentize(88%),
+      stroke: 0.75pt + rgb("#93c5fd").transparentize(40%),
+      radius: 4pt,
+      inset: (x: 10pt, y: 5.5pt),
+    )[
+      #text(
+        fill: rgb("#e0f2fe"),
+        size: 8pt,
+        weight: "bold",
+        tracking: 2.2pt,
+      )[SECOND EDITION]
+    ],
+    
+    v(22pt),
+    
+    par(leading: 0.80em)[
+      #text(
+        size: 36pt,
+        weight: "extrabold",
+        tracking: -0.5pt,
+      )[Introduction to\ Comparative Government\ and Politics]
+    ],
+    
+    v(22pt),
+    
+    text(
+      font: font-serif,
+      fill: rgb("#cbd5e1"),
+      size: 14pt,
+      style: "italic",
+    )[An Open Educational Resource Textbook],
+    
+    v(20pt),
+    
+    line(
+      length: 3.2cm,
+      stroke: (paint: rgb("#60a5fa"), thickness: 2pt, cap: "round"),
+    ),
   )
 
   #v(1fr)
 
-  // Publisher & License Footer
-  #line(length: 100%, stroke: 0.5pt + rgb("#cbd5e1"))
-  #v(0.4cm)
+  // -----------------------------------------------------------------------------
+  // Footer Block
+  // -----------------------------------------------------------------------------
   #grid(
     columns: (1fr, auto),
     gutter: 1cm,
+    align: bottom,
     [
-      #text(font: font-sans, size: 8.5pt, fill: brand-muted)[
-        *Academic Senate for California Community Colleges (ASCCC)*\
-        Open Educational Resources Initiative (OERI)\
-        Shared under a *CC BY-NC 4.0* International License
-      ]
+      #stack(
+        spacing: 0pt,
+        text(size: 7.5pt, weight: "bold", fill: rgb("#93c5fd"), tracking: 1.8pt)[LEAD AUTHOR],
+        v(5pt),
+        text(size: 9.5pt, weight: "semibold", fill: rgb("#ffffff"))[Dino Bozonelos],
+        
+        v(16pt),
+        
+        text(size: 7.5pt, weight: "bold", fill: rgb("#93c5fd"), tracking: 1.8pt)[CONTRIBUTING AUTHORS],
+        v(5pt),
+        par(leading: 0.75em)[
+          #text(size: 9.5pt, weight: "semibold", fill: rgb("#e2e8f0"))[
+            Austin Barraza · Brian Barrick · Josh Franco\
+            Charlotte Lee · Byran Martin · Masahiro Omae\
+            Jessica Scarffe · Stefan Veldhuis · Julia Wendt
+          ]
+        ]
+      )
     ],
     [
       #align(right + bottom)[
-        #text(font: font-sans, size: 9pt, weight: "bold", fill: brand-navy)[
-          OpenAudio OER
-        ]
+        #stack(
+          spacing: 4pt,
+          align(right)[
+            #text(size: 9pt, weight: "bold", tracking: 0.5pt, fill: rgb("#ffffff"))[ASCCC OERI]
+          ],
+          align(right)[
+            #text(size: 7.5pt, weight: "medium", fill: rgb("#94a3b8"))[CC BY-NC 4.0]
+          ],
+        )
       ]
     ]
   )
@@ -629,7 +631,9 @@
   #line(length: 4cm, stroke: 1pt + brand-navy)
   #v(0.4cm)
   #text(font: font-sans, size: 8.5pt, fill: brand-slate)[
-    *Authors:* Dr. Dino Bozonelos, Dr. Julia Wendt, Dr. Charlotte Lee, Jessica Scarffe, Brian Barrick, Dr. Masahiro Omae, Dr. Josh Franco, Dr. Byran Martin, and Stefan Veldhuis\
+    *Lead Author:* Dino Bozonelos\
+    \
+    *Contributing Authors:* Austin Barraza, Brian Barrick, Josh Franco, Charlotte Lee, Byran Martin, Masahiro Omae, Jessica Scarffe, Stefan Veldhuis, and Julia Wendt\
     \
     *Publisher:* Academic Senate for California Community Colleges (ASCCC) Open Educational Resources Initiative (OERI)\
     \
