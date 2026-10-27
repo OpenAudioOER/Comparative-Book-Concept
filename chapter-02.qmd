@@ -199,7 +199,7 @@ To address these challenges, political scientists rely on the work of English sc
 **Table 2.3.1: Visualizing Mill’s Logic**
 
 | Method | Scenario | What To Look For | The Logical Conclusion |
-|:---|:---|:---|:---|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | Method of Agreement (Leads to MDSD) | Five people each go to different restaurants but they all get food poisoning. | The one factor common to all cases (for instance, eating the same brand of spinach). | That shared factor is the likely cause of the illness. |
 | Method of Difference (Leads to MSSD) | Two siblings live in the same house and eat the same meals, but only one gets sick. | The one factor present only in the sick case (for instance, one sibling went swimming at a public pool while the other did not). | That differing factor is the likely cause of the illness. |
 :::

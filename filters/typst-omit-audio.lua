@@ -52,6 +52,11 @@ function Image(img)
     return img
   end
 
+  -- Sanitize unpopulated placeholder attributes
+  if img.attributes["width"] == "value" then
+    img.attributes["width"] = nil
+  end
+
   -- Scale portrait book covers to a balanced, proportional size
   local cap_text = pandoc.utils.stringify(img.caption)
   if img.src:match("2%.1%.1") or img.src:match("2%.3%.1") or cap_text:match("Book cover") then
@@ -73,8 +78,21 @@ function Pandoc(doc)
   local in_critical_thinking = false
 
   for _, block in ipairs(doc.blocks) do
+    -- 0. Suppress unpopulated placeholder figures
+    local is_placeholder = false
+    pandoc.walk_block(block, {
+      Image = function(img)
+        if img.src:match("image%%20path") or img.src:match("image path") then
+          is_placeholder = true
+        end
+      end
+    })
+
+    if is_placeholder then
+      -- Omit unpopulated placeholder figures from PDF build
+
     -- 1. Check for Headers
-    if block.t == "Header" then
+    elseif block.t == "Header" then
       local h_text = pandoc.utils.stringify(block)
       if h_text:match("References") then
         in_references = true
