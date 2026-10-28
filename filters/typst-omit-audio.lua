@@ -66,6 +66,54 @@ function Image(img)
   return img
 end
 
+local function make_country_profile_card(title, items)
+  local t = {}
+  table.insert(t, '#block(\n')
+  table.insert(t, '  width: 100%,\n')
+  table.insert(t, '  stroke: 0.75pt + rgb("#cbd5e1"),\n')
+  table.insert(t, '  radius: 6pt,\n')
+  table.insert(t, '  clip: true,\n')
+  table.insert(t, '  fill: rgb("#fcfbf9"),\n')
+  table.insert(t, '  breakable: false,\n')
+  table.insert(t, '  spacing: 1.5em,\n')
+  table.insert(t, '  [\n')
+  table.insert(t, '    #rect(\n')
+  table.insert(t, '      fill: rgb("#1e3a8a"),\n')
+  table.insert(t, '      width: 100%,\n')
+  table.insert(t, '      inset: (x: 12pt, y: 7.5pt),\n')
+  table.insert(t, '      stroke: none,\n')
+  table.insert(t, '      radius: 0pt,\n')
+  table.insert(t, '    )[\n')
+  table.insert(t, '      #grid(\n')
+  table.insert(t, '        columns: (1fr, auto),\n')
+  table.insert(t, '        align: (left + horizon, right + horizon),\n')
+  local banner_text = (title:upper() .. ' · COUNTRY PROFILE'):gsub('\\', '\\\\'):gsub('"', '\\"')
+  table.insert(t, string.format('        text(font: font-sans, size: 8.5pt, weight: "bold", fill: white, tracking: 1.4pt, "%s"),\n', banner_text))
+  table.insert(t, '        text(font: font-sans, size: 7.2pt, weight: "bold", fill: rgb("#93c5fd"), tracking: 1.2pt, "AT A GLANCE")\n')
+  table.insert(t, '      )\n')
+  table.insert(t, '    ]\n')
+  table.insert(t, '    #pad(x: 12pt, top: 10pt, bottom: 8pt)[\n')
+  table.insert(t, '      #grid(\n')
+  table.insert(t, '        columns: (1fr, 1fr),\n')
+  table.insert(t, '        column-gutter: 20pt,\n')
+  table.insert(t, '        row-gutter: 9pt,\n')
+  for _, it in ipairs(items) do
+    local l = it.label:gsub('\\', '\\\\'):gsub('"', '\\"')
+    local v = it.val:gsub('\\', '\\\\'):gsub('"', '\\"')
+    table.insert(t, '        block(inset: (bottom: 4pt), stroke: (bottom: 0.5pt + rgb("#e2e8f0")))[\n')
+    table.insert(t, string.format('          #text(font: font-sans, size: 6.8pt, weight: "bold", fill: rgb("#64748b"), tracking: 0.8pt, "%s")\n', l:upper()))
+    table.insert(t, '          \\ \n')
+    table.insert(t, '          #v(1.5pt)\n')
+    table.insert(t, string.format('          #text(font: font-sans, size: 8.5pt, weight: "semibold", fill: rgb("#0f172a"), "%s")\n', v))
+    table.insert(t, '        ],\n')
+  end
+  table.insert(t, '      )\n')
+  table.insert(t, '    ]\n')
+  table.insert(t, '  ]\n')
+  table.insert(t, ')\n')
+  return table.concat(t)
+end
+
 function Pandoc(doc)
   if not quarto.doc.is_format("typst") then
     return doc
@@ -76,6 +124,7 @@ function Pandoc(doc)
   local in_key_terms = false
   local in_review_questions = false
   local in_critical_thinking = false
+  local last_h3 = ""
 
   for _, block in ipairs(doc.blocks) do
     -- 0. Suppress unpopulated placeholder figures
@@ -94,6 +143,9 @@ function Pandoc(doc)
     -- 1. Check for Headers
     elseif block.t == "Header" then
       local h_text = pandoc.utils.stringify(block)
+      if block.level == 3 then
+        last_h3 = h_text
+      end
       if h_text:match("References") then
         in_references = true
       else
@@ -212,6 +264,29 @@ function Pandoc(doc)
         "#v(0.6em)\n"
       local answer_box = pandoc.RawBlock("typst", raw_typst)
       table.insert(new_blocks, answer_box)
+
+    -- 9. Country Profile Factsheet Card (Case Studies)
+    elseif block.t == "BulletList" and #block.content > 0 and pandoc.utils.stringify(block.content[1]):match("Full Country Name") then
+      local title = last_h3
+      local items = {}
+      for _, item in ipairs(block.content) do
+        local raw = pandoc.utils.stringify(item)
+        local label, val = raw:match("^([^:]+):%s*(.*)$")
+        if label and val then
+          table.insert(items, { label = label, val = val })
+          if (not title or title == "" or title == "Country") and label:match("Full Country Name") then
+            local short = val:match("^([^,]+)")
+            if short and short ~= "" then
+              title = short
+            end
+          end
+        end
+      end
+      if not title or title == "" then
+        title = "Country"
+      end
+      local card_typst = make_country_profile_card(title, items)
+      table.insert(new_blocks, pandoc.RawBlock("typst", card_typst))
 
     else
       table.insert(new_blocks, block)
