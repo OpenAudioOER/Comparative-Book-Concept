@@ -57,9 +57,9 @@ function Image(img)
     img.attributes["width"] = nil
   end
 
-  -- Scale portrait book covers to a balanced, proportional size
+  -- Scale portrait book covers and tall posters to a balanced, proportional size
   local cap_text = pandoc.utils.stringify(img.caption)
-  if img.src:match("2%.1%.1") or img.src:match("2%.3%.1") or cap_text:match("Book cover") then
+  if img.src:match("2%.1%.1") or img.src:match("2%.3%.1") or cap_text:match("Book cover") or img.src:match("8%.3%.3") or cap_text:match("campaign poster") then
     img.attributes["width"] = "2.1in"
   end
 
