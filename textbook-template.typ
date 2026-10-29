@@ -228,6 +228,26 @@
   }
 
   // ---------------------------------------------------------------------------
+  // Blockquotes: Publication-Grade Framed Quote Matching Oxford Navy Theme
+  // ---------------------------------------------------------------------------
+  show quote.where(block: true): it => {
+    block(
+      width: 100%,
+      inset: (left: 14pt, right: 12pt, top: 10pt, bottom: 10pt),
+      stroke: (left: 2.5pt + brand-navy),
+      fill: rgb("#f8fafc"),
+      radius: (right: 3pt),
+      spacing: 1.35em,
+      breakable: false,
+      [
+        #set text(font: font-serif, size: 10pt, style: "italic", fill: brand-slate)
+        #set par(leading: 0.68em, justify: true)
+        #it.body
+      ]
+    )
+  }
+
+  // ---------------------------------------------------------------------------
   // Headings
   // ---------------------------------------------------------------------------
   show heading: set text(font: font-sans, hyphenate: false)
