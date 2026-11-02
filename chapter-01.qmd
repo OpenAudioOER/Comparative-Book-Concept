@@ -1,16 +1,15 @@
 # Chapter 1: Why Study Comparative Politics?
 
-[Listen on Spotify](https://open.spotify.com/episode/7HOiM3L5he2hcgFav70Zqi?si=0rvl4zKYRX2bR1fk2lYWWw)
+[Listen on Spotify](https://open.spotify.com/episode/61OzGZNSCdti20xNXqj8lQ?si=l4Utc3_hR5qUy5OdvIy7Qw)
 
 ::: audio-timestamps
-- 0:00:00 Welcome & Introduction
-- 0:00:45 1.1: What is Comparative Politics?
-- 0:02:15 Overview & Comparative Politics Subfield
-- 0:04:30 American Politics, IR & Political Philosophy
-- 0:06:50 1.2: Approaches to Comparative Politics
-- 0:08:40 Area Studies, Cross-National & Subnational Studies
-- 0:11:15 1.3: Outline of the Textbook
-- 0:13:30 1.5: Student Resources
+- 0:00:00 Welcome
+- 0:00:40 1.1: What is Comparative Politics?
+- 0:27:47 1.2: Approaches to Comparative Politics
+- 0:43:04 1.3: Outline of the Textbook
+- 0:55:23 Key Terms
+- 1:00:07 Summary
+- 1:03:27 Credits
 :::
 
 ## 1.1: What is Comparative Politics?
@@ -147,7 +146,7 @@ Finally, there are political institutions, which can be formal or informal. **Po
 
 The study of formal, informal, and political institutions occurs in each of the three broad approaches to comparative analysis: area studies, cross-national studies, and subnational studies. These approaches demonstrate what comparativists call the ‘**unit of analysis**,’ or the primary entity or level that a researcher is studying or comparing. Each of these units-of-analysis enables the researcher to look at the issues from different levels in order to learn and develop greater understanding of the topic.
 
-![Figure 1.2.1: Political institutions can be either formal or informal. A campaign rally participant, pictured on the left, represents informal political institutions through political culture. The Supreme Court, pictured on the right, is a formal institution. (Sources (from left to right): [Trump Supporter](https://www.flickr.com/photos/johnnysilvercloud/27686095712/), by Johnny Silvercloud is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/deed.en); The Supreme Court, by Joe Ravi is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en))](images/1.2.1.png){#fig-1-2-1 fig-alt="Two side-by-side photographs: on the left, a campaign rally participant in a hat representing informal political culture; on the right, the neoclassical United States Supreme Court building at dusk representing a formal political institution."}
+![Figure 1.2.1: Political institutions can be either formal or informal. A campaign rally participant, pictured on the left, represents informal political institutions through political culture. The Supreme Court, pictured on the right, is a formal institution. (Sources (from left to right): [Trump Supporter](https://www.flickr.com/photos/johnnysilvercloud/27686095712/), by Johnny Silvercloud is licensed under [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/deed.en); The Supreme Court, by Joe Ravi is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en))](images/1.2.1.png){#fig-1-2-1 fig-alt="Two side-by-side photographs: on the left, a campaign rally participant wearing a flag representing informal political culture; on the right, the neoclassical United States Supreme Court building at dusk representing a formal political institution."}
 
 ### Area Studies
 
