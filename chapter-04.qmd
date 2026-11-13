@@ -86,29 +86,11 @@ There are hundreds of critiques and frameworks for defining and categorizing dem
 ::: {#tbl-4-1-1}
 **Table 4.1.1: Operationalizing (Measuring) Democracy**
 
-+--------------------------------+--------------------------------------------------------------------+
-| Index                          | Components Measured                                                |
-+================================+====================================================================+
-| Economist Intelligence Unit    | - Elections                                                        |
-|                                | - Participation                                                    |
-|                                | - Functioning of government                                        |
-|                                | - Civil liberties                                                  |
-|                                | - Political culture                                                |
-+--------------------------------+--------------------------------------------------------------------+
-| Freedom House                  | - Elections                                                        |
-|                                | - Participation                                                    |
-|                                | - Functioning of government                                        |
-|                                | - Individual rights                                                |
-|                                | - Organizational rights                                            |
-|                                | - Free expression                                                  |
-|                                | - Rule of law                                                      |
-+--------------------------------+--------------------------------------------------------------------+
-| Varieties of Democracy         | - Elections                                                        |
-|                                | - Participation                                                    |
-|                                | - Individual rights                                                |
-|                                | - Deliberation                                                     |
-|                                | - Egalitarianism                                                   |
-+--------------------------------+--------------------------------------------------------------------+
+| Index | Components Measured |
+|:-----------------------------------|:-----------------------------------|
+| Economist Intelligence Unit | Elections; Participation; Functioning of government; Civil liberties; Political culture |
+| Freedom House | Elections; Participation; Functioning of government; Individual rights; Organizational rights; Free expression; Rule of law |
+| Varieties of Democracy | Elections; Participation; Individual rights; Deliberation; Egalitarianism |
 :::
 
 The different operationalizations yield different outcomes across these three organizations. For instance, as of 2018, Freedom House identifies 86 democracies and 109 non-democracies while Varieties of Democracy identifies 99 democracies and 80 non- democracies. As a reminder from Chapter 3, a **non-democracy** is a political regime that denies citizens meaningful institutional channels for making choices about their collective well-being.
@@ -203,28 +185,11 @@ Table 4.3.1 summarizes a few of the advantages and disadvantages of the three sy
 ::: {#tbl-4-3-1}
 **Table 4.3.1: Advantages and Disadvantages of Presidential, Parliamentary, and Semi-Presidential Systems**
 
-+------------------------------+------------------------------------------------+------------------------------------------------+
-| System                       | Advantages                                     | Disadvantages                                  |
-+==============================+================================================+================================================+
-| Presidential System          | - Clear separation of powers                   | - Potential for gridlock                       |
-|                              | - President gains legitimacy through elections | - Difficult to remove president from power     |
-|                              | - President has a fixed term                   | - Potential for personalization of power       |
-+------------------------------+------------------------------------------------+------------------------------------------------+
-| Parliamentary System         | - Head of government (prime minister) depends  | - Lack of separation of powers between head of |
-|                              |   on legislative approval, providing           |   government and legislature                   |
-|                              |   accountability                               | - Head of government is not elected directly   |
-|                              | - Legislature can remove the head of           |   by the people                                |
-|                              |   government through a vote of no confidence   | - Potential for instability in the head of     |
-|                              | - Collective leadership is present, reducing   |   government and/or governing coalitions       |
-|                              |   the risk of personalization of power         |                                                |
-+------------------------------+------------------------------------------------+------------------------------------------------+
-| Semi-Presidential System     | - President gains legitimacy through elections | - Fixed terms tend to favor the president in   |
-|                              | - Head of government (prime minister) depends  |   the dual executive relationship              |
-|                              |   on legislative approval, providing           | - Responsibilities for the dual executives     |
-|                              |   accountability                               |   can blur, leading to confusion               |
-|                              | - Division of work between the dual executives | - Potential for power struggles between the    |
-|                              |   can decrease the amount of bureaucracy       |   dual executives                              |
-+------------------------------+------------------------------------------------+------------------------------------------------+
+| System | Advantages | Disadvantages |
+|:-----------------|:-----------------|:-----------------|
+| Presidential System | Clear separation of powers; President gains legitimacy through elections; President has a fixed term | Potential for gridlock; Difficult to remove president from power; Potential for personalization of power |
+| Parliamentary System | Head of government (prime minister) depends on legislative approval, providing accountability; Legislature can remove the head of government through a vote of no confidence; Collective leadership is present, reducing the risk of personalization of power | Lack of separation of powers between head of government and legislature; Head of government is not elected directly by the people; Potential for instability in the head of government and/or governing coalitions |
+| Semi-Presidential System | President gains legitimacy through elections; Head of government (prime minister) depends on legislative approval, providing accountability; Division of work between the dual executives can decrease the amount of bureaucracy | Fixed terms tend to favor the president in the dual executive relationship; Responsibilities for the dual executives can blur, leading to confusion; Potential for power struggles between the dual executives |
 :::
 
 ## 4.4: Democratization and Democratic Consolidation
