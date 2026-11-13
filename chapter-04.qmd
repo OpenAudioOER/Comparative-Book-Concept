@@ -607,9 +607,9 @@ Answers: 1.c, 2.d, 3.c, 4.d, 5.d
 
 #### Journals
 
-- [Democratization, Routledge](https://www.tandfonline.com/toc/fdem20/current)
-- [Frontiers in Political Science: Peace and Democracy](https://www.frontiersin.org/journals/political-science/sections/peace-and-democracy)
-- [Journal of Democracy, International Forum for Democratic Studies, Johns Hopkins University Press](https://journalofdemocracy.org/about/)
+- [*Democratization*](https://www.tandfonline.com/toc/fdem20/current) (Routledge)
+- [*Frontiers in Political Science: Peace and Democracy*](https://www.frontiersin.org/journals/political-science/sections/peace-and-democracy) (Frontiers Media)
+- [*Journal of Democracy*](https://journalofdemocracy.org/about/) (International Forum for Democratic Studies / Johns Hopkins University Press)
 
 #### Books
 
