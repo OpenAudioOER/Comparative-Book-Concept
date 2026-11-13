@@ -262,9 +262,9 @@ In comparing the theories, each of these theories highlights a different aspect 
 
 Scholars expect consolidated democracies to endure, but how can they tell when a democracy moves from fledgling to established status? What are the indicators of a consolidated democracy?
 
-Two potential indicators of democratic consolidation are the ‘two-election test’ and the ‘longevity test.’ The two-election test, also known as the ‘transfer of power test,’ asserts that a democracy becomes consolidated when a government that was elected through free and fair elections is subsequently defeated in a following election, and all sides accept the election outcome. This test judges democratic consolidation by the peaceful transfer of power. One problem with using this test as an indicator of democratic consolidation is that some states have dominant party systems in which the same political party is elected to office repeatedly. Japan's Liberal Democratic Party (LDP), for example, has been in power almost continuously since its founding in 1955, and it was in power continuously for nearly four decades, from 1955-1993. Yet even in 1992, Freedom House ranked Japan as a ‘free’ regime. It is difficult to imagine arguing that Japan was not a consolidated democracy prior to the 1993 election.
+Two potential indicators of democratic consolidation are the ‘two-election test’ and the ‘longevity test.’ The **two-election test**, also known as the ‘transfer of power test,’ asserts that a democracy becomes consolidated when a government that was elected through free and fair elections is subsequently defeated in a following election, and all sides accept the election outcome. This test judges democratic consolidation by the peaceful transfer of power. One problem with using this test as an indicator of democratic consolidation is that some states have dominant party systems in which the same political party is elected to office repeatedly. Japan's Liberal Democratic Party (LDP), for example, has been in power almost continuously since its founding in 1955, and it was in power continuously for nearly four decades, from 1955-1993. Yet even in 1992, Freedom House ranked Japan as a ‘free’ regime. It is difficult to imagine arguing that Japan was not a consolidated democracy prior to the 1993 election.
 
-The second potential indicator of democratic consolidation is the longevity test, which asserts that a democracy becomes consolidated after it holds free, fair, and regular elections for an extended period of time (for example, for more than two decades). Yet this test also has problems. If elections are held over time, yet those elections benefit only one party, the longevity test may not be a good indicator of democratic consolidation. Persistent elections do not necessarily indicate a high quality of democracy.
+The second potential indicator of democratic consolidation is the **longevity test**, which asserts that a democracy becomes consolidated after it holds free, fair, and regular elections for an extended period of time (for example, for more than two decades). Yet this test also has problems. If elections are held over time, yet those elections benefit only one party, the longevity test may not be a good indicator of democratic consolidation. Persistent elections do not necessarily indicate a high quality of democracy.
 
 The problems with these two tests demonstrate that it can be difficult to identify indicators for consolidated democracy. The following section briefly reviews three theories related to the likelihood of democratic consolidation, though scholars have proposed other theories as well. 
 
@@ -524,92 +524,51 @@ Zakaria, Fareed. *The Future of Freedom: Illiberal Democracy at Home and Abroad*
 
 ## 4.7: Student Resources
 
+### Key Terms
+
 - **Apartheid** is a system of governance in which racial oppression is institutionalized.
-
 - **Aristocracy** is a form of government where power is held by nobility or those considered to be of the highest class within a society.
-
 - **Authoritarian regime** is a form of government in which a small group of political, economic, military, or social elites holds political power and governs the state without meaningful constitutional accountability to the general population.
-
 - **Ba’athist Party** is a former transnational Arab political party that espoused pan-Arab nationalism and socialist economic policies.
-
 - **Checks and balances** is a system that provides the different branches with powers to limit one another in an effort to ensure that no branch becomes too powerful.
-
 - **Civil society theory of democratization** is an approach arguing that democratization is more likely when organized groups and associations that exist outside direct state control are strong and capable of organizing collective action to mobilize for political reform.
-
 - **Coalitions** are temporary groupings between two or more political parties.
-
 - **Congressional legislature** is a type of legislative body in which groups of legislators, elected by the people, make laws and share powers with other branches within the government.
-
 - **Consultative legislature** is a type of legislative body that advises the leader, or group of leaders, on issues relating to laws and their applications.
-
 - **Democracy** is a political regime in which the supreme power of government is vested in the people.
-
 - **Democratic consolidation** is a process in which new democracies evolve from fledgling democratic regimes to established, stable, and secure democratic regimes.
-
 - **Democratization** is a political regime transition in which a state moves from a non-democratic regime to a democratic regime.
-
-- **Direct democracy** is a government system that enables citizens to vote directly, or participate directly, in the formation of laws, public policy, and government decisions
-
+- **Direct democracy** is a government system that enables citizens to vote directly, or participate directly, in the formation of laws, public policy, and government decisions.
 - **Elections** are the mechanism by which leaders are chosen for political office in a democracy.
-
 - **Electoral systems** are voting systems. They provide a set of rules that dictates how elections are conducted and how results are determined and communicated.
-
-- **Elite theory** **of democratization** is an approach arguing that democratization depends largely on the calculations and interests of powerful groups, who may support democratic transitions when their interests can be protected through negotiated agreements.
-
+- **Elite theory of democratization** is an approach arguing that democratization depends largely on the calculations and interests of powerful groups, who may support democratic transitions when their interests can be protected through negotiated agreements.
 - **Executive branch** is responsible for implementing and enforcing the laws made by the legislature and typically led by a president or a prime minister.
-
 - **Fair elections** are those in which all votes carry equal weight, the vote totals are counted accurately, and the election results are accepted by all parties.
-
 - **Free elections** are those in which all citizens are able to vote for the candidates of their choice.
-
 - **Flawed democracy** is a democratic regime in which elections are free and fair, and basic civil liberties are protected, but issues exist which may hamper the democratic process.
-
 - **Head of government** is the chief executive who runs and manages the day-to-day business of the state.
-
 - **Head of state** is the chief executive who is the symbolic representative of the state. (For example, the head of state may represent the state internationally by attending ceremonial gatherings).
-
 - **Indirect democracy**, also called ‘representative democracy,’ is a type of democracy that channels the power of the people through representation, where citizens elect representatives to craft laws and make government decisions for them.
-
-- **International relations theory of democratization** is an approach arguing that external actors can influence whether countries become democratic, promoting democracy directly through intervention and assistance or indirectly through economic incentives and political pressure. 
-
+- **International relations theory of democratization** is an approach arguing that external actors can influence whether countries become democratic, promoting democracy directly through intervention and assistance or indirectly through economic incentives and political pressure.
 - **Judicial review** is the ability of courts to interpret the constitutionality of laws and government actions.
-
 - **Judicial branch** is the part of the government that resolves disputes through courts and interprets, applies, and determines the constitutionality of laws.
-
 - **Legislative branch** is the part of the government that performs three main functions: (1) it makes and revises laws; (2) it provides administrative oversight to ensure laws are properly executed; and (3), it represents members' constituents in the government, ideally enacting laws related to citizens' interests.
-
 - **Liberal democracy** is a type of democracy that not only facilitates free, fair, and regular elections, but also ensures protections of civil liberties, such as freedom of speech, and civil rights, including freedom from discrimination.
-
 - **Longevity test** is a measure asserting that a democracy becomes consolidated after it holds free, fair, and regular elections for an extended period of time, such as more than two decades.
-
 - **Majoritarian voting system** is an electoral system in which candidates must win a majority in order to win the election. If no candidate wins a majority, there will be a ‘runoff election’ between the top two vote-earners from the first round.
-
 - **Modernization theory of democratization** is an approach arguing that democracy is more likely to emerge as societies undergo economic and social development, producing a wealthier, more educated, and increasingly urbanized population that demands greater political participation and accountability.
-
 - **Non-democracy** is a political regime that denies citizens meaningful institutional channels for making choices about their collective well-being.
-
 - **Parliamentary legislature** is a type of legislative body in which members are elected by the people, enact laws, and choose and hold accountable the head of government, typically a prime minister.
-
 - **Parliamentary system** is a system of government in which the chief executive, usually a prime minister, is not directly elected and is instead chosen by the legislature.
-
 - **Plurality voting system**, sometimes referred to as ‘first-past-the-post,’ is an electoral system in which the winning candidate simply earns the most votes.
-
-- **Political culture theory of democratization** is an approach that examines the relationship between cultural values and democratic governance, and considers whether specific cultural values, such as tolerance and individualism, are necessary to support democratic institutions.. 
-
+- **Political culture theory of democratization** is an approach that examines the relationship between cultural values and democratic governance, and considers whether specific cultural values, such as tolerance and individualism, are necessary to support democratic institutions.
 - **Political parties** are organized groups of people who unite under shared values to get their preferred candidates elected to political office.
-
 - **Presidential system** is a system of government, sometimes called the ‘single executive system,’ in which an elected president leads the executive branch, acting both as the head of government and as the head of state.
-
-- **Proportional voting** system is an electoral system in which the distribution of seats, such as in a legislature, reflects the overall distribution of votes by the population.
-
+- **Proportional voting system** is an electoral system in which the distribution of seats, such as in a legislature, reflects the overall distribution of votes by the population.
 - **Semi-presidential system** is a system of government, sometimes called ‘the dual executive system,’ in which a state has both a president and a prime minister, and the dual executives share power.
-
 - **Separation of powers** is a system that divides government functions into three areas: the legislature, tasked primarily with the making of laws; the executive, who carries out or enforces these laws; and the judiciary, tasked with interpreting the constitutionality of laws.
-
 - **Suffrage** is the right to vote in political elections.
-
 - **Two-election test**, also known as the ‘transfer of power test,’ is a measure asserting that a democracy becomes consolidated when a government that was elected through free and fair elections is subsequently defeated and all sides accept the election outcome, demonstrating the peaceful transfer of power.
-
 - **Waves of democratization** are moments in history when multiple countries transition to democracy during the same time period.
 
 ### Summary
