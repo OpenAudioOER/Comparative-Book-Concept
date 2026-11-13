@@ -25,6 +25,12 @@ function Table(tbl)
       {pandoc.AlignLeft, 0.27},
       {pandoc.AlignLeft, 0.27}
     }
+  elseif #tbl.colspecs == 3 then
+    tbl.colspecs = {
+      {pandoc.AlignLeft, 0.24},
+      {pandoc.AlignLeft, 0.38},
+      {pandoc.AlignLeft, 0.38}
+    }
   elseif #tbl.colspecs == 2 then
     tbl.colspecs = {
       {pandoc.AlignLeft, 0.32},

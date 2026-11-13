@@ -48,7 +48,7 @@ Today, social contracts are observed in almost every type of political system, d
 There are also implicit social contracts. For example, most U.S. citizens are born into their social contract because the 14th Amendment to the U.S. Constitution guarantees birthright citizenship (U.S. Const. amend. XIV, § 1). By being born into citizenship, Americans may never need to actualize, or act upon, their citizenship. They benefit from a system that protects their rights and liberties, even when they choose not to obey the law. In contrast, there are other U.S. citizens who are not born into this social contract, and instead go through a formal process, called naturalization, for citizenship. **Naturalization** is the process by which non-citizens formally become citizens of the country they reside in (USCIS, 2024). Naturalization is a long process that requires multiple steps, including but not limited to background checks, oral examinations, paperwork, and pledging allegiance to the host country in a formal ceremony. The process of naturalization is an example of a voluntary and formal social contract.
 
 ::: {#fig-3-1-2}
-![Figure 3.1.2: Naturalization Ceremony at Harriet Tubman National Historical Park on August 8, 2019. (Source: [Naturalization Ceremony at Harriet Tubman National Historical Park](https://commons.wikimedia.org/wiki/File:Naturalization_Ceremony_at_Harriet_Tumban_National_Historical_Park_on_August_8,_2019._\(e7a40914-ab1d-46c1-9b30-f7cd63901069\).jpg) by Mary O'Neill is licensed under [Public Domain - US](https://creativecommons.org/publicdomain/zero/1.0/deed.en))](images/3.1.2.jpg){fig-alt="Outdoor naturalization ceremony at Harriet Tubman National Historical Park showing seated new citizens, officials, and American flags."}
+![Figure 3.1.2: Naturalization Ceremony at Harriet Tubman National Historical Park on August 8, 2019. (Source: [Naturalization Ceremony at Harriet Tubman National Historical Park](https://commons.wikimedia.org/wiki/File:Naturalization_Ceremony_at_Harriet_Tumban_National_Historical_Park_on_August_8,_2019._(e7a40914-ab1d-46c1-9b30-f7cd63901069).jpg) by Mary O'Neill is licensed under [Public Domain - US](https://creativecommons.org/publicdomain/zero/1.0/deed.en))](images/3.1.2.jpg){fig-alt="Outdoor naturalization ceremony at Harriet Tubman National Historical Park showing seated new citizens, officials, and American flags."}
 :::
 
 To summarize, our understanding of and need for government comes from this historical reckoning of the social contract and the drive for social order. The following section will now define several related, but distinct, terms that are foundational to the study of comparative politics.
@@ -124,7 +124,7 @@ As one example of a non-democracy, consider a **personalist regime**, a system i
 The current Supreme Leader of North Korea is Kim Jong-Un, who has served since 2011. Kim Jong-Un took over the title of Supreme Leader after the death of his father, Kim Jong-Il. Similarly, Kim Jong-Il took over the title of Supreme Leader in 1994 after the death of his father, Kim Il-Sung. The people of North Korea do not elect their Supreme Leader. Instead, political power is transferred through dynastic succession within the Kim family. The state's legitimacy therefore relies on charismatic legitimacy stemming from the Kim family, which enjoys a cult of personality. A **cult of personality** occurs when a state leverages all aspects of a leader’s real and exaggerated traits to solidify the leader’s power (Geddes et al., 2018). In North Korea, the media promotes propaganda to endow its leader with divine-like status.
 
 ::: {#fig-3-2-1}
-![Figure 3.2.1: Image of Kim Jong-Un, Supreme Leader of North Korea, in 2019. (Source: [Kim Jong-un](https://commons.wikimedia.org/wiki/File:Kim_Jong-un_April_2019_\(cropped\).jpg), by Alexei Nikolsky is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/))](images/3.2.1.jpg){fig-alt="Official portrait photograph of Kim Jong-Un, Supreme Leader of North Korea, in dark attire against a North Korean flag background." width="340"}
+![Figure 3.2.1: Image of Kim Jong-Un, Supreme Leader of North Korea, in 2019. (Source: [Kim Jong-un](https://commons.wikimedia.org/wiki/File:Kim_Jong-un_April_2019_(cropped).jpg), by Alexei Nikolsky is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/))](images/3.2.1.jpg){fig-alt="Official portrait photograph of Kim Jong-Un, Supreme Leader of North Korea, in dark attire against a North Korean flag background." width="340"}
 :::
 
 As a second example of a non-democracy, is a **military regime**, a type of political regime characterized by military elites running the government, also referred to as a junta (Linz, 2000; Geddes et al., 2018). Similar to the personalist regime example, within a military regime, the leaders do not come to power through elections. In many cases, rather, a junta initially forms as resistance to or rebellion against an existing government, then gains power through a military-led coup d'état. A **coup d'état,** often simply called ‘coup,’ is an attempt to abruptly, unlawfully, and sometimes violently seize power from an existing government. In Myanmar in 2021, for instance, the military, known as the Tatmadaw, seized control and overthrew a democratically-elected government (Egreteau, 2022). After a parliamentary election in November 2020 that resulted in a decrease in the number of military-aligned political party seats, Myanmar's military alleged election fraud and requested that the government delay the opening session of parliament. The government rejected this request and, in response, the military seized power, detained those who had won the election, declared a state of emergency, and handed control of all branches of government to Senior General Min Aung Hlaing as junta leader, under the official title of Chairman of the State Administration Council.
@@ -167,8 +167,8 @@ Why compare and contrast Botswana and Somalia when discussing the state? This se
 - **Capital:** Gaborone
 - **Total land size:** 224,610 sq. miles
 - **Population:** 2.5 million (2025)
-- **GDP:** $19.401 billion (2024)
-- **GDP per capita:** $18,100 (2024)
+- **GDP:** \$19.401 billion (2024)
+- **GDP per capita:** \$18,100 (2024)
 - **Currency:** Pula
 
 The Republic of Botswana is located in Southern Africa, and it is a landlocked country. Botswana is bordered by South Africa to the south, Namibia to the northwest, and Zimbabwe to the northeast. Botswana has a long history, and is credited with perhaps being one of the earliest homelands of modern humans, dating back over 200,000 years. Much of what is known about the ancient Botswana region is derived from archeological and anthropological research, which has traced evidence of human civilization through ancient tools, cave drawings, and evidence of farming practices that existed through the region over time. Although there is robust evidence of the region’s population adopting agricultural practices and having tribal norms and values that were followed, the first actual written records of life in Botswana did not exist until the 1820s.
@@ -206,8 +206,8 @@ Another explanation is resource-based (North, 1981; Olson, 2000). The British la
 - **Capital:** Mogadishu
 - **Total land size:** 246,201 sq. miles
 - **Population:** 20.3 million (2025)
-- **GDP:** $12.109 billion (2024)
-- **GDP per capita:** $1,400 (2025)
+- **GDP:** \$12.109 billion (2024)
+- **GDP per capita:** \$1,400 (2025)
 - **Currency:** Somali Shilling
 
 Somalia is a country located in Eastern Africa, the Horn of Africa, and bordered by Kenya, Ethiopia, and Djibouti. Like Botswana, Somalia has a long history. In fact, Somalia is thought to have been settled by early *Homo sapiens*, as modern humans emerged in Africa roughly 300,000 years ago. Archaeological digs have unearthed pyramids, tombs, ancient cities, tools, burial grounds, homes, and walls. Over time, the land that is now Somalia was affected by various civilizations and outside influences given its location for trade. Somalia was a stopping point that enabled profitable trade to occur between what is now the Middle East, connecting trading pathways with India and China. In the 9th century, Islam was introduced to the region of present-day Somalia by Muslims fleeing persecution. Over time, Islam grew to be the main religion of Somalia (Lewis, 2002).
@@ -442,27 +442,27 @@ Answers: 1.c, 2.c, 3.d., 4.a, 5.c
 
 ### Critical Thinking Questions
 
-1. What is the state and what is its relationship to the social contract? Consider the various ways in which the social contract can manifest to contribute to varying state outcomes.
+1.  What is the state and what is its relationship to the social contract? Consider the various ways in which the social contract can manifest to contribute to varying state outcomes.
 
-2. How is the strength of a state derived? How can the difference between weak and strong states be determined? Provide examples.
+2.  How is the strength of a state derived? How can the difference between weak and strong states be determined? Provide examples.
 
-3. Are some societies better off without the state? Are there circumstances where the formation of a state would be detrimental? Describe these circumstances.
+3.  Are some societies better off without the state? Are there circumstances where the formation of a state would be detrimental? Describe these circumstances.
 
 ### Suggestions for Further Study
 
 #### Websites
 
-- [Our World in Data](https://ourworldindata.org/democracy)  
-- [The World Bank, World Development Indicators](https://datatopics.worldbank.org/world-development-indicators/) 
+- [Our World in Data](https://ourworldindata.org/democracy)\
+- [The World Bank, World Development Indicators](https://datatopics.worldbank.org/world-development-indicators/)
 
 #### Journal Articles
 
-- Gabriel A. Almond. (September 1988) “The Return of the State,” and replies by Eric A. Nordlinger, Theodore J. Lowi and Sergio Fabbrini, American Political Science Review, vol. 82, pp. 875-901.  
+- Gabriel A. Almond. (September 1988) “The Return of the State,” and replies by Eric A. Nordlinger, Theodore J. Lowi and Sergio Fabbrini, American Political Science Review, vol. 82, pp. 875-901.\
 - Stephen D. Krasner. (January 1984) “Approaches to the State: Alternative Conceptions and Historical Dynamics,” Comparative Politics, 16, pp. 223-246.
 
 #### Books
 
-- Martin Carnoy. (1984) Political Theory and the State.  
-- Mancur Olson. (2000). Power and Prosperity. New York: Basic Books.  
-- Robert Putnam. (1993). Making Democracy Work. Princeton, N.J.: Princeton University Press.  
+- Martin Carnoy. (1984) Political Theory and the State.\
+- Mancur Olson. (2000). Power and Prosperity. New York: Basic Books.\
+- Robert Putnam. (1993). Making Democracy Work. Princeton, N.J.: Princeton University Press.\
 - Hendrik Spruyt. (1994). The Sovereign State and Its Competitors. Princeton: Princeton University Press.

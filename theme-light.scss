@@ -1369,6 +1369,33 @@ main.content table.table {
     vertical-align: top;
     color: var(--tb-ink);
     background-color: transparent;
+
+    ul, ol {
+      margin: 0.15rem 0;
+      padding-left: 1.25rem;
+
+      li {
+        margin-bottom: 0.35rem;
+        line-height: 1.5;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // Auto-balance column widths for 2-column comparative tables in HTML
+  &:has(thead th:nth-child(2):last-child) {
+    colgroup col:first-child { width: 32% !important; }
+    colgroup col:nth-child(2) { width: 68% !important; }
+  }
+
+  // Auto-balance column widths for 3-column comparative tables in HTML
+  &:has(thead th:nth-child(3):last-child) {
+    colgroup col:first-child { width: 24% !important; }
+    colgroup col:nth-child(2) { width: 38% !important; }
+    colgroup col:nth-child(3) { width: 38% !important; }
   }
 
   tbody tr:last-child td {
@@ -1867,7 +1894,8 @@ main.content section[id*="suggestions-for-further-study"] {
     }
   }
 
-  section#websites ul {
+  section#websites ul,
+  section#journals ul {
     padding-left: 1.25rem;
 
     li {
@@ -1875,6 +1903,14 @@ main.content section[id*="suggestions-for-further-study"] {
       font-family: var(--tb-sans);
       font-size: 0.94rem;
       font-weight: 550;
+
+      > p {
+        margin-bottom: 0;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        display: inline;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -2094,6 +2130,11 @@ main.content section[id*="books"] ul li {
   line-height: 1.65;
   margin-bottom: 0.85rem;
   overflow-wrap: break-word;
+
+  p {
+    margin-bottom: 0;
+    display: inline;
+  }
 }
 
 main.content section[id*="journal-articles"] ul,
