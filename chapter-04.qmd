@@ -62,7 +62,7 @@ Indirect democracy is the system that most democratic states use today. This is 
 Although most democratic states practice indirect democracy, there are sometimes mechanisms that align with direct democracy. For instance, the United States has a representative democracy, but voters in some states can put forth initiatives and referendums, also referred to as ballot propositions, for citizens to vote on directly.
 
 ::: {#fig-4-1-2}
-![Figure 4.1.2: A voter filling in their ballot at a polling place on Election Day in the United States. (Source: [Voters in Des Moines](https://www.flickr.com/photos/tabor-roeder/50564518207/) by Phil Roeder, via [Flickr](https://www.flickr.com/photos/tabor-roeder/50564518207/), is licensed under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/deed.en))](images/4.1.2.jpg){fig-alt="Close-up of a voter's hands filling in bubbles on a paper ballot inside a private voting booth on Election Day in the United States."}
+![Figure 4.1.2: A young woman smiles while casting her vote in Nigeria's 2023 presidential election. (Source: [2023 DRG Photo Contest Third Place Winner](https://www.flickr.com/photos/usaid_images/53321015270) by [Ryan Mahoney, U.S. Agency for International Development (USAID)](https://www.flickr.com/photos/usaid_images/), is licensed under [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/deed.en))](images/4.1.2.jpg){fig-alt="A smiling Nigerian woman in black and gold attire bends forward to drop her paper ballot into a red-lidded, zip-tied translucent ballot box labeled for the Independent National Electoral Commission, with a white voting booth and another voter waiting behind her." width="400"}
 :::
 
 ### Conceptualizing and Operationalizing Democracy
